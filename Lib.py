@@ -8,6 +8,7 @@ import string
 import json as jsn
 from scipy import io
 import pickle
+import numpy as np
 
 # nltk.download('stopwords')
 # nltk.download('punkt')
@@ -46,6 +47,9 @@ def processText(text):
     # text = " ".join(text)
     return text
 
+def processTextParagraph(text):
+    return " ".join(processText(text))
+
 def num(s):
     try:
         return float(s)
@@ -74,4 +78,90 @@ def save_data(data,data_vector,data_rating,output_file,output_label,output_data,
             f.write("%s\n" % item)
     f.close()
 
+def save_data_numpy(home_dir,data,data_vector,data_rating):
+    np.save(home_dir+"data_np",data)
+    np.save(home_dir+"data_vector_np",data_vector)
+    np.save(home_dir+"data_rating_np",data_rating)
 
+def load_data(home_dir):
+    data=np.load(home_dir+"data_np.npy")
+    data_rating = np.load(home_dir + "data_rating_np.npy")
+    data_vector = np.load(home_dir + "data_vector_np.npy")
+
+    return (data,data_rating,data_vector)
+
+def create_graph(home_dir):
+    (data,data_rating,data_vector)=load_data(home_dir)
+
+    n=data.shape[0]
+    indexes=np.random.choice(n, min(1000,n))
+    print(indexes)
+
+    print("Data count: ", data.shape)
+    print("Vector count: ", data_vector.shape)
+    print("Rating count: ", data_rating.shape)
+
+    data=data[indexes]
+    data_rating = data_rating[indexes]
+    data_vector = data_vector[indexes]
+
+    print("Data count: ", data.shape)
+    print("Vector count: ", data_vector.shape)
+    print("Rating count: ", data_rating.shape)
+
+    from sklearn.neighbors import kneighbors_graph
+    import networkx as nx
+    import scipy as sp
+
+    mode='distance'
+    metric='cosine'
+    #metric = 'euclidean'
+
+    k=5
+    sparse_graph = kneighbors_graph(data_vector, k, mode=mode, metric=metric, include_self=False)
+
+    if (mode == 'distance'):
+        #sparse_graph.data = 1.0 / (1.0 + sparse_graph.data)  # poincare
+        #sparse_graph.data = 1.0 - sparse_graph.data
+        sparse_graph.data = sparse_graph.data+1e-10
+        #sparse_graph.eliminate_zeros()
+
+    print('Saving graph ----')
+    graph = home_dir + 'graph.npz'
+    gephi = home_dir + "graph_gephi.gexf"
+
+    sp.sparse.save_npz(graph, sparse_graph)
+    print('Graph saving Done')
+
+    custom_labels=[]
+    for i in range(data_rating.shape[0]):
+        custom_labels.append(str(data_rating[i])+"->"+data[i][:50])
+
+    print(custom_labels)
+
+    threshold=3.0
+    if("Imdb" in home_dir): threshold=5.0
+
+    for i in range(data_rating.shape[0]):
+        if(data_rating[i]>threshold):
+            data_rating[i]=1
+        else:
+            data_rating[i] = 0
+
+
+    labels = dict(zip(range(data_rating.shape[0]), data_rating))
+    G = nx.from_scipy_sparse_matrix(sparse_graph)
+    nx.set_node_attributes(G, labels, 'labels')
+    print("Writing gephi")
+    nx.write_gexf(G, gephi)
+
+    return
+
+
+
+if __name__ == '__main__':
+    home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"
+    #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Yelp/"
+    #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/DBpedia/dbpedia_csv/"
+    #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/AmazonReview/"
+    create_graph(home_dir)

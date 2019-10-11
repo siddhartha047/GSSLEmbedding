@@ -2,14 +2,14 @@ import timeit
 import os
 import numpy as np
 from Lib import *
-from Word2Vec import *
+from W2Vec.Word2Vec import *
 
 start = timeit.default_timer()
 model=load_model(MODEL_NAME)
 stop = timeit.default_timer()
 print('Model loading time: ', stop - start)
 
-def readData(fileName,data,data_vector,data_rating,minCharLength,readall=False):
+def readData(fileName,data,data_vector,data_rating,minWordLength,readall=False):
     nrows = 20
 
     with open(fileName, encoding="utf-8-sig") as f:
@@ -19,10 +19,12 @@ def readData(fileName,data,data_vector,data_rating,minCharLength,readall=False):
             if len(row) == 3:
                 label=num(row[0])
                 text=processText(row[1] + row[2])
-                data_rating.append(label)  # 0 is class label
-                data_vector.append(apply_embedding(text, model))
-                data.append(" ".join(text))  # 1 is title 2 is abstract
-                #print(" ".join(text))
+
+                if(len(text)>minWordLength):
+                    data_rating.append(label)  # 0 is class label
+                    data_vector.append(apply_embedding(text, model))
+                    data.append(" ".join(text))  # 1 is title 2 is abstract
+                    #print(" ".join(text))
             else:
                 print("improper format\n")
 
@@ -48,16 +50,25 @@ def main():
 
     print("Started Reading data")
     start_reading = timeit.default_timer()
-    readData(inputFile1, data, data_vector, data_rating, minCharLength=140, readall=True)  # False: read first 20 data
-    readData(inputFile2, data, data_vector, data_rating, minCharLength=140, readall=True)  # False: read first 20
+    readData(inputFile1, data, data_vector, data_rating, minWordLength=10, readall=False)  # False: read first 20 data
+    readData(inputFile2, data, data_vector, data_rating, minWordLength=10, readall=False)  # False: read first 20
     stop_reading = timeit.default_timer()
     print('Time to process: ', stop_reading - start_reading)
 
-    print("Data count: ",len(data))
-    print("Vector count: ",len(data_vector))
-    print("Rating count: ", len(data_rating))
+    start_reading = timeit.default_timer()
+    data = np.array(data)
+    data_rating = np.array(data_rating)
+    data_vector = np.array(data_vector)
+    stop_reading = timeit.default_timer()
+    print('Time to convert into numpy: ', stop_reading - start_reading)
+
+    print("Data count: ", data.shape)
+    print("Vector count: ", data_vector.shape)
+    print("Rating count: ", data_rating.shape)
 
     save_data(data,data_vector,data_rating,output_file,output_label,output_data,comment="dbpedia review vector")
+    save_data_numpy(home_dir, data, data_vector, data_rating)
+
 
 if __name__ == '__main__':
     start = timeit.default_timer()

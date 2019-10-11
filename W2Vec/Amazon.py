@@ -2,14 +2,14 @@ import timeit
 import os
 import numpy as np
 from Lib import *
-from Word2Vec import *
+from W2Vec.Word2Vec import *
 
 start = timeit.default_timer()
 model=load_model(MODEL_NAME)
 stop = timeit.default_timer()
 print('Model loading time: ', stop - start)
 
-def read_data(filename,data, data_vector, data_rating,minCharLength,readall=False):
+def read_data(filename,data, data_vector, data_rating,minWordLength,readall=False):
     nrows=20
     for review in parse(filename):
         # data.append([review['reviewerID'],review['asin'],review['reviewText'],review['overall']])
@@ -18,7 +18,7 @@ def read_data(filename,data, data_vector, data_rating,minCharLength,readall=Fals
         text=processText(review['reviewText'])
         rating=review['overall']
 
-        if(int(rating)!=3):
+        if(int(rating)!=3 and len(text)>minWordLength):
             data.append(" ".join(text))
             data_vector.append(apply_embedding(text, model))
             data_rating.append(rating)
@@ -42,15 +42,23 @@ def main():
 
     print("Started Reading data")
     start_reading = timeit.default_timer()
-    read_data(input_file, data, data_vector, data_rating, minCharLength=20, readall=False)
+    read_data(input_file, data, data_vector, data_rating, minWordLength=10, readall=False)
     stop_reading = timeit.default_timer()
     print('Time to process: ', stop_reading - start_reading)
 
-    print("Data count: ",len(data))
-    print("Vector count: ",len(data_vector))
-    print("Rating count: ", len(data_rating))
+    start_reading = timeit.default_timer()
+    data = np.array(data)
+    data_rating = np.array(data_rating)
+    data_vector = np.array(data_vector)
+    stop_reading = timeit.default_timer()
+    print('Time to convert into numpy: ', stop_reading - start_reading)
+
+    print("Data count: ", data.shape)
+    print("Vector count: ", data_vector.shape)
+    print("Rating count: ", data_rating.shape)
 
     save_data(data,data_vector,data_rating,output_file,output_label,output_data,comment="Amazon review vector")
+    save_data_numpy(home_dir, data, data_vector, data_rating)
 
 if __name__ == '__main__':
     start = timeit.default_timer()
