@@ -3,9 +3,6 @@ import os
 import numpy as np
 from Lib import *
 from Word2Vec import *
-import json as jsn
-from scipy import io
-import pickle
 
 start = timeit.default_timer()
 model=load_model(MODEL_NAME)
@@ -64,26 +61,11 @@ def main():
     stop_reading = timeit.default_timer()
     print('Time to process: ', stop_reading - start_reading)
 
-    # data=['The cat sat on the mat.','The ate ate dog # @ ate my homework 123','hibijibi']
-    # data = [processText(text) for text in data]
-    # data_rating=np.array([1,2,3])
-
     print("Data count: ",len(data))
     print("Vector count: ",len(data_vector))
     print("Rating count: ", len(data_rating))
 
-    print("Started Writing data")
-    pickle.dump(data_vector,open(output_data,"wb"))
-    io.mmwrite(output_file, data_vector, comment="imdb review data")
-
-    f = open(output_label, 'w')
-    f.write("%d\n" % len(data_rating))
-
-    print("Writing Class label")
-    with open(output_label, 'a') as f:
-        for item in data_rating:
-            f.write("%s\n" % item)
-    f.close()
+    save_data(data,data_vector,data_rating,output_file,output_label,output_data,comment="imdb review vector")
 
 if __name__ == '__main__':
     start = timeit.default_timer()

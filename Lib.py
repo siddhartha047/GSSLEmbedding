@@ -5,6 +5,9 @@ from nltk.tokenize import word_tokenize
 import nltk
 import csv
 import string
+import json as jsn
+from scipy import io
+import pickle
 
 # nltk.download('stopwords')
 # nltk.download('punkt')
@@ -53,14 +56,21 @@ def parse(path):
   for l in g:
     yield eval(l)
 
-# def processText(sentence):
-#     tokens = word_tokenize(sentence)
-#     tokens = [w.lower() for w in tokens]
-#     table = str.maketrans('', '', string.punctuation)
-#     stripped = [w.translate(table) for w in tokens]
-#     words = [word for word in stripped if word.isalpha()]
-#     words = [w for w in words if not w in stop_words]
-#
-#     return ' '.join(words)
+
+def save_data(data,data_vector,data_rating,output_file,output_label,output_data,comment=""):
+    print("Started Writing data")
+
+    pickle.dump(data, open(output_data, "wb"))
+
+    io.mmwrite(output_file, data_vector, comment=comment)
+
+    f = open(output_label, 'w')
+    f.write("%d\n" % len(data_rating))
+
+    print("Writing Class label")
+    with open(output_label, 'a') as f:
+        for item in data_rating:
+            f.write("%s\n" % item)
+    f.close()
 
 
