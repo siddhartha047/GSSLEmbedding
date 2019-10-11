@@ -42,6 +42,7 @@ def processText(text):
     # Lemmatisation
     lem = WordNetLemmatizer()
     text = [lem.lemmatize(word) for word in text if not word in stop_words]
+    text = [word for word in text if len(word)>2]
     # text = " ".join(text)
     return text
 
@@ -59,9 +60,9 @@ def parse(path):
 
 def save_data(data,data_vector,data_rating,output_file,output_label,output_data,comment=""):
     print("Started Writing data")
-
     pickle.dump(data, open(output_data, "wb"))
 
+    print("Writing vector as mtx file")
     io.mmwrite(output_file, data_vector, comment=comment)
 
     f = open(output_label, 'w')

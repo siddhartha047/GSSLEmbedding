@@ -21,8 +21,8 @@ def readData(directory,data,data_vector,data_rating,minCharLength,readall=False)
             rating = num(ratingtext)
             review = processText(reviewtext)
 
-            if (len(review) >= minCharLength and int(rating) != 3):
-                data.append(review)
+            if (int(rating) != 3):
+                data.append(" ".join(review))
                 data_vector.append(apply_embedding(review, model))
                 data_rating.append(rating)
 
@@ -33,7 +33,7 @@ def readData(directory,data,data_vector,data_rating,minCharLength,readall=False)
 
 def main():
     # home_dir = "/global/cscratch1/sd/sferdou/amazon_data/"
-    home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/";
+    home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"
     input_file1 = home_dir + "train/pos/"
     input_file2 = home_dir + "train/neg/"
     input_file3 = home_dir + "test/pos/"
@@ -50,7 +50,7 @@ def main():
     #ignores rating 3, review with text length less than140
     #to read all pass True
     minCharLength=20
-    readall=False
+    readall=True
 
     print("Started Reading data")
     start_reading = timeit.default_timer()
