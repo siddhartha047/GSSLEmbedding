@@ -1,8 +1,4 @@
-import timeit
-import os
-import numpy as np
-from Lib import *
-from W2Vec.Word2Vec import *
+from Dataset.Lib import *
 
 start = timeit.default_timer()
 model=load_model(MODEL_NAME)

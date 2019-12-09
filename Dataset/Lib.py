@@ -78,6 +78,12 @@ def save_data(data,data_vector,data_rating,output_file,output_label,output_data,
             f.write("%s\n" % item)
     f.close()
 
+def save_data_mat(home_dir,data,data_vector,data_rating):
+    import scipy as sp
+    sp.io.savemat(home_dir+"data_mat",mdict={'data': data})
+    sp.io.savemat(home_dir + "data_vector_mat", mdict={'data_vector': data_vector})
+    sp.io.savemat(home_dir + "data_rating_mat", mdict={'data_rating': data_rating})
+
 def save_data_numpy(home_dir,data,data_vector,data_rating):
     np.save(home_dir+"data_np",data)
     np.save(home_dir+"data_vector_np",data_vector)
@@ -158,10 +164,30 @@ def create_graph(home_dir):
     return
 
 
+def load_model(model_name):
+    from gensim.models.doc2vec import Doc2Vec
+    import numpy as np
+
+    model = Doc2Vec.load(model_name)
+    vectors = np.zeros((model.corpus_count, model.vector_size), np.float)
+    print(vectors.shape)
+    for i in range(model.corpus_count):
+        vectors[i] = model.docvecs[i]
+    print(vectors.shape)
+
+    return vectors
+
 
 if __name__ == '__main__':
-    home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"
+    # home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"
+    # #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Yelp/"
+    # #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/DBpedia/dbpedia_csv/"
+    # #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/AmazonReview/"
+    # create_graph(home_dir)
+
+    home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/d2v/"
     #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Yelp/"
     #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/DBpedia/dbpedia_csv/"
     #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/AmazonReview/"
     create_graph(home_dir)
+    #load_model("Models/imdb_d2v.model")

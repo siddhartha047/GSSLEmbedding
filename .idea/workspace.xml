@@ -2,14 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/W2Vec/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset/Dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset/Dbpedia_read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset/Imdb_read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset/Yelp_read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GNN/GCN/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GNN/GSAGE/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GNN/LabelPropagation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GNN/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/KNN/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/1g_core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/2g_vector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/3g_transformation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/4g_queries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/5g_word2vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/6g_Doc2Vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Practice/info.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Models/test_d2v.model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Test/Doc2Vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Test/Doc2VecTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Test/d2v.model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/GensimTransformer/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/Test/NormalW2vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/Test/NormalW2vecPretrained.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/Test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/Word2Vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/backup/Amazon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/backup/DBpedia.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/backup/Imdb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/backup/Yelp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/backup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/w2v.model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/w2v.model.trainables.syn1neg.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/w2v.model.wv.vectors.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2VecAvg/Word2Vec_avg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2VecAvg/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2VecPretrained/Test/W2vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2VecPretrained/Test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Word2VecPretrained/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/glove_load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Amazon.py" beforeDir="false" afterPath="$PROJECT_DIR$/W2Vec/Amazon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBpedia.py" beforeDir="false" afterPath="$PROJECT_DIR$/W2Vec/DBpedia.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Imdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/W2Vec/Imdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Word2Vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/W2Vec/Word2Vec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yelp.py" beforeDir="false" afterPath="$PROJECT_DIR$/W2Vec/Yelp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Path.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/W2Vec/Word2Vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/backup/Word2Vec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W2Vec/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Word2Vec/Amazon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Word2Vec/DBpedia.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Word2Vec/Imdb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Word2Vec/Yelp.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,63 +68,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/W2Vec/Imdb.py">
+        <entry file="file://$PROJECT_DIR$/Dataset/Dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dataset/Lib.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="80" column="26" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="26" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/W2Vec/Yelp.py">
+        <entry file="file://$PROJECT_DIR$/Dataset/Imdb_read.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="32" column="63" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/W2Vec/DBpedia.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="37" column="78" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="78" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/W2Vec/Amazon.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="32" column="71" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="117">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Lib.py">
+        <entry file="file://$PROJECT_DIR$/Configuration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="162" column="4" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="90" column="22" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -91,6 +120,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>minCharLength</find>
+      <find>®</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -103,8 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/doc2vec/Amazon.py" />
-        <option value="$PROJECT_DIR$/imdb.py" />
         <option value="$PROJECT_DIR$/Doc2vec.py" />
         <option value="$PROJECT_DIR$/Path.py" />
         <option value="$PROJECT_DIR$/Word2Vec.py" />
@@ -120,11 +148,46 @@
         <option value="$PROJECT_DIR$/W2Vec/DBpedia.py" />
         <option value="$PROJECT_DIR$/W2Vec/Amazon.py" />
         <option value="$PROJECT_DIR$/W2Vec/Imdb.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Doc2Vec.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Doc2VecTest.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Practice/Doc2VecTest.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Practice/Doc2Vec.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Test/Doc2Vec.py" />
         <option value="$PROJECT_DIR$/Lib.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Test/Doc2VecTest.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Doc2VecLearn.py" />
+        <option value="$PROJECT_DIR$/D2Vec/Imdb_d2v.py" />
+        <option value="$PROJECT_DIR$/W2vecLearn/Test/W2vec.py" />
+        <option value="$PROJECT_DIR$/Doc2Vec/Doc2VecTrain.py" />
+        <option value="$PROJECT_DIR$/Dataset/ReadDataset.py" />
+        <option value="$PROJECT_DIR$/Dataset/Yelp_read.py" />
+        <option value="$PROJECT_DIR$/Dataset/Dbpedia_read.py" />
+        <option value="$PROJECT_DIR$/Dataset/Dataset.py" />
+        <option value="$PROJECT_DIR$/Vectorize/Doc2Vec/VectorizeDataset.py" />
+        <option value="$PROJECT_DIR$/Vectorize/Word2Vec/Test/NormalW2vec.py" />
+        <option value="$PROJECT_DIR$/Vectorize/glove_load.py" />
+        <option value="$PROJECT_DIR$/Vectorize/Word2Vec/Test/NormalW2vecPretrained.py" />
+        <option value="$PROJECT_DIR$/Practice/1gensim.py" />
+        <option value="$PROJECT_DIR$/Practice/1g_core.py" />
+        <option value="$PROJECT_DIR$/Practice/info.txt" />
+        <option value="$PROJECT_DIR$/Practice/2g_vector.py" />
+        <option value="$PROJECT_DIR$/Practice/3g_transformation.py" />
+        <option value="$PROJECT_DIR$/Practice/4g_queries.py" />
+        <option value="$PROJECT_DIR$/Practice/5g_word2vec.py" />
+        <option value="$PROJECT_DIR$/Practice/Doc2Vec.py" />
+        <option value="$PROJECT_DIR$/Practice/6g_Doc2Vec.py" />
+        <option value="$PROJECT_DIR$/Dataset/Imdb_read.py" />
+        <option value="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" />
+        <option value="$PROJECT_DIR$/Vectorize/Word2VecAvg/Word2Vec_avg.py" />
+        <option value="$PROJECT_DIR$/Vectorize/Word2Vec/Word2Vec.py" />
+        <option value="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" />
+        <option value="$PROJECT_DIR$/Dataset/Lib.py" />
+        <option value="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" />
+        <option value="$PROJECT_DIR$/Configuration.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="830" />
@@ -146,7 +209,13 @@
             <path>
               <item name="GSSLEmbedding" type="b2602c69:ProjectViewProjectNode" />
               <item name="GSSLEmbedding" type="462c0819:PsiDirectoryNode" />
-              <item name="W2Vec" type="462c0819:PsiDirectoryNode" />
+              <item name="Vectorize" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GSSLEmbedding" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GSSLEmbedding" type="462c0819:PsiDirectoryNode" />
+              <item name="Vectorize" type="462c0819:PsiDirectoryNode" />
+              <item name="Word2Vec" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -156,12 +225,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Dataset" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Word2Vec" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Vectorize/Word2Vec/backup" />
+      <recent name="$PROJECT_DIR$/Vectorize" />
+      <recent name="$PROJECT_DIR$/Dataset" />
+      <recent name="$PROJECT_DIR$/D2Vec/models" />
+      <recent name="$PROJECT_DIR$/D2Vec/Practice" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Dataset" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -176,50 +252,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Lib">
-    <configuration name="DBpedia" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/W2Vec" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/W2Vec/DBpedia.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Imdb" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/W2Vec" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/W2Vec/Imdb.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Lib" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Configuration">
+    <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -231,7 +265,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lib.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Configuration.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,7 +274,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Yelp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Doc2VecTrain" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -248,11 +282,74 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/W2Vec" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Doc2Vec" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/W2Vec/Yelp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="VectorizeDataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Word2Vec" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Word2Vec" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Word2Vec/Word2Vec.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Word2Vec_avg" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Word2VecAvg" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Word2VecAvg/Word2Vec_avg.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -263,10 +360,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Lib" />
-        <item itemvalue="Python.DBpedia" />
-        <item itemvalue="Python.Yelp" />
-        <item itemvalue="Python.Imdb" />
+        <item itemvalue="Python.Configuration" />
+        <item itemvalue="Python.Word2Vec" />
+        <item itemvalue="Python.Word2Vec_avg" />
+        <item itemvalue="Python.VectorizeDataset" />
+        <item itemvalue="Python.Doc2VecTrain" />
       </list>
     </recent_temporary>
   </component>
@@ -284,34 +382,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="829" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7848101" visible="true" weight="0.21564482" />
+      <window_info id="Structure" order="1" sideWeight="0.21518987" side_tool="true" weight="0.13389711" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28455284" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49918166" visible="true" weight="0.3568521" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39891452" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32874015" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32971507" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5008183" side_tool="true" weight="0.35820895" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28861788" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -325,65 +422,49 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Doc2vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="9" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="106" selection-start-column="106" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/W2Vec/Word2Vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/W2Vec/DBpedia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="37" column="78" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/W2Vec/Imdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/W2Vec/Yelp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="32" column="63" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/W2Vec/Amazon.py">
+    <entry file="file://$PROJECT_DIR$/Doc2vec.py" />
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/backup/Amazon.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="32" column="71" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="71" />
@@ -393,13 +474,257 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lib.py">
+    <entry file="file://$PROJECT_DIR$/Vectorize/Doc2Vec/Test/Doc2VecTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="162" column="4" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="4" />
+        <state relative-caret-position="398">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Doc2Vec/Test/Doc2Vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="e#29#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Path.py" />
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/backup/DBpedia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" selection-start-line="35" selection-start-column="4" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/backup/Yelp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2VecPretrained/Test/W2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/glove_load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/1g_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/3g_transformation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="52" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/4g_queries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="6" selection-start-line="6" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/5g_word2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="e#1479#1850#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/2g_vector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" selection-start-line="5" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/Yelp_read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/Dbpedia_read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/6g_Doc2Vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/tensor13_37/lib/python3.7/site-packages/smart_open/smart_open_lib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="397" selection-start-line="397" selection-end-line="397" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/Test/NormalW2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/backup/Imdb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/backup/Word2Vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/Imdb_read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/Test/NormalW2vecPretrained.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2Vec/Word2Vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#2238#2277#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Word2VecAvg/Word2Vec_avg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="73" column="40" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#2628#2667#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
+          <folding>
+            <element signature="e#29#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphConstruction/KNN/knn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/Dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/Lib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="80" column="26" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="26" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vectorize/VectorizeDataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="74" column="45" lean-forward="true" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Configuration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="90" column="22" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
         </state>
       </provider>
     </entry>
