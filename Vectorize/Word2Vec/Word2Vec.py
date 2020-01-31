@@ -6,17 +6,6 @@ import gensim
 import numpy as np
 import sys
 
-pretrained_model={
-    "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
-
-    "GLOVE"         :{"name":"GLOVE",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
-
-    "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/cybersecurity/1million.word2vec.model"}
-}
-
 
 def learn(data, model_info, vec_size, model_name,load_saved=False,visualize=False):
 
@@ -88,6 +77,16 @@ def learn(data, model_info, vec_size, model_name,load_saved=False,visualize=Fals
 
     return X
 
+pretrained_model={
+    "GOOGLE"        :{"name":"GOOGLE",
+                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+
+    "GLOVE"         :{"name":"GLOVE",
+                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+
+    "CYBERSECURITY" :{"name":"CYBERSECURITY",
+                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/cybersecurity/1million.word2vec.model"}
+}
 
 if __name__ == '__main__':
     # data = [['this', 'is', 'the', 'first', 'sentence', 'for', 'word2vec'],
@@ -128,3 +127,6 @@ if __name__ == '__main__':
 
     X=learn(data,pretrained_model['GLOVE'],vec_size=300,model_name='w2v.model',load_saved=False,visualize=True)
     print(X.shape)
+
+
+

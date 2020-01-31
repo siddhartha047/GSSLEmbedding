@@ -67,6 +67,7 @@ def main(dataset_info,config,method_config):
     if(config["saving_format"]=="numpy"):
         from Dataset.Lib import save_data_numpy
         save_data_numpy(output_dir,data,data_vector,data_rating)
+
     elif(config["saving_format"]=="mtx"):
         from Dataset.Lib import save_data
         save_data(data, data_vector, data_rating, output_file, output_label, output_data, comment=dataset_name)
@@ -74,6 +75,7 @@ def main(dataset_info,config,method_config):
     elif(config["saving_format"]=="mat"):
         from Dataset.Lib import save_data_mat
         save_data_mat(output_dir,data,data_vector,data_rating)
+
     else:
         print("This file saving format is not implemented")
         sys.exit(0)

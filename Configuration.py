@@ -6,28 +6,28 @@ dataset_info={
     "karate"    :{"name":"karate",
                   "path":"/"},
     "yelp"      :{"name":"yelp",
-                  "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Yelp/",
-                  "output_path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Yelp/"},
+                  "path":"/Users/siddharthashankardas/Purdue/Dataset/Yelp/",
+                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Yelp/"},
     "dbpedia"   :{"name":"dbpedia",
-                  "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/DBpedia/dbpedia_csv/",
-                  "output_path":"/Users/sid/Purdue/Research/GCSSL/Dataset/DBpedia/dbpedia_csv/"},
+                  "path":"/Users/siddharthashankardas/Purdue/Dataset/DBpedia/dbpedia_csv/",
+                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/DBpedia/dbpedia_csv/"},
     "amazon"    :{"name":"amazon",
-                  "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/AmazonReview/",
-                  "output_path":"/Users/sid/Purdue/Research/GCSSL/Dataset/AmazonReview/"},
+                  "path":"/Users/siddharthashankardas/Purdue/Dataset/AmazonReview/",
+                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/AmazonReview/"},
     "imdb"      :{"name":"imdb",
-                  "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/",
-                  "output_path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"}
+                  "path":"/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/",
+                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/"}
 }
 
 pretrained_model={
     "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
 
     "GLOVE"         :{"name":"GLOVE",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
 
     "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/cybersecurity/1million.word2vec.model"}
+                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/cybersecurity/1million.word2vec.model"}
 }
 
 
@@ -35,7 +35,7 @@ pretrained_model={
 VEC_config={
     "dataset_name":"imdb",
     "method":"word2vec",
-    #"saving_format": "numpy", #numpy, mtx, mat
+    #"saving_format": "numpy", #numpy, mtx, mat, binary
     "saving_format":"mat",
     "load_saved": True, #resume if possible in any stage (data loading, model loading etc.)
     "visualize":False
@@ -49,19 +49,8 @@ Doc2Vec_config={
 Word2Vec_config={
     "vec_size":300,
     "pretrained_model":pretrained_model,
-    "pretrained_model_name":"GLOVE",
+    "pretrained_model_name":"GOOGLE",
 }
-
-#graph construction configuration
-
-
-#learning and test configuration
-
-
-#running the program
-RUN_vectorize=False
-RUN_graph_construction=True
-RUN_learn=False
 
 
 def vectorize():
@@ -86,13 +75,14 @@ def vectorize():
     return
 
 GRAPH_data_config={
-    "algorithm":'knn',
+    "algorithm":'bmatch',
     "dataset_name":'imdb',
-    "method":'word2vec'
+    "method":'word2vec',
+    "saving_format":"mat"  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
 }
 
 KNN_config={
-        "k":5,
+        "k":100,
         "mode":'distance', #connectivity will give 1,0
         "metric":"cosine",
         "include_self":True
@@ -113,6 +103,10 @@ def construct_graph():
         from GraphConstruction.KNN.knn import KNN_construction
         KNN_construction(dataset_info[GRAPH_data_config['dataset_name']],GRAPH_data_config,KNN_config,save_gephi=True)
 
+    elif(GRAPH_data_config['algorithm']=='bmatch'):
+        from GraphConstruction.KNN.knn import KNN_construction
+        KNN_construction(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, KNN_config,
+                         save_gephi=True)
     else:
         print(GRAPH_data_config['algorithm']," -> The graph construction algorithm is not implemented yet")
         sys.exit(0)
@@ -123,6 +117,11 @@ def construct_graph():
 def learn_test():
 
     return
+
+#running the program
+RUN_vectorize=False
+RUN_graph_construction=True
+RUN_learn=False
 
 if __name__ == '__main__':
     if(RUN_vectorize):

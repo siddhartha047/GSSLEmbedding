@@ -40,7 +40,7 @@ def load(filename,update_gensim_file,dim=300):
 
 
 if __name__ == '__main__':
-    dim=200
-    GLOVE = "/Users/sid/Purdue/Research/GCSSL/Dataset/Model/glove.6B/glove.6B."+str(dim)+"d.txt"
-    updateGLOVE="/Users/sid/Purdue/Research/GCSSL/Dataset/Model/glove.6B/gensim_glove.6B."+str(dim)+"d.txt"
+    dim=300
+    GLOVE = "/Users/siddharthashankardas/Purdue/Dataset/Model/glove.6B/glove.6B."+str(dim)+"d.txt"
+    updateGLOVE="/Users/siddharthashankardas/Purdue/Dataset/Model/glove.6B/gensim_glove.6B."+str(dim)+"d.txt"
     load(GLOVE,updateGLOVE,dim)

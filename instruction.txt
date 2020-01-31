@@ -1,0 +1,43 @@
+Steps to run
+
+1. Install anaconda/load anaconda module
+	module load cuda/10.0.130
+	module load anaconda/5.3.1-py37
+	module load cudnn/cuda-10.0_7.4
+
+2. Create and load a new environment of python 3+
+	conda create -n tensor_531_37_gpu python=3.7
+	source activate tensor_531_37_gpu
+	conda activate tensor_531_37_gpu
+
+3. For Install packages from requirements.txt or do them manually
+	conda install pip
+	pip install --upgrade pip
+	conda install pytorch torchvision -c pytorch #cpu
+	pip install dgl #cpu
+	conda install tensorflow==1.15
+	pip install keras
+	pip install gensim
+	pip install pandas
+	pip install nltk
+	pip install sklearn
+	pip install networkx
+	pip install matplotlib
+	pip install graphviz
+	pip install imageio
+	pip install tqdm
+	pip install scipy
+	
+	3.2
+	go to python in the console
+	import nltk
+	nltk.download('stopwords')
+	nltk.download('wordnet')
+
+4. To add the python path in pycharm type the following from activated terminal console
+	which python
+	in Mac this recturns
+	/Users/siddharthashankardas/opt/anaconda3/envs/tensor_37/bin/python
+
+
+

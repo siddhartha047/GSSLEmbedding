@@ -80,9 +80,9 @@ def save_data(data,data_vector,data_rating,output_file,output_label,output_data,
 
 def save_data_mat(home_dir,data,data_vector,data_rating):
     import scipy as sp
-    sp.io.savemat(home_dir+"data_mat",mdict={'data': data})
-    sp.io.savemat(home_dir + "data_vector_mat", mdict={'data_vector': data_vector})
-    sp.io.savemat(home_dir + "data_rating_mat", mdict={'data_rating': data_rating})
+    sp.io.savemat(home_dir+"data_mat.mat",mdict={'data': data})
+    sp.io.savemat(home_dir + "data_vector_mat.mat", mdict={'data_vector': data_vector})
+    sp.io.savemat(home_dir + "data_rating_mat.mat", mdict={'data_rating': data_rating})
 
 def save_data_numpy(home_dir,data,data_vector,data_rating):
     np.save(home_dir+"data_np",data)

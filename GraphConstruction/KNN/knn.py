@@ -1,6 +1,8 @@
 import numpy as np
 import scipy as sp
+from scipy import io
 from sklearn.neighbors import kneighbors_graph
+import sys
 
 # from scipy.sparse import csr_matrix
 # from graphviz import Digraph,Graph
@@ -26,21 +28,32 @@ def KNN_construction(dataset_info,GRAPH_config,KNN_config,save_gephi=False):
     #data = np.load(output_dir + "data_np.npy")
     data_rating = np.load(output_dir + "data_rating_np.npy")
     data_vector = np.load(output_dir + "data_vector_np.npy")
-    print("Loading Done")
+    print("Loading Done....")
+    print("Data vector shape: ",data_vector.shape)
 
+    print("Constructing graph using Knn with k= ",KNN_config['k'])
     A=knn(data_vector,KNN_config['k'],KNN_config['mode'],KNN_config['metric'],KNN_config['include_self'])
 
-    print('Saving graph ----')
-    sp.sparse.save_npz(output_dir+'graph_knn.npz', A)
+    print('Saving graph ----',GRAPH_config['saving_format'],' format')
+
+    if(GRAPH_config['saving_format']=='numpy'):
+        sp.sparse.save_npz(output_dir+'graph_knn_'+str(KNN_config['k'])+'.npz', A)
+    elif(GRAPH_config['saving_format']=='mat'):
+        io.savemat(output_dir+'graph_knn_'+str(KNN_config['k'])+'.mat', mdict={'data': A})
+    elif (GRAPH_config['saving_format'] == 'mtx'):
+        io.mmwrite(output_dir+'graph_knn_'+str(KNN_config['k']), A, comment='Sparse Graph')
+    else:
+        print("This graph saving format is not implemented yet")
+        sys.exit(0)
     print('Graph saving Done')
 
 
     if(save_gephi==True):
-        save_gephi_graph(output_dir,A,data_rating)
+        save_gephi_graph(output_dir,A,data_rating,KNN_config['k'])
 
     return A
 
-def save_gephi_graph(output_dir,A,y):
+def save_gephi_graph(output_dir,A,y,k):
     import networkx as nx
 
     labels = dict(zip(range(len(y)), y))
@@ -51,7 +64,7 @@ def save_gephi_graph(output_dir,A,y):
 
     nx.set_node_attributes(G, labels, 'labels')
     print("Writing gephi")
-    nx.write_gexf(G, output_dir+'graph.gexf')
+    nx.write_gexf(G, output_dir+'graph_'+str(k)+'.gexf')
 
     return
 
@@ -78,7 +91,7 @@ if __name__ == '__main__':
 
     print(A)
 
-    save_gephi_graph("",A,y)
+    save_gephi_graph("",A,y,k)
 
 
     #KNN_construction()
