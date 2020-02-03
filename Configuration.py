@@ -73,7 +73,7 @@ else:
 #vectorize configuration
 VEC_config={
     "dataset_name":"imdb",
-    "method":"word2vec",
+    "method":"word2vec_avg",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
     "saving_format":['txt','mtx','mat','numpy'],
     "load_saved": True, #resume if possible in any stage (data loading, model loading etc.)
@@ -170,7 +170,7 @@ def learn_test():
 
 #running the program
 RUN_vectorize=True
-RUN_graph_construction=True
+RUN_graph_construction=False
 RUN_learn=False
 
 if __name__ == '__main__':

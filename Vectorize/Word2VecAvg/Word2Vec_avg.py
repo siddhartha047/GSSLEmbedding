@@ -7,14 +7,14 @@ import numpy as np
 import sys
 
 pretrained_model={
-    "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+    "GOOGLE": {"name": "GOOGLE",
+               "path": "/Users/siddharthashankardas/Purdue/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
 
-    "GLOVE"         :{"name":"GLOVE",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+    "GLOVE": {"name": "GLOVE",
+              "path": "/Users/siddharthashankardas/Purdue/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
 
-    "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/Users/sid/Purdue/Research/GCSSL/Dataset/Model/cybersecurity/1million.word2vec.model"}
+    "CYBERSECURITY": {"name": "CYBERSECURITY",
+                      "path": "/Users/siddharthashankardas/Purdue/Dataset/Model/cybersecurity/1million.word2vec.model"}
 }
 
 

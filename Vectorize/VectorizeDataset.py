@@ -48,14 +48,14 @@ def main(dataset_info,config,method_config):
         data_vector=learn(data_doc,model_info,vec_size=vec_size,model_name=model_name,load_saved=config['load_saved'],visualize=config['visualize'])
 
     elif(config['method']=="word2vec_avg"):
-        # from Vectorize.Word2VecAvg.Word2Vec_avg import learn
-        # pretrained_model = method_config['pretrained_model']
-        # vec_size = method_config['vec_size']
-        # model_name = output_dir +method_config['pretrained_model_name']+ 'w2v.model'
-        # model_info = pretrained_model[method_config['pretrained_model_name']]
-        # data_doc = [item.split() for item in data]
-        # data_vector = learn(data_doc, model_info, vec_size=vec_size, model_name=model_name, load_saved=config['load_saved'],
-        #                     visualize=config['visualize'])
+        from Vectorize.Word2VecAvg.Word2Vec_avg import learn
+        pretrained_model = method_config['pretrained_model']
+        vec_size = method_config['vec_size']
+        model_name = output_dir +method_config['pretrained_model_name']+ 'w2v.model'
+        model_info = pretrained_model[method_config['pretrained_model_name']]
+        data_doc = [item.split() for item in data]
+        data_vector = learn(data_doc, model_info, vec_size=vec_size, model_name=model_name, load_saved=config['load_saved'],
+                            visualize=config['visualize'])
 
         print("Not implemented properly check again")
 
