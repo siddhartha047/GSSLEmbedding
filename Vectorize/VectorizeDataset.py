@@ -48,15 +48,16 @@ def main(dataset_info,config,method_config):
         data_vector=learn(data_doc,model_info,vec_size=vec_size,model_name=model_name,load_saved=config['load_saved'],visualize=config['visualize'])
 
     elif(config['method']=="word2vec_avg"):
-        from Vectorize.Word2VecAvg.Word2Vec_avg import learn
-        pretrained_model = method_config['pretrained_model']
-        vec_size = method_config['vec_size']
-        model_name = output_dir +method_config['pretrained_model_name']+ 'w2v.model'
-        model_info = pretrained_model[method_config['pretrained_model_name']]
-        data_doc = [item.split() for item in data]
-        data_vector = learn(data_doc, model_info, vec_size=vec_size, model_name=model_name, load_saved=config['load_saved'],
-                            visualize=config['visualize'])
+        # from Vectorize.Word2VecAvg.Word2Vec_avg import learn
+        # pretrained_model = method_config['pretrained_model']
+        # vec_size = method_config['vec_size']
+        # model_name = output_dir +method_config['pretrained_model_name']+ 'w2v.model'
+        # model_info = pretrained_model[method_config['pretrained_model_name']]
+        # data_doc = [item.split() for item in data]
+        # data_vector = learn(data_doc, model_info, vec_size=vec_size, model_name=model_name, load_saved=config['load_saved'],
+        #                     visualize=config['visualize'])
 
+        print("Not implemented properly check again")
 
     else:
         sys.exit("not implemented yet")
@@ -64,21 +65,21 @@ def main(dataset_info,config,method_config):
 
 
     print("Saving data in ", config["saving_format"], "format")
-    if(config["saving_format"]=="numpy"):
+    if("numpy" in config["saving_format"]):
         from Dataset.Lib import save_data_numpy
         save_data_numpy(output_dir,data,data_vector,data_rating)
 
-    elif(config["saving_format"]=="mtx"):
+    if ("mtx" in config["saving_format"]):
         from Dataset.Lib import save_data
         save_data(data, data_vector, data_rating, output_file, output_label, output_data, comment=dataset_name)
 
-    elif(config["saving_format"]=="mat"):
+    if ("mat" in config["saving_format"]):
         from Dataset.Lib import save_data_mat
         save_data_mat(output_dir,data,data_vector,data_rating)
 
-    else:
-        print("This file saving format is not implemented")
-        sys.exit(0)
+    if ("txt" in config["saving_format"]):
+        from Dataset.Lib import save_data_txt
+        save_data_txt(output_dir, data, data_vector, data_rating)
 
     print("Data saving done")
 

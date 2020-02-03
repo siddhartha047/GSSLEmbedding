@@ -84,6 +84,11 @@ def save_data_mat(home_dir,data,data_vector,data_rating):
     sp.io.savemat(home_dir + "data_vector_mat.mat", mdict={'data_vector': data_vector})
     sp.io.savemat(home_dir + "data_rating_mat.mat", mdict={'data_rating': data_rating})
 
+def save_data_txt(home_dir,data,data_vector,data_rating):
+    np.savetxt(home_dir + "data_txt.txt", data, delimiter='\t')
+    np.savetxt(home_dir + "data_vector_txt.txt", data_vector, delimiter='\t')
+    np.savetxt(home_dir + "data_rating_txt.txt", data_rating, delimiter='\t')
+
 def save_data_numpy(home_dir,data,data_vector,data_rating):
     np.save(home_dir+"data_np",data)
     np.save(home_dir+"data_vector_np",data_vector)
@@ -185,9 +190,14 @@ if __name__ == '__main__':
     # #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/AmazonReview/"
     # create_graph(home_dir)
 
-    home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/d2v/"
+    home_dir = "/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/word2vec/"
     #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Yelp/"
     #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/DBpedia/dbpedia_csv/"
     #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/AmazonReview/"
-    create_graph(home_dir)
+    #create_graph(home_dir)
     #load_model("Models/imdb_d2v.model")
+    #data=[['This','is'],['not','meh']]
+    data=np.random.rand(5,5)
+    data_rating=np.random.rand(5,1)
+    data_vector=np.random.rand(5,10)
+    save_data_txt(home_dir, data,data_vector,data_rating)

@@ -2,56 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/BMatchingSolver" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/objects.mk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/sources.mk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BMatchingLibrary.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BMatchingLibrary.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BMatchingProblem.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BMatchingProblem.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BMatchingSolver.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BMatchingSolver.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BeliefPropagator.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BeliefPropagator.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BipartiteFunctionOracle.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BipartiteFunctionOracle.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BipartiteMatrixOracle.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/BipartiteMatrixOracle.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/EuclideanDistance.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/EuclideanDistance.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/FunctionOracle.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/FunctionOracle.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/IndexHeap.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/IndexHeap.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/InnerProduct.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/InnerProduct.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/IntDoubleMap.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/IntDoubleMap.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/IntSet.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/IntSet.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/MatrixOracle.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/MatrixOracle.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/OscillationDetector.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/OscillationDetector.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/WeightFunction.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/WeightFunction.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/WeightOracle.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/WeightOracle.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/subdir.mk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/utils.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release/src/utils.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/bmatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GSSLEmbedding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GSSLEmbedding.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dataset/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vectorize/Word2Vec/Word2Vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Word2Vec/Word2Vec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vectorize/glove_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/glove_load.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +47,7 @@
       <recent name="$PROJECT_DIR$/D2Vec/Practice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bmatch">
+  <component name="RunManager" selected="Python.Configuration">
     <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,6 +61,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Configuration.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Lib" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/Lib.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,8 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bmatch" />
         <item itemvalue="Python.Configuration" />
+        <item itemvalue="Python.bmatch" />
         <item itemvalue="Python.knn" />
         <item itemvalue="Python.glove_load" />
       </list>
@@ -236,30 +211,30 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1580060896613" />
-    <state width="1414" height="219" key="GridCell.Tab.0.bottom" timestamp="1580414034895">
+    <state width="1414" height="219" key="GridCell.Tab.0.bottom" timestamp="1580763550154">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="219" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1580414034895" />
-    <state width="1414" height="219" key="GridCell.Tab.0.center" timestamp="1580414034894">
+    <state width="1414" height="219" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1580763550154" />
+    <state width="1414" height="219" key="GridCell.Tab.0.center" timestamp="1580763550150">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="219" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1580414034894" />
-    <state width="1414" height="219" key="GridCell.Tab.0.left" timestamp="1580414034894">
+    <state width="1414" height="219" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1580763550150" />
+    <state width="1414" height="219" key="GridCell.Tab.0.left" timestamp="1580763550109">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="219" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1580414034894" />
-    <state width="1414" height="219" key="GridCell.Tab.0.right" timestamp="1580414034895">
+    <state width="1414" height="219" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1580763550109" />
+    <state width="1414" height="219" key="GridCell.Tab.0.right" timestamp="1580763550153">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="219" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1580414034895" />
+    <state width="1414" height="219" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1580763550153" />
     <state x="241" y="23" key="SettingsEditor" timestamp="1580060916984">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="241" y="23" key="SettingsEditor/0.23.1440.826@0.23.1440.826" timestamp="1580060916984" />
-    <state x="397" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1580403929103">
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1580754669960">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="397" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1580403929103" />
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1580754669960" />
     <state x="340" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580231379064">
       <screen x="0" y="23" width="1440" height="826" />
     </state>

@@ -1,6 +1,7 @@
 import sys
+import os
 
-dataset_info={
+dataset_info_local={
     "custom"    :{"name":"custom",
                   "path":"/"},
     "karate"    :{"name":"karate",
@@ -19,7 +20,19 @@ dataset_info={
                   "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/"}
 }
 
-pretrained_model={
+dataset_info_gilbreth={
+    "yelp"      :{"name":"yelp",
+                  "path":"/scratch/gilbreth/das90/Dataset/Yelp/",
+                  "output_path":"/scratch/gilbreth/das90/Dataset/Yelp/"},
+    "dbpedia"   :{"name":"dbpedia",
+                  "path":"/scratch/gilbreth/das90/Dataset/DBpedia/dbpedia_csv/",
+                  "output_path":"/scratch/gilbreth/das90/Dataset/DBpedia/dbpedia_csv/"},
+    "imdb"      :{"name":"imdb",
+                  "path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/",
+                  "output_path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/"}
+}
+
+pretrained_model_local={
     "GOOGLE"        :{"name":"GOOGLE",
                       "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
 
@@ -30,13 +43,39 @@ pretrained_model={
                       "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/cybersecurity/1million.word2vec.model"}
 }
 
+pretrained_model_gilbreth={
+    "GOOGLE"        :{"name":"GOOGLE",
+                      "path":"/scratch/gilbreth/das90/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+
+    "GLOVE"         :{"name":"GLOVE",
+                      "path":"/scratch/gilbreth/das90/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+
+    "CYBERSECURITY" :{"name":"CYBERSECURITY",
+                      "path":"/scratch/gilbreth/das90/Dataset/Model/cybersecurity/1million.word2vec.model"}
+}
+
+dataset_info={}
+pretrained_model={}
+
+
+if((os.uname()[1]).split('-')[0]=="Siddharthas"):
+    dataset_info=dataset_info_local
+    pretrained_model=pretrained_model_local
+elif((os.uname()[1]).split('-')[0] == "gilbreth"):
+    dataset_info=dataset_info_gilbreth
+    pretrained_model = pretrained_model_gilbreth
+else:
+    print(os.uname())
+    sys.exit(0)
+
+
 
 #vectorize configuration
 VEC_config={
     "dataset_name":"imdb",
     "method":"word2vec",
-    #"saving_format": "numpy", #numpy, mtx, mat, binary
-    "saving_format":"mat",
+    #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
+    "saving_format":['txt','mtx','mat','numpy'],
     "load_saved": True, #resume if possible in any stage (data loading, model loading etc.)
     "visualize":False
 }
@@ -67,6 +106,17 @@ def vectorize():
         from Vectorize import VectorizeDataset
         VectorizeDataset.main(dataset_info[VEC_config['dataset_name']], VEC_config, Word2Vec_config)
 
+    elif (VEC_config['method'] == "TF_IDF"):
+        print("Not implemented yet")
+
+    elif (VEC_config['method'] == "LSI"):
+        print("Not implemented yet")
+
+    elif (VEC_config['method'] == "LDA"):
+        print("Not implemented yet")
+
+    elif (VEC_config['method'] == "FAST_TEXT"):
+        print("Not implemented yet")
 
     else:
         print("improper method")
@@ -82,7 +132,7 @@ GRAPH_data_config={
 }
 
 KNN_config={
-        "k":100,
+        "k":5,
         "mode":'distance', #connectivity will give 1,0
         "metric":"cosine",
         "include_self":True
@@ -119,7 +169,7 @@ def learn_test():
     return
 
 #running the program
-RUN_vectorize=False
+RUN_vectorize=True
 RUN_graph_construction=True
 RUN_learn=False
 
