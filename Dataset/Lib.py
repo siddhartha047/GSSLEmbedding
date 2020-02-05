@@ -85,7 +85,7 @@ def save_data_mat(home_dir,data,data_vector,data_rating):
     sp.io.savemat(home_dir + "data_rating_mat.mat", mdict={'data_rating': data_rating})
 
 def save_data_txt(home_dir,data,data_vector,data_rating):
-    np.savetxt(home_dir + "data_txt.txt", data, delimiter='\t')
+    #np.savetxt(home_dir + "data_txt.txt", data, delimiter='\t')
     np.savetxt(home_dir + "data_vector_txt.txt", data_vector, delimiter='\t')
     np.savetxt(home_dir + "data_rating_txt.txt", data_rating, delimiter='\t')
 

@@ -54,9 +54,7 @@ def main(dataset_info,config,method_config):
         model_name = output_dir +method_config['pretrained_model_name']+ 'w2v.model'
         model_info = pretrained_model[method_config['pretrained_model_name']]
         data_doc = [item.split() for item in data]
-        data_vector = learn(data_doc, model_info, vec_size=vec_size, model_name=model_name, load_saved=config['load_saved'],
-                            visualize=config['visualize'])
-
+        data_vector=learn(data_doc, model_info, vec_size=vec_size, visualize=config['visualize'])
         print("Not implemented properly check again")
 
     else:

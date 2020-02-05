@@ -33,7 +33,8 @@ def learn(data, model_info, vec_size,visualize=False):
     print(X.shape)
 
     for i in range(len(data)):
-        X[i]=np.mean(model.wv[data[i]], axis=0)
+        doc = [word for word in data[i] if word in model.wv.vocab]
+        X[i]=np.mean(model.wv[doc], axis=0)
 
     if(visualize==True):
         n=min(20,len(data))

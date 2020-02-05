@@ -57,15 +57,17 @@ pretrained_model_gilbreth={
 dataset_info={}
 pretrained_model={}
 
+print(os.uname())
+pc_name=(os.uname()[1]).split('-')[0]
+print("Pc-Name: ",pc_name)
 
-if((os.uname()[1]).split('-')[0]=="Siddharthas"):
+if(pc_name=="Siddharthas"):
     dataset_info=dataset_info_local
     pretrained_model=pretrained_model_local
-elif((os.uname()[1]).split('-')[0] == "gilbreth"):
+elif(pc_name == "gilbreth"):
     dataset_info=dataset_info_gilbreth
     pretrained_model = pretrained_model_gilbreth
 else:
-    print(os.uname())
     sys.exit(0)
 
 
@@ -76,7 +78,7 @@ VEC_config={
     "method":"word2vec_avg",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
     "saving_format":['txt','mtx','mat','numpy'],
-    "load_saved": True, #resume if possible in any stage (data loading, model loading etc.)
+    "load_saved": False, #resume if possible in any stage (data loading, model loading etc.)
     "visualize":False
 }
 
