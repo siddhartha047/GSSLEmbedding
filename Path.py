@@ -1,9 +1,10 @@
 import os
 import sys
 
-script=sys.argv[0]
-paths=script.split("/")
-base_path='/'.join([paths[i] for i in range(paths.index("GSSLEmbedding"))])+"/GSSLEmbedding/"
+script=os. getcwd()
+# paths=script.split("/")
+#base_path='/'.join([paths[i] for i in range(paths.index("GSSLEmbedding"))])+"/GSSLEmbedding/"
+base_path=script
 print(base_path)
 
 dataset_info_local={
@@ -81,9 +82,9 @@ else:
 executable=''
 
 if(pc_name=="Siddharthas"):
-    executable=base_path+'GraphConstruction/Bmatch/Release_osx/BMatchingSolver'
+    executable=base_path+'/GraphConstruction/Bmatch/Release_osx/BMatchingSolver'
 elif(pc_name == "gilbreth"):
-    executable=base_path+'GraphConstruction/Bmatch/Release_linux/BMatchingSolver'
+    executable=base_path+'/GraphConstruction/Bmatch/Release_linux/BMatchingSolver'
 else:
     print(pc_name," not matched")
     sys.exit(0)

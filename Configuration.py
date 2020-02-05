@@ -73,8 +73,8 @@ KNN_config={
 }
 
 bMatching_config={
-        #"b":range(5,101,5),
-        "b":[5],
+        "b":range(5,101,5),
+        #"b":[5],
         "mode":'distance', #connectivity will give 1,0
         "metric":"euclidean", #used internally
         "include_self":False
