@@ -1,81 +1,11 @@
 import sys
 import os
-
-dataset_info_local={
-    "custom"    :{"name":"custom",
-                  "path":"/"},
-    "karate"    :{"name":"karate",
-                  "path":"/"},
-    "yelp"      :{"name":"yelp",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/Yelp/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Yelp/"},
-    "dbpedia"   :{"name":"dbpedia",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/DBpedia/dbpedia_csv/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/DBpedia/dbpedia_csv/"},
-    "amazon"    :{"name":"amazon",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/AmazonReview/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/AmazonReview/"},
-    "imdb"      :{"name":"imdb",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/"}
-}
-
-dataset_info_gilbreth={
-    "yelp"      :{"name":"yelp",
-                  "path":"/scratch/gilbreth/das90/Dataset/Yelp/",
-                  "output_path":"/scratch/gilbreth/das90/Dataset/Yelp/"},
-    "dbpedia"   :{"name":"dbpedia",
-                  "path":"/scratch/gilbreth/das90/Dataset/DBpedia/dbpedia_csv/",
-                  "output_path":"/scratch/gilbreth/das90/Dataset/DBpedia/dbpedia_csv/"},
-    "imdb"      :{"name":"imdb",
-                  "path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/",
-                  "output_path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/"}
-}
-
-pretrained_model_local={
-    "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
-
-    "GLOVE"         :{"name":"GLOVE",
-                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
-
-    "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/cybersecurity/1million.word2vec.model"}
-}
-
-pretrained_model_gilbreth={
-    "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/scratch/gilbreth/das90/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
-
-    "GLOVE"         :{"name":"GLOVE",
-                      "path":"/scratch/gilbreth/das90/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
-
-    "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/scratch/gilbreth/das90/Dataset/Model/cybersecurity/1million.word2vec.model"}
-}
-
-dataset_info={}
-pretrained_model={}
-
-print(os.uname())
-pc_name=(os.uname()[1]).split('-')[0]
-print("Pc-Name: ",pc_name)
-
-if(pc_name=="Siddharthas"):
-    dataset_info=dataset_info_local
-    pretrained_model=pretrained_model_local
-elif(pc_name == "gilbreth"):
-    dataset_info=dataset_info_gilbreth
-    pretrained_model = pretrained_model_gilbreth
-else:
-    sys.exit(0)
-
-
+from Path import *
 
 #vectorize configuration
 VEC_config={
     "dataset_name":"imdb",
-    "method":"word2vec_avg",
+    "method":"word2vec",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
     "saving_format":['txt','mtx','mat','numpy'],
     "load_saved": False, #resume if possible in any stage (data loading, model loading etc.)
@@ -129,23 +59,25 @@ def vectorize():
 GRAPH_data_config={
     "algorithm":'bmatch',
     "dataset_name":'imdb',
-    "method":'word2vec',
-    "saving_format":"mat"  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
+    "method":'word2vec_avg',
+    #"saving_format":["numpy","mat","gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
+    "saving_format":["gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
 }
 
 KNN_config={
-        "k":5,
+        #"k": range(5,101,5),
+        "k": [5],
         "mode":'distance', #connectivity will give 1,0
         "metric":"cosine",
-        "include_self":True
+        "include_self":False
 }
 
 bMatching_config={
-
-}
-
-edge_cover_config={
-
+        #"b":range(5,101,5),
+        "b":[5],
+        "mode":'distance', #connectivity will give 1,0
+        "metric":"euclidean", #used internally
+        "include_self":False
 }
 
 
@@ -153,12 +85,13 @@ def construct_graph():
 
     if(GRAPH_data_config['algorithm']=='knn'):
         from GraphConstruction.KNN.knn import KNN_construction
-        KNN_construction(dataset_info[GRAPH_data_config['dataset_name']],GRAPH_data_config,KNN_config,save_gephi=True)
+        KNN_construction(dataset_info[GRAPH_data_config['dataset_name']],GRAPH_data_config,KNN_config)
 
     elif(GRAPH_data_config['algorithm']=='bmatch'):
-        from GraphConstruction.KNN.knn import KNN_construction
-        KNN_construction(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, KNN_config,
-                         save_gephi=True)
+        from GraphConstruction.Bmatch.bmatch import bmatch_construction
+        bmatch_construction(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, bMatching_config)
+
+
     else:
         print(GRAPH_data_config['algorithm']," -> The graph construction algorithm is not implemented yet")
         sys.exit(0)
@@ -171,8 +104,8 @@ def learn_test():
     return
 
 #running the program
-RUN_vectorize=True
-RUN_graph_construction=False
+RUN_vectorize=False
+RUN_graph_construction=True
 RUN_learn=False
 
 if __name__ == '__main__':

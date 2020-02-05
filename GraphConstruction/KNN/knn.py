@@ -3,6 +3,9 @@ import scipy as sp
 from scipy import io
 from sklearn.neighbors import kneighbors_graph
 import sys
+import os
+import timeit
+
 
 # from scipy.sparse import csr_matrix
 # from graphviz import Digraph,Graph
@@ -18,40 +21,64 @@ def knn(x,k,mode='distance',metric='cosine',include_self=True):
 
     return A
 
-def KNN_construction(dataset_info,GRAPH_config,KNN_config,save_gephi=False):
-    dataset_name = dataset_info['name']
-    home_dir = dataset_info['path']
-    output_dir = dataset_info['output_path'] + GRAPH_config['method'] + '/'
-    print(output_dir)
+def knn_single(data_vector,data_rating,k,KNN_config,GRAPH_config,output_dir):
+    print("Constructing graph using Knn with k= ", k)
+
+    if (data_rating.shape[0] < k):
+        print("k={0} has to be smaller than N={1}".format(k, N))
+        return False
+
+    A = knn(data_vector, k, KNN_config['mode'], KNN_config['metric'], KNN_config['include_self'])
+    print('Saving graph ----', GRAPH_config['saving_format'], ' format')
+
+    if ('numpy' in GRAPH_config['saving_format']):
+        sp.sparse.save_npz(output_dir + 'graph_knn_' + str(k) + '.npz', A)
+    if ('mat' in GRAPH_config['saving_format']):
+        io.savemat(output_dir + 'graph_knn_' + str(k) + '.mat', mdict={'data': A})
+    if ('mtx' in GRAPH_config['saving_format']):
+        io.mmwrite(output_dir + 'graph_knn_' + str(k) + '.mtx', A, comment='Sparse Graph')
+    if ('gephi' in GRAPH_config['saving_format']):
+        save_gephi_graph(output_dir, A, data_rating, k)
+    if ('txt' in GRAPH_config['saving_format']):
+        print("text format saving is not implemented yet")
+        # np.savetxt(output_dir+'graph_knn_'+str(k)+'.txt', A, delimiter='\t')
+
+    print('Graph saving Done for ',k)
+
+    return True
+
+def kmatch_wrapper(args):
+    return knn_single(*args)
+
+def KNN_construction(dataset_info,GRAPH_config,KNN_config):
+    data_dir = dataset_info['output_path'] + GRAPH_config['method'] + '/'
+    print(data_dir)
+    output_dir=data_dir+'/knn/'
+
+    if not os.path.exists(output_dir):
+        print("Creating directory: ",output_dir)
+        os.makedirs(output_dir)
 
     print("Loading Saved data")
     #data = np.load(output_dir + "data_np.npy")
-    data_rating = np.load(output_dir + "data_rating_np.npy")
-    data_vector = np.load(output_dir + "data_vector_np.npy")
+    data_rating = np.load(data_dir + "data_rating_np.npy")
+    data_vector = np.load(data_dir + "data_vector_np.npy")
     print("Loading Done....")
     print("Data vector shape: ",data_vector.shape)
 
-    print("Constructing graph using Knn with k= ",KNN_config['k'])
-    A=knn(data_vector,KNN_config['k'],KNN_config['mode'],KNN_config['metric'],KNN_config['include_self'])
+    start_time = timeit.timeit()
 
-    print('Saving graph ----',GRAPH_config['saving_format'],' format')
+    from multiprocessing import Pool
+    k_num = len(KNN_config['k'])
+    p = Pool(k_num)
+    arguments = [(data_vector,data_rating,k,KNN_config,GRAPH_config,output_dir) for k in  KNN_config['k']]
+    print(p.map(kmatch_wrapper, arguments))
 
-    if(GRAPH_config['saving_format']=='numpy'):
-        sp.sparse.save_npz(output_dir+'graph_knn_'+str(KNN_config['k'])+'.npz', A)
-    elif(GRAPH_config['saving_format']=='mat'):
-        io.savemat(output_dir+'graph_knn_'+str(KNN_config['k'])+'.mat', mdict={'data': A})
-    elif (GRAPH_config['saving_format'] == 'mtx'):
-        io.mmwrite(output_dir+'graph_knn_'+str(KNN_config['k']), A, comment='Sparse Graph')
-    else:
-        print("This graph saving format is not implemented yet")
-        sys.exit(0)
-    print('Graph saving Done')
+    #(knn_single(data_vector,data_rating,k,KNN_config,GRAPH_config,output_dir) for k in KNN_config['k'])
 
+    end_time = timeit.timeit()
 
-    if(save_gephi==True):
-        save_gephi_graph(output_dir,A,data_rating,KNN_config['k'])
-
-    return A
+    print("Total time: ", end_time - start_time)
 
 def save_gephi_graph(output_dir,A,y,k):
     import networkx as nx
@@ -64,7 +91,7 @@ def save_gephi_graph(output_dir,A,y,k):
 
     nx.set_node_attributes(G, labels, 'labels')
     print("Writing gephi")
-    nx.write_gexf(G, output_dir+'graph_'+str(k)+'.gexf')
+    nx.write_gexf(G, output_dir+'graph_knn_'+str(k)+'.gexf')
 
     return
 

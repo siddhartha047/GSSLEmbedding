@@ -1,17 +1,31 @@
 import os
 import sys
 import subprocess
+import numpy as np
+import scipy as sp
+from scipy import io
+from Path import executable
+import timeit
 
-pc_name=(os.uname()[1]).split('-')[0]
-executable=''
+def read_txt(output_edges):
+    with open(output_edges, 'r') as f:
+        data = f.readlines()
+        data=[list(map(int,(line.strip().split()))) for line in data]
+        data = np.array(data)
+        return data
 
-if(pc_name=="Siddharthas"):
-    executable='Release_osx/BMatchingSolver'
-elif(pc_name == "gilbreth"):
-    executable='Release_linux/BMatchingSolver'
-else:
-    print(pc_name," not matched")
-    sys.exit(0)
+def write_mtx(output_edges):
+    data=read_txt(output_edges)
+    #print(data)
+    print("Edges: ",data.shape)
+    newfileName=os.path.splitext(output_edges)[0]+".mtx"
+    io.mmwrite(newfileName, data, comment="edge list")
+    #print(read_mtx(newfileName))
+
+def read_mtx(output_edges):
+    data=io.mmread(output_edges)
+    return data
+
 
 def bmatch_weight_matrix(weight_matrix,b_degree,output_edges,N,Cache,verbose=1):
     # Release/BMatchingSolver -w test/uni_example_weights.txt -d test/uni_example_degrees.txt -n 10 -o test/uni_example_ssolution.txt -c 5 -v 1
@@ -29,6 +43,96 @@ def bmatch_descriptor(feature_matrix,b_degree,output_edges,N,Cache,Dimension,ver
     output = popen.stdout.read()
     print(output.decode())
 
+def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N):
+    print("Constructing graph using b-matching with b= ", b)
+
+    if(N<=b):
+        print("b={0} has to be smaller than N={1}".format(b,N))
+        return False
+
+    b_degree = output_dir + 'b_degree_' + str(b) + '.txt'
+    degree = np.ones(N, int) * b
+    np.savetxt(b_degree, degree, delimiter='\n', fmt='%d')
+    feature_matrix = data_dir + 'data_vector_txt.txt'
+    output_edges = output_dir + 'graph_bmatch_' + str(b) + '.txt'
+    Cache = b
+    Dimension = D
+    bmatch_descriptor(feature_matrix, b_degree, output_edges, N, Cache, Dimension, verbose=1)
+    print('Saving graph ----', GRAPH_config['saving_format'], ' format')
+    data = read_txt(output_edges)
+
+    if ('numpy' in GRAPH_config['saving_format']):
+        np.save(output_dir + 'graph_bmatch_' + str(b) + '.npy', data)
+    if ('mat' in GRAPH_config['saving_format']):
+        io.savemat(output_dir + 'graph_bmatch_' + str(b) + '.mat', mdict={'data': data})
+    if ('mtx' in GRAPH_config['saving_format']):
+        io.mmwrite(output_dir + 'graph_bmatch_' + str(b) + '.mtx', data, comment='Edge list')
+
+    if ('gephi' in GRAPH_config['saving_format']):
+        save_gephi_graph(output_dir, data, data_rating, b)
+
+    print('Graph saving Done for ',b)
+
+    if os.path.exists(b_degree):
+        os.remove(b_degree)
+        print("Degree file deleted")
+    else:
+        print("degree file does not exist")
+
+    return True
+
+def bmatch_wrapper(args):
+    return bmatch_single(*args)
+
+def bmatch_construction(dataset_info,GRAPH_config,bMatching_config):
+    data_dir = dataset_info['output_path'] + GRAPH_config['method'] + '/'
+    print(data_dir)
+    output_dir=data_dir+'/bmatch/'
+
+    if not os.path.exists(output_dir):
+        print("Creating directory: ",output_dir)
+        os.makedirs(output_dir)
+
+    print("Loading Saved data")
+    data_rating = np.load(data_dir + "data_rating_np.npy")
+    data_vector = np.load(data_dir + "data_vector_np.npy")
+    print("Loading Done....")
+
+    N=data_rating.shape[0]
+    D=data_vector.shape[1]
+
+    start_time=timeit.timeit()
+
+    from multiprocessing import Pool
+    b_num=len(bMatching_config)
+    p = Pool(b_num)
+    arguments = [(output_dir, b, data_dir, GRAPH_config, data_rating, D, N) for b in bMatching_config['b']]
+    print(p.map(bmatch_wrapper, arguments))
+
+    #bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N)) for b in bMatching_config['b']
+
+    end_time = timeit.timeit()
+
+    print("Total time: ",end_time-start_time)
+
+def save_gephi_graph(output_dir,data,y,k):
+    import networkx as nx
+
+    labels = dict(zip(range(len(y)), y))
+    G = nx.from_edgelist(data)
+    # print(G.edges())
+    # G=G.to_directed()
+    # print(G.edges())
+
+    nx.set_node_attributes(G, labels, 'labels')
+    print("Writing gephi")
+    nx.write_gexf(G, output_dir+'graph_bmatch_'+str(k)+'.gexf')
+
+    return
+
+
+
+
 
 def bmatch_test():
     b_degree='test/uni_example_degrees.txt'
@@ -44,6 +148,7 @@ def bmatch_test():
     popen.wait()
     output = popen.stdout.read()
     print(output.decode())
+
 
 if __name__ == '__main__':
 

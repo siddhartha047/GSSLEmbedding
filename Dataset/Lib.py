@@ -62,6 +62,7 @@ def parse(path):
     yield eval(l)
 
 
+#mtx format
 def save_data(data,data_vector,data_rating,output_file,output_label,output_data,comment=""):
     print("Started Writing data")
     pickle.dump(data, open(output_data, "wb"))
