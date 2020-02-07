@@ -55,7 +55,8 @@ def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N):
     np.savetxt(b_degree, degree, delimiter='\n', fmt='%d')
     feature_matrix = data_dir + 'data_vector_txt.txt'
     output_edges = output_dir + 'graph_bmatch_' + str(b) + '.txt'
-    Cache = b
+    #Cache = b
+    Cache = min(1000,N-1)
     Dimension = D
     bmatch_descriptor(feature_matrix, b_degree, output_edges, N, Cache, Dimension, verbose=1)
     print('Saving graph ----', GRAPH_config['saving_format'], ' format')
@@ -116,6 +117,7 @@ def bmatch_construction(dataset_info,GRAPH_config,bMatching_config):
     print("Total time: ",end_time-start_time)
 
 def save_gephi_graph(output_dir,data,y,k):
+
     import networkx as nx
 
     labels = dict(zip(range(len(y)), y))
@@ -127,8 +129,6 @@ def save_gephi_graph(output_dir,data,y,k):
     nx.set_node_attributes(G, labels, 'labels')
     print("Writing gephi")
     nx.write_gexf(G, output_dir+'graph_bmatch_'+str(k)+'.gexf')
-
-    return
 
 
 
