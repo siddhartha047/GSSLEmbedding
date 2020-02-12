@@ -20,7 +20,7 @@ def main(dataset_info,config,method_config):
     data_rating=[]
     data_vector=[]
 
-    from Dataset.Dataset import read_dataset
+    from Dataset.Dataset_lib import read_dataset
     (data, data_rating, data_vector)=read_dataset(dataset_name,home_dir,output_dir,config['load_saved'])
 
     import numpy as np
@@ -57,15 +57,26 @@ def main(dataset_info,config,method_config):
         data_vector=learn(data_doc, model_info, vec_size=vec_size, visualize=config['visualize'])
         print("Not implemented properly check again")
 
+    elif (config['method'] == "TF_IDF"):
+        from Vectorize.Transformer.tfidf import tf_idf
+        data_vector=tf_idf(data,method_config)
     else:
         sys.exit("not implemented yet")
     print(config['method'], " Training ended")
 
+    print(data.shape)
+    print(data_rating.shape)
+    print(data_vector.shape)
 
     print("Saving data in ", config["saving_format"], "format")
     if("numpy" in config["saving_format"]):
         from Dataset.Lib import save_data_numpy
-        save_data_numpy(output_dir,data,data_vector,data_rating)
+        if (type(data_vector).__name__ == "csr_matrix"):
+            print("Converting scipy sparse to dense,")
+            data_vector_dense=data_vector.todense()
+            save_data_numpy(output_dir, data, data_vector_dense, data_rating)
+        else:
+            save_data_numpy(output_dir,data,data_vector,data_rating)
 
     if ("mtx" in config["saving_format"]):
         from Dataset.Lib import save_data
@@ -77,7 +88,13 @@ def main(dataset_info,config,method_config):
 
     if ("txt" in config["saving_format"]):
         from Dataset.Lib import save_data_txt
-        save_data_txt(output_dir, data, data_vector, data_rating)
+        if (type(data_vector).__name__ == "csr_matrix"):
+            print("Converting scipy sparse to dense,")
+            data_vector_dense=data_vector.todense()
+            save_data_txt(output_dir, data, data_vector_dense, data_rating)
+
+        else:
+            save_data_txt(output_dir, data, data_vector, data_rating)
 
     print("Data saving done")
 

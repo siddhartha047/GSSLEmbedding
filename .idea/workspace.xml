@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dataset/Reuters_read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Transformer/tfidf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Dataset_lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/bmatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/bmatch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Path.py" beforeDir="false" afterPath="$PROJECT_DIR$/Path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vectorize/GensimTransformer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Transformer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,21 +38,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GraphConstruction/Bmatch/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Dataset" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Dataset" />
+      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch/test" />
+      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Vectorize/Word2Vec/backup" />
       <recent name="$PROJECT_DIR$/Vectorize" />
       <recent name="$PROJECT_DIR$/Dataset" />
       <recent name="$PROJECT_DIR$/D2Vec/models" />
       <recent name="$PROJECT_DIR$/D2Vec/Practice" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch/test" />
-      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch" />
-      <recent name="$PROJECT_DIR$/Dataset" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Configuration">
@@ -111,7 +119,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Word2Vec" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Reuters_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -119,32 +127,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Word2Vec" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Word2Vec/Word2Vec.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Word2Vec_avg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Word2VecAvg" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Word2VecAvg/Word2Vec_avg.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/Reuters_read.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,13 +161,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tfidf" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Transformer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Transformer/tfidf.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Configuration" />
+        <item itemvalue="Python.Reuters_read" />
+        <item itemvalue="Python.tfidf" />
         <item itemvalue="Python.Path" />
         <item itemvalue="Python.bmatch" />
-        <item itemvalue="Python.Word2Vec_avg" />
-        <item itemvalue="Python.Word2Vec" />
       </list>
     </recent_temporary>
   </component>
@@ -233,22 +241,38 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1580943356051" />
-    <state width="1414" height="200" key="GridCell.Tab.0.bottom" timestamp="1581034141457">
+    <state width="1414" height="231" key="GridCell.Tab.0.bottom" timestamp="1581531988157">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="200" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581034141457" />
-    <state width="1414" height="200" key="GridCell.Tab.0.center" timestamp="1581034141455">
+    <state width="1414" height="231" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581531988157" />
+    <state width="1414" height="231" key="GridCell.Tab.0.center" timestamp="1581531988156">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="200" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1581034141455" />
-    <state width="1414" height="200" key="GridCell.Tab.0.left" timestamp="1581034141454">
+    <state width="1414" height="231" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1581531988156" />
+    <state width="1414" height="231" key="GridCell.Tab.0.left" timestamp="1581531988156">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="200" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1581034141454" />
-    <state width="1414" height="200" key="GridCell.Tab.0.right" timestamp="1581034141456">
+    <state width="1414" height="231" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1581531988156" />
+    <state width="1414" height="231" key="GridCell.Tab.0.right" timestamp="1581531988157">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="200" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1581034141456" />
+    <state width="1414" height="231" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1581531988157" />
+    <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581531363062">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="1414" height="249" key="GridCell.Tab.1.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581531363062" />
+    <state width="1414" height="249" key="GridCell.Tab.1.center" timestamp="1581531363062">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="1414" height="249" key="GridCell.Tab.1.center/0.23.1440.826@0.23.1440.826" timestamp="1581531363062" />
+    <state width="1414" height="249" key="GridCell.Tab.1.left" timestamp="1581531363061">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="1414" height="249" key="GridCell.Tab.1.left/0.23.1440.826@0.23.1440.826" timestamp="1581531363061" />
+    <state width="1414" height="249" key="GridCell.Tab.1.right" timestamp="1581531363062">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="1414" height="249" key="GridCell.Tab.1.right/0.23.1440.826@0.23.1440.826" timestamp="1581531363062" />
     <state x="241" y="23" key="SettingsEditor" timestamp="1580060916984">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -261,13 +285,13 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="340" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.826@0.23.1440.826" timestamp="1580231379064" />
-    <state x="319" y="26" width="802" height="819" key="find.popup" timestamp="1580408685762">
+    <state x="319" y="26" width="978" height="819" key="find.popup" timestamp="1581470578457">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="319" y="26" width="802" height="819" key="find.popup/0.23.1440.826@0.23.1440.826" timestamp="1580408685762" />
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1580935308448">
+    <state x="319" y="26" width="978" height="819" key="find.popup/0.23.1440.826@0.23.1440.826" timestamp="1581470578457" />
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1581526907024">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1580935308448" />
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1581526907024" />
   </component>
 </project>

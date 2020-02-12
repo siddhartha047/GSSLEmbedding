@@ -1,20 +1,16 @@
-import re
 import gzip
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-import nltk
-import csv
-import string
-import json as jsn
-from scipy import io
 import pickle
+import re
+
 import numpy as np
-
-# nltk.download('stopwords')
-# nltk.download('punkt')
-
+from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
+from scipy import io
+
+#import nltk
+# nltk.download('stopwords')
+# nltk.download('punkt')
 
 lem = WordNetLemmatizer()
 stem = PorterStemmer()
@@ -86,9 +82,9 @@ def save_data_mat(home_dir,data,data_vector,data_rating):
     sp.io.savemat(home_dir + "data_rating_mat.mat", mdict={'data_rating': data_rating})
 
 def save_data_txt(home_dir,data,data_vector,data_rating):
-    #np.savetxt(home_dir + "data_txt.txt", data, delimiter='\t')
+    np.savetxt(home_dir + "data_txt.txt", data, delimiter='\t',fmt='%s'),
     np.savetxt(home_dir + "data_vector_txt.txt", data_vector, delimiter='\t')
-    np.savetxt(home_dir + "data_rating_txt.txt", data_rating, delimiter='\t')
+    np.savetxt(home_dir + "data_rating_txt.txt", data_rating, delimiter='\t',fmt='%s')
 
 def save_data_numpy(home_dir,data,data_vector,data_rating):
     np.save(home_dir+"data_np",data)

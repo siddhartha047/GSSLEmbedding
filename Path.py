@@ -11,7 +11,9 @@ dataset_info_local={
     "test"    :{"name":"test",
                 "path":"/Users/siddharthashankardas/Purdue/Dataset/test_data/",
                 "output_path":"/Users/siddharthashankardas/Purdue/Dataset/test_data/"},
-
+    "reuters"    :{"name":"reuters",
+                "path":"",
+                "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Reuters/"},
     "karate"    :{"name":"karate",
                   "path":"/"},
     "yelp"      :{"name":"yelp",
@@ -29,6 +31,9 @@ dataset_info_local={
 }
 
 dataset_info_gilbreth={
+    "reuters"    :{"name":"reuters",
+                "path":"",
+                "output_path":"/scratch/gilbreth/das90/Dataset/Reuters/"},
     "yelp"      :{"name":"yelp",
                   "path":"/scratch/gilbreth/das90/Dataset/Yelp/",
                   "output_path":"/scratch/gilbreth/das90/Dataset/Yelp/"},

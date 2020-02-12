@@ -68,9 +68,8 @@ def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N):
         io.savemat(output_dir + 'graph_bmatch_' + str(b) + '.mat', mdict={'data': data})
     if ('mtx' in GRAPH_config['saving_format']):
         io.mmwrite(output_dir + 'graph_bmatch_' + str(b) + '.mtx', data, comment='Edge list')
-
     if ('gephi' in GRAPH_config['saving_format']):
-        save_gephi_graph(output_dir, data, data_rating, b)
+        save_gephi_graph(output_dir, data, data_rating, b,GRAPH_config['multi_label'])
 
     print('Graph saving Done for ',b)
 
@@ -95,8 +94,10 @@ def bmatch_construction(dataset_info,GRAPH_config,bMatching_config):
         os.makedirs(output_dir)
 
     print("Loading Saved data")
-    data_rating = np.load(data_dir + "data_rating_np.npy")
-    data_vector = np.load(data_dir + "data_vector_np.npy")
+    data_rating = np.load(data_dir + "data_rating_np.npy",allow_pickle=True)
+    data_vector = np.load(data_dir + "data_vector_np.npy",allow_pickle=True)
+    print("Data rating shape :",data_rating.shape)
+    print("Data vector shape :", data_vector.shape)
     print("Loading Done....")
 
     N=data_rating.shape[0]
@@ -116,21 +117,26 @@ def bmatch_construction(dataset_info,GRAPH_config,bMatching_config):
 
     print("Total time: ",end_time-start_time)
 
-def save_gephi_graph(output_dir,data,y,k):
-
+def save_gephi_graph(output_dir,A,y,k,multi_label=False):
     import networkx as nx
 
-    labels = dict(zip(range(len(y)), y))
-    G = nx.from_edgelist(data)
+    labels=[]
+    if(multi_label):
+        nY= [" ".join(row) for row in y]
+        labels = dict(zip(range(len(y)), nY))
+    else:
+        labels = dict(zip(range(len(y)), y))
+
+    G = nx.from_scipy_sparse_matrix(A)
     # print(G.edges())
     # G=G.to_directed()
     # print(G.edges())
 
     nx.set_node_attributes(G, labels, 'labels')
     print("Writing gephi")
-    nx.write_gexf(G, output_dir+'graph_bmatch_'+str(k)+'.gexf')
+    nx.write_gexf(G, output_dir+'graph_knn_'+str(k)+'.gexf')
 
-
+    return
 
 
 
