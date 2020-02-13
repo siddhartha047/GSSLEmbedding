@@ -34,16 +34,17 @@ dataset_info_gilbreth={
     "reuters"    :{"name":"reuters",
                 "path":"",
                 "output_path":"/scratch/gilbreth/das90/Dataset/Reuters/"},
-    "yelp"      :{"name":"yelp",
-                  "path":"/scratch/gilbreth/das90/Dataset/Yelp/",
-                  "output_path":"/scratch/gilbreth/das90/Dataset/Yelp/"},
-    "dbpedia"   :{"name":"dbpedia",
-                  "path":"/scratch/gilbreth/das90/Dataset/DBpedia/dbpedia_csv/",
-                  "output_path":"/scratch/gilbreth/das90/Dataset/DBpedia/dbpedia_csv/"},
     "imdb"      :{"name":"imdb",
                   "path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/",
                   "output_path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/"}
 }
+
+dataset_info_rice={
+    "reuters"    :{"name":"reuters",
+                "path":"",
+                "output_path":"/scratch/rice/d/das90/Dataset/Reuters/"},
+}
+
 
 pretrained_model_local={
     "GOOGLE"        :{"name":"GOOGLE",
@@ -67,6 +68,16 @@ pretrained_model_gilbreth={
                       "path":"/scratch/gilbreth/das90/Dataset/Model/cybersecurity/1million.word2vec.model"}
 }
 
+pretrained_model_rice={
+    "GOOGLE"        :{"name":"GOOGLE",
+                      "path":"/scratch/rice/d/das90/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+
+    "GLOVE"         :{"name":"GLOVE",
+                      "path":"/scratch/rice/d/das90/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+
+    "CYBERSECURITY" :{"name":"CYBERSECURITY",
+                      "path":"/scratch/rice/d/das90/Dataset/Model/cybersecurity/1million.word2vec.model"}
+}
 
 dataset_info={}
 pretrained_model={}
@@ -81,6 +92,9 @@ if(pc_name=="Siddharthas"):
 elif(pc_name == "gilbreth"):
     dataset_info=dataset_info_gilbreth
     pretrained_model = pretrained_model_gilbreth
+elif(pc_name == "rice"):
+    dataset_info=dataset_info_rice
+    pretrained_model = pretrained_model_rice
 else:
     sys.exit(0)
 
@@ -88,7 +102,7 @@ executable=''
 
 if(pc_name=="Siddharthas"):
     executable=base_path+'/GraphConstruction/Bmatch/Release_osx/BMatchingSolver'
-elif(pc_name == "gilbreth"):
+elif(pc_name in ["gilbreth", "rice", "snyder","scholar","halstead"]):
     executable=base_path+'/GraphConstruction/Bmatch/Release_linux/BMatchingSolver'
 else:
     print(pc_name," not matched")

@@ -2,16 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dataset/Reuters_read.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vectorize/Transformer/tfidf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/DistanceMatrix/WeightMatrix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/DistanceMatrix/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Transformer/lda.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vectorize/Transformer/lsi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Dataset_lib.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dataset/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_linux/BMatchingSolver" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_linux/BMatchingSolver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_linux/src/BMatchingSolver.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_linux/src/BMatchingSolver.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/BMatchingSolver" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/BMatchingSolver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingLibrary.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingLibrary.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingLibrary.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingLibrary.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingProblem.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingProblem.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingProblem.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingProblem.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingSolver.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingSolver.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingSolver.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BMatchingSolver.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BeliefPropagator.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BeliefPropagator.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BeliefPropagator.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BeliefPropagator.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteFunctionOracle.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteFunctionOracle.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteFunctionOracle.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteFunctionOracle.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteMatrixOracle.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteMatrixOracle.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteMatrixOracle.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/BipartiteMatrixOracle.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/EuclideanDistance.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/EuclideanDistance.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/EuclideanDistance.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/EuclideanDistance.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/FunctionOracle.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/FunctionOracle.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/FunctionOracle.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/FunctionOracle.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IndexHeap.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IndexHeap.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IndexHeap.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IndexHeap.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/InnerProduct.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/InnerProduct.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/InnerProduct.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/InnerProduct.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntDoubleMap.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntDoubleMap.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntDoubleMap.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntDoubleMap.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntSet.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntSet.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntSet.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/IntSet.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/MatrixOracle.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/MatrixOracle.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/MatrixOracle.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/MatrixOracle.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/OscillationDetector.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/OscillationDetector.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/OscillationDetector.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/OscillationDetector.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightFunction.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightFunction.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightFunction.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightFunction.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightOracle.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightOracle.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightOracle.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/WeightOracle.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/utils.d" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/utils.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/Release_osx/src/utils.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GraphConstruction/Bmatch/bmatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Bmatch/bmatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Path.py" beforeDir="false" afterPath="$PROJECT_DIR$/Path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vectorize/GensimTransformer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Transformer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vectorize/Transformer/tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Transformer/tfidf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,27 +135,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Path" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Path.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Reuters_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,7 +156,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bmatch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="lda" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,11 +164,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GraphConstruction/Bmatch" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Transformer" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphConstruction/Bmatch/bmatch.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Transformer/lda.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="lsi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Transformer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Transformer/lsi.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,10 +222,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Configuration" />
-        <item itemvalue="Python.Reuters_read" />
+        <item itemvalue="Python.lda" />
+        <item itemvalue="Python.lsi" />
         <item itemvalue="Python.tfidf" />
-        <item itemvalue="Python.Path" />
-        <item itemvalue="Python.bmatch" />
+        <item itemvalue="Python.Reuters_read" />
       </list>
     </recent_temporary>
   </component>
@@ -241,22 +278,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1580943356051" />
-    <state width="1414" height="231" key="GridCell.Tab.0.bottom" timestamp="1581531988157">
+    <state width="1414" height="157" key="GridCell.Tab.0.bottom" timestamp="1581616026705">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="231" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581531988157" />
-    <state width="1414" height="231" key="GridCell.Tab.0.center" timestamp="1581531988156">
+    <state width="1414" height="157" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581616026705" />
+    <state width="1414" height="157" key="GridCell.Tab.0.center" timestamp="1581616026704">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="231" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1581531988156" />
-    <state width="1414" height="231" key="GridCell.Tab.0.left" timestamp="1581531988156">
+    <state width="1414" height="157" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1581616026704" />
+    <state width="1414" height="157" key="GridCell.Tab.0.left" timestamp="1581616026704">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="231" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1581531988156" />
-    <state width="1414" height="231" key="GridCell.Tab.0.right" timestamp="1581531988157">
+    <state width="1414" height="157" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1581616026704" />
+    <state width="1414" height="157" key="GridCell.Tab.0.right" timestamp="1581616026704">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="231" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1581531988157" />
+    <state width="1414" height="157" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1581616026704" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581531363062">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -289,9 +326,9 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="319" y="26" width="978" height="819" key="find.popup/0.23.1440.826@0.23.1440.826" timestamp="1581470578457" />
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1581526907024">
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1581611583633">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1581526907024" />
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1581611583633" />
   </component>
 </project>

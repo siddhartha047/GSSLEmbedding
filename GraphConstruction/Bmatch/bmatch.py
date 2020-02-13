@@ -27,23 +27,48 @@ def read_mtx(output_edges):
     return data
 
 
-def bmatch_weight_matrix(weight_matrix,b_degree,output_edges,N,Cache,verbose=1):
+def bmatch_weight_matrix(weight_matrix,b_degree,output_edges,N,Cache,max_iterations=-1,verbose=1):
     # Release/BMatchingSolver -w test/uni_example_weights.txt -d test/uni_example_degrees.txt -n 10 -o test/uni_example_ssolution.txt -c 5 -v 1
-    args = (executable, "-w", weight_matrix, "-d", b_degree, "-n", str(N), "-o", output_edges,"-c",str(Cache),"-v",str(verbose))
-    popen = subprocess.Popen(args, stdout=subprocess.PIPE)
-    popen.wait()
-    output = popen.stdout.read()
-    print(output.decode())
+    args=''
+    if(max_iterations==-1):
+        args = (executable, "-w", weight_matrix, "-d", b_degree, "-n", str(N), "-o", output_edges,"-c",str(Cache),"-v",str(verbose))
+    else:
+        args = (executable, "-w", weight_matrix, "-d", b_degree, "-n", str(N), "-o", output_edges, "-c", str(Cache), "-v",str(verbose),"-i",str(max_iterations))
+    # popen = subprocess.Popen(args, stdout=subprocess.PIPE)
+    # popen.wait()
+    # output = popen.stdout.read()
+    # print(output.decode())
+    popen = subprocess.Popen(args, stdout=subprocess.PIPE, universal_newlines=True)
+    for stdout_line in iter(popen.stdout.readline, ""):
+        print(stdout_line)
+    popen.stdout.close()
+    return_code = popen.wait()
+    if return_code:
+        raise subprocess.CalledProcessError(return_code, args)
 
-def bmatch_descriptor(feature_matrix,b_degree,output_edges,N,Cache,Dimension,verbose=1):
+
+def bmatch_descriptor(feature_matrix,b_degree,output_edges,N,Cache,Dimension,max_iterations=-1,verbose=1):
     # Release/BMatchingSolver -w test/uni_example_weights.txt -d test/uni_example_degrees.txt -n 10 -o test/uni_example_ssolution.txt -c 5 -v 1
-    args = (executable, "-x", feature_matrix, "-d", b_degree, "-n", str(N), "-o", output_edges,"-c",str(Cache),"-v",str(verbose),"-t","1","-D",str(Dimension))
-    popen = subprocess.Popen(args, stdout=subprocess.PIPE)
-    popen.wait()
-    output = popen.stdout.read()
-    print(output.decode())
+    print("Maximum iteration: ",max_iterations)
+    args=""
+    if(max_iterations==-1):
+        args = (executable, "-x", feature_matrix, "-d", b_degree, "-n", str(N), "-o", output_edges,"-c",str(Cache),"-v",str(verbose),"-t","1","-D",str(Dimension))
+    else:
+        args = (executable, "-x", feature_matrix, "-d", b_degree, "-n", str(N), "-o", output_edges,"-c",str(Cache),"-v",str(verbose),"-t","1","-D",str(Dimension),"-i",str(max_iterations))
+    # popen = subprocess.Popen(args, stdout=subprocess.PIPE)
+    # popen.wait()
+    # output = popen.stdout.read()
+    # print(output.decode())
+    popen = subprocess.Popen(args, stdout=subprocess.PIPE, universal_newlines=True)
+    for stdout_line in iter(popen.stdout.readline, ""):
+        print(stdout_line)
+    popen.stdout.close()
+    return_code = popen.wait()
+    if return_code:
+        raise subprocess.CalledProcessError(return_code, args)
 
-def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N):
+
+def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N,max_iterations):
     print("Constructing graph using b-matching with b= ", b)
 
     if(N<=b):
@@ -56,9 +81,11 @@ def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N):
     feature_matrix = data_dir + 'data_vector_txt.txt'
     output_edges = output_dir + 'graph_bmatch_' + str(b) + '.txt'
     #Cache = b
-    Cache = min(1000,N-1)
+    N=1500
+    Cache = min(b,N-1)
+    #Cache = N-1
     Dimension = D
-    bmatch_descriptor(feature_matrix, b_degree, output_edges, N, Cache, Dimension, verbose=1)
+    bmatch_descriptor(feature_matrix, b_degree, output_edges, N, Cache, Dimension, max_iterations, verbose=1)
     print('Saving graph ----', GRAPH_config['saving_format'], ' format')
     data = read_txt(output_edges)
 
@@ -108,7 +135,7 @@ def bmatch_construction(dataset_info,GRAPH_config,bMatching_config):
     from multiprocessing import Pool
     b_num=len(bMatching_config)
     p = Pool(b_num)
-    arguments = [(output_dir, b, data_dir, GRAPH_config, data_rating, D, N) for b in bMatching_config['b']]
+    arguments = [(output_dir, bMatching_config['b'][biter], data_dir, GRAPH_config, data_rating, D, N,bMatching_config['max_iterations'][biter]) for biter in range(len(bMatching_config['b']))]
     print(p.map(bmatch_wrapper, arguments))
 
     #bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N)) for b in bMatching_config['b']
@@ -127,7 +154,8 @@ def save_gephi_graph(output_dir,A,y,k,multi_label=False):
     else:
         labels = dict(zip(range(len(y)), y))
 
-    G = nx.from_scipy_sparse_matrix(A)
+    #G = nx.from_scipy_sparse_matrix(A)
+    G = nx.from_edgelist(A)
     # print(G.edges())
     # G=G.to_directed()
     # print(G.edges())

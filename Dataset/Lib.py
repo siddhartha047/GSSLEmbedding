@@ -8,9 +8,9 @@ from nltk.stem.porter import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
 from scipy import io
 
-#import nltk
-# nltk.download('stopwords')
-# nltk.download('punkt')
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
 
 lem = WordNetLemmatizer()
 stem = PorterStemmer()

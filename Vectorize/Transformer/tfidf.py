@@ -6,7 +6,7 @@ def tf_idf(docs,TF_IDF_config):
     #tokenizer=tokenize
     tfidf = TfidfVectorizer( min_df=3,
                         max_df=0.90, max_features=TF_IDF_config['max_features'],
-                        use_idf=True, sublinear_tf=True,
+                        use_idf=True, sublinear_tf=True, ngram_range=TF_IDF_config['ngram'],
                         norm='l2');
     tfidf.fit(docs);
 
@@ -22,10 +22,12 @@ if __name__ == '__main__':
         'This is the first document.',
         'This document is the second document.',
         'And this is the third one.',
-        'Is this the first document?',
+        'Is this the first document?'
     ]
     TF_IDF_config = {
-        'max_features': 3000
+        'max_features': 3000,
+        'ngram': (1, 1)  # min max range
+
     }
     tf_idf(corpus,TF_IDF_config)
 

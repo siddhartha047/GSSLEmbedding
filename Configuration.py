@@ -5,7 +5,7 @@ from Path import *
 #vectorize configuration
 VEC_config={
     "dataset_name":"reuters",
-    "method":"TF_IDF",
+    "method":"LDA",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
     "saving_format":['txt','mtx','mat','numpy'],
     "load_saved": False, #resume if possible in any stage (data loading, model loading etc.)
@@ -44,15 +44,30 @@ def vectorize():
     elif (VEC_config['method'] == "TF_IDF"):
         from Vectorize import VectorizeDataset
         TF_IDF_config = {
-            'max_features':3000
+            'max_features':3000,
+            'ngram':(1,1) #min max range
         }
         VectorizeDataset.main(dataset_info[VEC_config['dataset_name']], VEC_config, TF_IDF_config)
 
     elif (VEC_config['method'] == "LSI"):
-        print("Not implemented yet")
+        from Vectorize import VectorizeDataset
+        LSI_config = {
+            'tfidf_features':3000,
+            'max_features': 100,
+            'ngram': (1, 1)  # min max range
+        }
+        VectorizeDataset.main(dataset_info[VEC_config['dataset_name']], VEC_config, LSI_config)
 
     elif (VEC_config['method'] == "LDA"):
-        print("Not implemented yet")
+        from Vectorize import VectorizeDataset
+        LDA_config = {
+            'ngram': (1, 1),  # min max range
+            'features':3000, #use -1 to adapt this automatically
+            'max_iter':10,
+            'max_features': 100 #final number of feature
+
+        }
+        VectorizeDataset.main(dataset_info[VEC_config['dataset_name']], VEC_config, LDA_config)
 
     elif (VEC_config['method'] == "FAST_TEXT"):
         print("Not implemented yet")
@@ -90,9 +105,10 @@ def construct_graph():
         from GraphConstruction.Bmatch.bmatch import bmatch_construction
         bMatching_config = {
             # "b":range(5,101,5),
-            "b": [5],
+            "b": [5,100],
             "mode": 'distance',  # connectivity will give 1,0
             "metric": "euclidean",  # used internally
+            "max_iterations":[10,10], #this is given, -1 means default max_interations
             "include_self": False
         }
         bmatch_construction(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, bMatching_config)
@@ -111,7 +127,7 @@ def learn_test():
 
 #running the program
 RUN_vectorize=True
-RUN_graph_construction=True
+RUN_graph_construction=False
 RUN_learn=False
 
 if __name__ == '__main__':

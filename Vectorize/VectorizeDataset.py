@@ -60,6 +60,12 @@ def main(dataset_info,config,method_config):
     elif (config['method'] == "TF_IDF"):
         from Vectorize.Transformer.tfidf import tf_idf
         data_vector=tf_idf(data,method_config)
+    elif (config['method'] == "LSI"):
+        from Vectorize.Transformer.lsi import lsi
+        data_vector=lsi(data,method_config)
+    elif (config['method'] == "LDA"):
+        from Vectorize.Transformer.lda import lda
+        data_vector=lda(data,method_config)
     else:
         sys.exit("not implemented yet")
     print(config['method'], " Training ended")

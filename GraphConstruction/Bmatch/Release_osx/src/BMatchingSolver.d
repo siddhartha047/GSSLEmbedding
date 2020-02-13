@@ -1,4 +1,4 @@
-src/BMatchingSolver.d src/BMatchingSolver.o: ../src/BMatchingSolver.cpp \
+src/BMatchingSolver.d: ../src/BMatchingSolver.cpp \
   ../src/BMatchingLibrary.h ../src/WeightOracle.h ../src/utils.h \
   ../src/IntDoubleMap.h ../src/SparseMatrix.h \
   ../src/BipartiteFunctionOracle.h ../src/WeightFunction.h \
