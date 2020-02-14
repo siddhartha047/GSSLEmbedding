@@ -2,81 +2,85 @@ import os
 import sys
 
 script=os. getcwd()
-# paths=script.split("/")
-#base_path='/'.join([paths[i] for i in range(paths.index("GSSLEmbedding"))])+"/GSSLEmbedding/"
 base_path=script
 print(base_path)
 
+local_path="/Users/siddharthashankardas/Purdue/Dataset/"
+gilbreth_scratch_path="/scratch/gilbreth/das90/Dataset/"
+rice_scratch_path="/scratch/rice/d/das90/Dataset/"
+
+#dataset location in the system
+
 dataset_info_local={
     "test"    :{"name":"test",
-                "path":"/Users/siddharthashankardas/Purdue/Dataset/test_data/",
-                "output_path":"/Users/siddharthashankardas/Purdue/Dataset/test_data/"},
+                "path":local_path+"test_data/",
+                "output_path":local_path+"test_data/"},
     "reuters"    :{"name":"reuters",
                 "path":"",
-                "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Reuters/"},
-    "karate"    :{"name":"karate",
-                  "path":"/"},
-    "yelp"      :{"name":"yelp",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/Yelp/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Yelp/"},
-    "dbpedia"   :{"name":"dbpedia",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/DBpedia/dbpedia_csv/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/DBpedia/dbpedia_csv/"},
-    "amazon"    :{"name":"amazon",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/AmazonReview/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/AmazonReview/"},
+                "output_path":local_path+"Reuters/"},
+    "newsgroup": {"name": "newsgroup",
+                "path": "",
+                "output_path": local_path + "Newsgroup/"},
     "imdb"      :{"name":"imdb",
-                  "path":"/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/",
-                  "output_path":"/Users/siddharthashankardas/Purdue/Dataset/Imdb/aclImdb/"}
+                  "path":local_path+"Imdb/aclImdb/",
+                  "output_path":local_path+"/Imdb/aclImdb/"}
 }
 
 dataset_info_gilbreth={
     "reuters"    :{"name":"reuters",
                 "path":"",
-                "output_path":"/scratch/gilbreth/das90/Dataset/Reuters/"},
+                "output_path":gilbreth_scratch_path+"Reuters/"},
+    "newsgroup": {"name": "newsgroup",
+                  "path": "",
+                  "output_path": gilbreth_scratch_path + "Newsgroup/"},
     "imdb"      :{"name":"imdb",
-                  "path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/",
-                  "output_path":"/scratch/gilbreth/das90/Dataset/Imdb/aclImdb/"}
+                  "path":gilbreth_scratch_path+"Imdb/aclImdb/",
+                  "output_path":gilbreth_scratch_path+"Imdb/aclImdb/"}
 }
 
 dataset_info_rice={
     "reuters"    :{"name":"reuters",
                 "path":"",
-                "output_path":"/scratch/rice/d/das90/Dataset/Reuters/"},
+                "output_path":rice_scratch_path+"Reuters/"},
+    "newsgroup": {"name": "newsgroup",
+                  "path": "",
+                  "output_path": rice_scratch_path + "Newsgroup/"}
 }
 
 
+#pretrained model location
+
 pretrained_model_local={
     "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+                      "path":local_path+"/Model/word2vec/GoogleNews-vectors-negative300.bin"},
 
     "GLOVE"         :{"name":"GLOVE",
-                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+                      "path":local_path+"/Model/glove.6B/gensim_glove.6B.300d.txt"},
 
     "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/Users/siddharthashankardas/Purdue/Dataset/Model/cybersecurity/1million.word2vec.model"}
+                      "path":local_path+"Model/cybersecurity/1million.word2vec.model"}
 }
 
 pretrained_model_gilbreth={
     "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/scratch/gilbreth/das90/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+                      "path":gilbreth_scratch_path+"Model/word2vec/GoogleNews-vectors-negative300.bin"},
 
     "GLOVE"         :{"name":"GLOVE",
-                      "path":"/scratch/gilbreth/das90/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+                      "path":gilbreth_scratch_path+"Model/glove.6B/gensim_glove.6B.300d.txt"},
 
     "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/scratch/gilbreth/das90/Dataset/Model/cybersecurity/1million.word2vec.model"}
+                      "path":gilbreth_scratch_path+"Model/cybersecurity/1million.word2vec.model"}
 }
 
 pretrained_model_rice={
     "GOOGLE"        :{"name":"GOOGLE",
-                      "path":"/scratch/rice/d/das90/Dataset/Model/word2vec/GoogleNews-vectors-negative300.bin"},
+                      "path":rice_scratch_path+"Model/word2vec/GoogleNews-vectors-negative300.bin"},
 
     "GLOVE"         :{"name":"GLOVE",
-                      "path":"/scratch/rice/d/das90/Dataset/Model/glove.6B/gensim_glove.6B.300d.txt"},
+                      "path":rice_scratch_path+"Model/glove.6B/gensim_glove.6B.300d.txt"},
 
     "CYBERSECURITY" :{"name":"CYBERSECURITY",
-                      "path":"/scratch/rice/d/das90/Dataset/Model/cybersecurity/1million.word2vec.model"}
+                      "path":rice_scratch_path+"Model/cybersecurity/1million.word2vec.model"}
 }
 
 dataset_info={}

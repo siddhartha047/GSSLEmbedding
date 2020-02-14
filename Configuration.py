@@ -4,11 +4,11 @@ from Path import *
 
 #vectorize configuration
 VEC_config={
-    "dataset_name":"reuters",
-    "method":"LDA",
+    "dataset_name":"newsgroup",
+    "method":"TF_IDF",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
     "saving_format":['txt','mtx','mat','numpy'],
-    "load_saved": False, #resume if possible in any stage (data loading, model loading etc.)
+    "load_saved": True, #resume if possible in any stage (data loading, model loading etc.)
     "visualize":False
 }
 
@@ -80,9 +80,9 @@ def vectorize():
 
 GRAPH_data_config={
     "algorithm":'bmatch',
-    "dataset_name":'reuters',
+    "dataset_name":'newsgroup',
     "method":'TF_IDF',
-    "multi_label":True,
+    "multi_label":False,
     #"saving_format":["numpy","mat","gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
     "saving_format":["gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
 }

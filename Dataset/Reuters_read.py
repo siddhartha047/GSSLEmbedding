@@ -4,9 +4,11 @@ import timeit
 from nltk.corpus import reuters
 
 import nltk
-nltk.download("reuters")
-import nltk
-nltk.download('punkt')
+try:
+    nltk.data.find('corpora/reuters.zip')
+except LookupError:
+    nltk.download('reuters')
+
 #resources
 #https://martin-thoma.com/nlp-reuters/
 #process the documents into following steps
@@ -89,30 +91,29 @@ def read(home_dir,output_dir,load_saved):
         os.makedirs(output_dir)
 
     data = []
-    data_vector = []
     data_rating = []
 
     # ignores rating 3, review with text length less than140
     # to read all pass True
     minWordLength = 10
-    readall = False
+    readall = True
 
     if (load_saved==False or os.path.exists(output_dir + "data_np.npy") == False):
         print("Started Reading data")
         start_reading = timeit.default_timer()
-        (data, data_rating, data_vector)=readData(output_dir,data, data_vector, data_rating, minWordLength, readall)
+        (data, data_rating, data_vector)=readData(output_dir,data, data_rating, minWordLength, readall)
         stop_reading = timeit.default_timer()
         print('Time to process: ', stop_reading - start_reading)
     else:
         print("Loading Saved data")
         data = np.load(output_dir + "data_np.npy",allow_pickle=True)
         data_rating = np.load(output_dir + "data_rating_np.npy",allow_pickle=True)
-        data_vector = np.load(output_dir + "data_vector_np.npy",allow_pickle=True)
         print("Loading Done")
 
-    save_data_numpy(output_dir,data,data_vector,data_rating)
+    from Dataset.Lib import save_data_rating_numpy
+    save_data_rating_numpy(output_dir, data, data_rating)
 
-    return (data,data_rating,data_vector)
+    return (data,data_rating)
 
 if __name__ == '__main__':
     read("", "/Users/siddharthashankardas/Purdue/Dataset/Reuters/", False)

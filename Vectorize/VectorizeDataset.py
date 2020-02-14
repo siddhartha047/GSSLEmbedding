@@ -6,7 +6,11 @@ def main(dataset_info,config,method_config):
 
     dataset_name=dataset_info['name']
     home_dir=dataset_info['path']
+    data_out_dir=dataset_info['output_path']
     output_dir=dataset_info['output_path']+config['method']+'/'
+    if not os.path.exists(output_dir):
+        print("Creating directory: ",output_dir)
+        os.makedirs(output_dir)
 
     print("Data directory: ",home_dir)
     print("Output directory: ",output_dir)
@@ -21,7 +25,7 @@ def main(dataset_info,config,method_config):
     data_vector=[]
 
     from Dataset.Dataset_lib import read_dataset
-    (data, data_rating, data_vector)=read_dataset(dataset_name,home_dir,output_dir,config['load_saved'])
+    (data, data_rating)=read_dataset(dataset_name,home_dir,data_out_dir,config['load_saved'])
 
     import numpy as np
     start_reading = timeit.default_timer()
@@ -76,31 +80,31 @@ def main(dataset_info,config,method_config):
 
     print("Saving data in ", config["saving_format"], "format")
     if("numpy" in config["saving_format"]):
-        from Dataset.Lib import save_data_numpy
+        from Dataset.Lib import save_vector_rating_numpy
         if (type(data_vector).__name__ == "csr_matrix"):
             print("Converting scipy sparse to dense,")
             data_vector_dense=data_vector.todense()
-            save_data_numpy(output_dir, data, data_vector_dense, data_rating)
+            save_vector_rating_numpy(output_dir,data_vector_dense, data_rating)
         else:
-            save_data_numpy(output_dir,data,data_vector,data_rating)
+            save_vector_rating_numpy(output_dir,data_vector,data_rating)
 
     if ("mtx" in config["saving_format"]):
         from Dataset.Lib import save_data
-        save_data(data, data_vector, data_rating, output_file, output_label, output_data, comment=dataset_name)
+        save_data(data_vector, data_rating, output_file, output_label, output_data, comment=dataset_name)
 
     if ("mat" in config["saving_format"]):
         from Dataset.Lib import save_data_mat
-        save_data_mat(output_dir,data,data_vector,data_rating)
+        save_data_mat(output_dir,data_vector,data_rating)
 
     if ("txt" in config["saving_format"]):
         from Dataset.Lib import save_data_txt
         if (type(data_vector).__name__ == "csr_matrix"):
             print("Converting scipy sparse to dense,")
             data_vector_dense=data_vector.todense()
-            save_data_txt(output_dir, data, data_vector_dense, data_rating)
+            save_data_txt(output_dir, data_vector_dense, data_rating)
 
         else:
-            save_data_txt(output_dir, data, data_vector, data_rating)
+            save_data_txt(output_dir, data_vector, data_rating)
 
     print("Data saving done")
 

@@ -9,8 +9,20 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from scipy import io
 
 import nltk
-nltk.download('stopwords')
-nltk.download('punkt')
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 lem = WordNetLemmatizer()
 stem = PorterStemmer()
@@ -59,7 +71,19 @@ def parse(path):
 
 
 #mtx format
-def save_data(data,data_vector,data_rating,output_file,output_label,output_data,comment=""):
+def save_data(data_vector,data_rating,output_file,output_label,output_data,comment=""):
+    print("Writing vector as mtx file")
+    io.mmwrite(output_file, data_vector, comment=comment)
+
+    f = open(output_label, 'w')
+    f.write("%d\n" % len(data_rating))
+
+    print("Writing Class label")
+    with open(output_label, 'a') as f:
+        for item in data_rating:
+            f.write("%s\n" % item)
+    f.close()
+def save_data2(data,data_vector,data_rating,output_file,output_label,output_data,comment=""):
     print("Started Writing data")
     pickle.dump(data, open(output_data, "wb"))
 
@@ -75,19 +99,35 @@ def save_data(data,data_vector,data_rating,output_file,output_label,output_data,
             f.write("%s\n" % item)
     f.close()
 
-def save_data_mat(home_dir,data,data_vector,data_rating):
+
+def save_data_mat(home_dir,data_vector,data_rating):
+    import scipy as sp
+    #sp.io.savemat(home_dir+"data_mat.mat",mdict={'data': data})
+    sp.io.savemat(home_dir + "data_vector_mat.mat", mdict={'data_vector': data_vector})
+    sp.io.savemat(home_dir + "data_rating_mat.mat", mdict={'data_rating': data_rating})
+
+def save_data_mat2(home_dir,data,data_vector,data_rating):
     import scipy as sp
     sp.io.savemat(home_dir+"data_mat.mat",mdict={'data': data})
     sp.io.savemat(home_dir + "data_vector_mat.mat", mdict={'data_vector': data_vector})
     sp.io.savemat(home_dir + "data_rating_mat.mat", mdict={'data_rating': data_rating})
 
-def save_data_txt(home_dir,data,data_vector,data_rating):
+def save_data_txt(home_dir,data_vector,data_rating):
+    #np.savetxt(home_dir + "data_txt.txt", data, delimiter='\t',fmt='%s'),
+    np.savetxt(home_dir + "data_vector_txt.txt", data_vector, delimiter='\t')
+    np.savetxt(home_dir + "data_rating_txt.txt", data_rating, delimiter='\t',fmt='%s')
+
+def save_data_txt2(home_dir,data,data_vector,data_rating):
     np.savetxt(home_dir + "data_txt.txt", data, delimiter='\t',fmt='%s'),
     np.savetxt(home_dir + "data_vector_txt.txt", data_vector, delimiter='\t')
     np.savetxt(home_dir + "data_rating_txt.txt", data_rating, delimiter='\t',fmt='%s')
 
-def save_data_numpy(home_dir,data,data_vector,data_rating):
+
+def save_data_rating_numpy(home_dir,data,data_rating):
     np.save(home_dir+"data_np",data)
+    np.save(home_dir+"data_rating_np",data_rating)
+
+def save_vector_rating_numpy(home_dir,data_vector,data_rating):
     np.save(home_dir+"data_vector_np",data_vector)
     np.save(home_dir+"data_rating_np",data_rating)
 
