@@ -11,6 +11,16 @@ Steps to run
 	conda activate tensor_531_37_gpu
 
 3. For Install packages from requirements.txt or do them manually
+	command used to export conda packages
+		conda list -e > conda_requirements.txt
+	command used to export pip packages
+		pip freeze > pip_requirements.txt
+	
+	command to import them
+		conda create --name <env> --file conda_requirements.txt
+		conda install conda_requirements.txt
+		pip install -r pip_requirements.txt
+
 	conda install pip
 	pip install --upgrade pip
 	conda install pytorch torchvision -c pytorch #cpu

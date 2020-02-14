@@ -1,6 +1,7 @@
 import sys
 import os
 from Path import *
+import numpy as np
 
 #vectorize configuration
 VEC_config={
@@ -79,8 +80,8 @@ def vectorize():
     return
 
 GRAPH_data_config={
-    "algorithm":'bmatch',
-    "dataset_name":'newsgroup',
+    "algorithm":'knn',
+    "dataset_name":'reuters',
     "method":'TF_IDF',
     "multi_label":False,
     #"saving_format":["numpy","mat","gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
@@ -104,11 +105,12 @@ def construct_graph():
     elif(GRAPH_data_config['algorithm']=='bmatch'):
         from GraphConstruction.Bmatch.bmatch import bmatch_construction
         bMatching_config = {
-            # "b":range(5,101,5),
+            #"b":range(5,101,5),
             "b": [5,100],
             "mode": 'distance',  # connectivity will give 1,0
             "metric": "euclidean",  # used internally
-            "max_iterations":[10,10], #this is given, -1 means default max_interations
+            "max_iterations":[-1,-1], #this is given, -1 means default max_interations
+            #"max_iterations": np.ones(len(range(5,101,5)))*-1,  # this is given, -1 means default max_interations
             "include_self": False
         }
         bmatch_construction(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, bMatching_config)
@@ -126,8 +128,8 @@ def learn_test():
     return
 
 #running the program
-RUN_vectorize=True
-RUN_graph_construction=False
+RUN_vectorize=False
+RUN_graph_construction=True
 RUN_learn=False
 
 if __name__ == '__main__':

@@ -43,9 +43,7 @@ def bmatch_weight_matrix(weight_matrix,b_degree,output_edges,N,Cache,max_iterati
         print(stdout_line)
     popen.stdout.close()
     return_code = popen.wait()
-    if return_code:
-        raise subprocess.CalledProcessError(return_code, args)
-
+    print(return_code)
 
 def bmatch_descriptor(feature_matrix,b_degree,output_edges,N,Cache,Dimension,max_iterations=-1,verbose=1):
     # Release/BMatchingSolver -w test/uni_example_weights.txt -d test/uni_example_degrees.txt -n 10 -o test/uni_example_ssolution.txt -c 5 -v 1
@@ -56,16 +54,18 @@ def bmatch_descriptor(feature_matrix,b_degree,output_edges,N,Cache,Dimension,max
     else:
         args = (executable, "-x", feature_matrix, "-d", b_degree, "-n", str(N), "-o", output_edges,"-c",str(Cache),"-v",str(verbose),"-t","1","-D",str(Dimension),"-i",str(max_iterations))
     # popen = subprocess.Popen(args, stdout=subprocess.PIPE)
-    # popen.wait()
+    # return_code=popen.wait()
     # output = popen.stdout.read()
     # print(output.decode())
+
     popen = subprocess.Popen(args, stdout=subprocess.PIPE, universal_newlines=True)
     for stdout_line in iter(popen.stdout.readline, ""):
         print(stdout_line)
     popen.stdout.close()
     return_code = popen.wait()
-    if return_code:
-        raise subprocess.CalledProcessError(return_code, args)
+    print(return_code)
+
+    return return_code
 
 
 def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N,max_iterations):
@@ -81,11 +81,15 @@ def bmatch_single(output_dir,b,data_dir,GRAPH_config,data_rating,D,N,max_iterati
     feature_matrix = data_dir + 'data_vector_txt.txt'
     output_edges = output_dir + 'graph_bmatch_' + str(b) + '.txt'
     #Cache = b
-    N=1500
+    #N=1000
     Cache = min(b,N-1)
     #Cache = N-1
     Dimension = D
-    bmatch_descriptor(feature_matrix, b_degree, output_edges, N, Cache, Dimension, max_iterations, verbose=1)
+    return_code=bmatch_descriptor(feature_matrix, b_degree, output_edges, N, Cache, Dimension, max_iterations, verbose=1)
+
+    if(return_code!=0):
+        return False
+
     print('Saving graph ----', GRAPH_config['saving_format'], ' format')
     data = read_txt(output_edges)
 
