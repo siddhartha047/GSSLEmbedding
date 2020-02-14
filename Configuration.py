@@ -4,11 +4,11 @@ from Path import *
 
 #vectorize configuration
 VEC_config={
-    "dataset_name":"newsgroup",
+    "dataset_name":"reuters",
     "method":"TF_IDF",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
     "saving_format":['txt','mtx','mat','numpy'],
-    "load_saved": True, #resume if possible in any stage (data loading, model loading etc.)
+    "load_saved": False, #resume if possible in any stage (data loading, model loading etc.)
     "visualize":False
 }
 

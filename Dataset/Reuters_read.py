@@ -17,6 +17,11 @@ from nltk.stem.porter import PorterStemmer
 import re
 from nltk.corpus import stopwords
 
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
 cachedStopWords = stopwords.words("english")
 
 def tokenize(text):
@@ -33,8 +38,7 @@ def tokenize(text):
 
     return " ".join(filtered_tokens)
 
-
-def readData(output_dir,data, data_vector, data_rating, minWordLength, readall):
+def readData(output_dir,data, data_rating, minWordLength, readall):
     # List of documents
     documents = reuters.fileids()
     print(str(len(documents)) + " documents");
@@ -82,7 +86,7 @@ def readData(output_dir,data, data_vector, data_rating, minWordLength, readall):
     np.save(output_dir+'train_index',train_index)
     np.save(output_dir + 'test_index', test_index)
 
-    return (data, data_rating, data_vector)
+    return (data, data_rating)
 
 
 def read(home_dir,output_dir,load_saved):
@@ -101,7 +105,7 @@ def read(home_dir,output_dir,load_saved):
     if (load_saved==False or os.path.exists(output_dir + "data_np.npy") == False):
         print("Started Reading data")
         start_reading = timeit.default_timer()
-        (data, data_rating, data_vector)=readData(output_dir,data, data_rating, minWordLength, readall)
+        (data, data_rating)=readData(output_dir,data, data_rating, minWordLength, readall)
         stop_reading = timeit.default_timer()
         print('Time to process: ', stop_reading - start_reading)
     else:

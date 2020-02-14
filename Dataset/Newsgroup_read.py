@@ -5,23 +5,63 @@ import timeit
 import numpy as np
 import pickle
 
-def readData(output_dir):
+from Dataset.Lib import processText
+
+def tokenize(text):
+    min_length = 3
+
+    filtered_tokens=processText(text)
+
+    if(len(filtered_tokens)<min_length):
+        # print(text)
+        # print(filtered_tokens)
+        return ("",False)
+
+    return (" ".join(filtered_tokens),True)
+
+def readData(output_dir,readall,minWordLength):
     newsgroups_train = fetch_20newsgroups(subset='train', remove=('headers', 'footers', 'quotes'))
     newsgroups_test = fetch_20newsgroups(subset='test', remove=('headers', 'footers', 'quotes'))
 
     categories=list(newsgroups_train.target_names)
 
-    print("Training size :",len(newsgroups_train.data))
-    print("Test size :", len(newsgroups_test.data))
+    trsize=len(newsgroups_train.data)
+    testsize=len(newsgroups_test.data)
 
-    data=newsgroups_train.data
-    data.extend(newsgroups_test.data)
+    print("Training size :",trsize)
+    print("Test size :", testsize)
 
-    data_rating=newsgroups_train.target
-    data_rating=np.append(data_rating,newsgroups_test.target)
+
+    data=[]
+    data_rating=[]
+
+    print("Started filtering text")
+    index=0
+    for i in range(len(newsgroups_train.data)):
+        (text,status)=tokenize(newsgroups_train.data[i])
+        if(status):
+            data.append(text)
+            data_rating.append(newsgroups_train.target[i])
+            index += 1
+    print("Filtering ended")
+    train_size=index
+    for i in range(len(newsgroups_test.data)):
+        (text,status)=tokenize(newsgroups_test.data[i])
+        if(status):
+            data.append(text)
+            data_rating.append(newsgroups_test.target[i])
+            index += 1
+    print("Filtering ended")
+    test_size=index-train_size
+
+    print("New train size ", train_size, " Removed :", trsize-train_size)
+    print("New test size ", test_size, " Removed :",testsize-test_size)
+
+    print("Total example remove: ",trsize+testsize-train_size-test_size)
+
 
     print("Total ",len(data))
-    print("Total rating ",data_rating.shape)
+    print("Total rating ",len(data_rating))
 
     categories_to_index= dict(zip(categories, range(len(categories))))
     index_to_categories = np.array(categories)
@@ -34,12 +74,13 @@ def readData(output_dir):
     f.close()
     np.save(output_dir + 'index_to_categories', index_to_categories)
 
-    train_index= np.array(range(len(newsgroups_train.data)))
-    test_index = np.array(range(len(newsgroups_train.data),len(newsgroups_train.data)+len(newsgroups_test.data)))
+    train_index = np.array(range(train_size))
+    test_index = np.array(range(train_size,index))
+
     np.save(output_dir+'train_index',train_index)
     np.save(output_dir + 'test_index', test_index)
 
-    return (data, data_rating)
+    return (np.array(data), np.array(data_rating))
 
 
 def read(home_dir,output_dir,load_saved):
@@ -58,7 +99,7 @@ def read(home_dir,output_dir,load_saved):
     if (load_saved==False or os.path.exists(output_dir + "data_np.npy") == False):
         print("Started Reading data")
         start_reading = timeit.default_timer()
-        (data,data_rating)=readData(output_dir)
+        (data,data_rating)=readData(output_dir,readall,minWordLength)
         stop_reading = timeit.default_timer()
         print('Time to process: ', stop_reading - start_reading)
     else:
