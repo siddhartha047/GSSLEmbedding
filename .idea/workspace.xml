@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="" />
+    <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mixed/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +47,7 @@
       <recent name="$PROJECT_DIR$/D2Vec/Practice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Configuration">
+  <component name="RunManager" selected="Python.ReutersProcessing">
     <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,6 +132,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ReutersProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/ReutersProcessing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Reuters_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,34 +174,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lda" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Transformer" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Transformer/lda.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ReutersProcessing" />
         <item itemvalue="Python.Configuration" />
         <item itemvalue="Python.Path" />
         <item itemvalue="Python.Newsgroup_read" />
         <item itemvalue="Python.Reuters_read" />
-        <item itemvalue="Python.lda" />
       </list>
     </recent_temporary>
   </component>
@@ -229,22 +233,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="249" key="GridCell.Tab.0.bottom" timestamp="1581662171789">
+    <state width="1414" height="284" key="GridCell.Tab.0.bottom" timestamp="1581921339300">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="249" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581662171789" />
-    <state width="1414" height="249" key="GridCell.Tab.0.center" timestamp="1581662171788">
+    <state width="1414" height="284" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581921339300" />
+    <state width="1414" height="284" key="GridCell.Tab.0.center" timestamp="1581921339299">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="249" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1581662171788" />
-    <state width="1414" height="249" key="GridCell.Tab.0.left" timestamp="1581662171787">
+    <state width="1414" height="284" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1581921339299" />
+    <state width="1414" height="284" key="GridCell.Tab.0.left" timestamp="1581921339298">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="249" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1581662171787" />
-    <state width="1414" height="249" key="GridCell.Tab.0.right" timestamp="1581662171788">
+    <state width="1414" height="284" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1581921339298" />
+    <state width="1414" height="284" key="GridCell.Tab.0.right" timestamp="1581921339299">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="249" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1581662171788" />
+    <state width="1414" height="284" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1581921339299" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
