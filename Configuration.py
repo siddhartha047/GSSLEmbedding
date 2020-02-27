@@ -5,7 +5,7 @@ import numpy as np
 
 #vectorize configuration
 VEC_config={
-    "dataset_name":"reuters",
+    "dataset_name":"newsgroup",
     "method":"TF_IDF",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
     "saving_format":['txt','mtx','mat','numpy'],
@@ -45,7 +45,7 @@ def vectorize():
     elif (VEC_config['method'] == "TF_IDF"):
         from Vectorize import VectorizeDataset
         TF_IDF_config = {
-            'max_features':3000,
+            'max_features':5000,
             'ngram':(1,1) #min max range
         }
         VectorizeDataset.main(dataset_info[VEC_config['dataset_name']], VEC_config, TF_IDF_config)
@@ -53,8 +53,8 @@ def vectorize():
     elif (VEC_config['method'] == "LSI"):
         from Vectorize import VectorizeDataset
         LSI_config = {
-            'tfidf_features':3000,
-            'max_features': 100,
+            'tfidf_features':5000,
+            'max_features': 300,
             'ngram': (1, 1)  # min max range
         }
         VectorizeDataset.main(dataset_info[VEC_config['dataset_name']], VEC_config, LSI_config)
@@ -80,12 +80,12 @@ def vectorize():
     return
 
 GRAPH_data_config={
-    "algorithm":'knn',
-    "dataset_name":'reuters',
+    "algorithm":'complete',
+    "dataset_name":'newsgroup',
     "method":'TF_IDF',
     "multi_label":False,
     #"saving_format":["numpy","mat","gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
-    "saving_format":["gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
+    "saving_format":["gephi","mtx","txt","numpy"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
 }
 
 
@@ -101,6 +101,15 @@ def construct_graph():
             "include_self": False
         }
         KNN_construction(dataset_info[GRAPH_data_config['dataset_name']],GRAPH_data_config,KNN_config)
+
+    elif (GRAPH_data_config['algorithm'] == 'complete'):
+        from GraphConstruction.Complete.ScipyComplete import csr2graph
+        complete_config = {
+            "metric": "cosine",
+            "include_self": False
+        }
+        csr2graph(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, complete_config)
+
 
     elif(GRAPH_data_config['algorithm']=='bmatch'):
         from GraphConstruction.Bmatch.bmatch import bmatch_construction

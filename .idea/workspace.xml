@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mixed/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Complete/ScipyComplete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Complete/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mixed/Edge2Mtx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mixed/Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +53,7 @@
       <recent name="$PROJECT_DIR$/D2Vec/Practice" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ReutersProcessing">
+  <component name="RunManager" selected="Python.Configuration">
     <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,6 +75,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Edge2Mtx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Edge2Mtx.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Lib" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,27 +109,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/Lib.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Newsgroup_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/Newsgroup_read.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,7 +159,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Reuters_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -161,11 +167,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/Reuters_read.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,11 +182,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ReutersProcessing" />
         <item itemvalue="Python.Configuration" />
+        <item itemvalue="Python.Edge2Mtx" />
+        <item itemvalue="Python.ReutersProcessing" />
+        <item itemvalue="Python.Test" />
         <item itemvalue="Python.Path" />
-        <item itemvalue="Python.Newsgroup_read" />
-        <item itemvalue="Python.Reuters_read" />
       </list>
     </recent_temporary>
   </component>
@@ -233,22 +239,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="284" key="GridCell.Tab.0.bottom" timestamp="1581921339300">
+    <state width="1414" height="286" key="GridCell.Tab.0.bottom" timestamp="1582846214099">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="284" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1581921339300" />
-    <state width="1414" height="284" key="GridCell.Tab.0.center" timestamp="1581921339299">
+    <state width="1414" height="286" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1582846214099" />
+    <state width="1414" height="286" key="GridCell.Tab.0.center" timestamp="1582846214099">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="284" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1581921339299" />
-    <state width="1414" height="284" key="GridCell.Tab.0.left" timestamp="1581921339298">
+    <state width="1414" height="286" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1582846214099" />
+    <state width="1414" height="286" key="GridCell.Tab.0.left" timestamp="1582846214098">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="284" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1581921339298" />
-    <state width="1414" height="284" key="GridCell.Tab.0.right" timestamp="1581921339299">
+    <state width="1414" height="286" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1582846214098" />
+    <state width="1414" height="286" key="GridCell.Tab.0.right" timestamp="1582846214099">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="284" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1581921339299" />
+    <state width="1414" height="286" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1582846214099" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -269,21 +275,21 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="241" y="23" key="SettingsEditor/0.23.1440.826@0.23.1440.826" timestamp="1580060916984" />
-    <state x="397" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1580867317107">
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1582840721893">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="397" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1580867317107" />
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1582840721893" />
     <state x="340" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580231379064">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="340" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.826@0.23.1440.826" timestamp="1580231379064" />
-    <state x="319" y="26" width="978" height="819" key="find.popup" timestamp="1581470578457">
+    <state x="319" y="26" width="978" height="819" key="find.popup" timestamp="1582252601899">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="319" y="26" width="978" height="819" key="find.popup/0.23.1440.826@0.23.1440.826" timestamp="1581470578457" />
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1581611583633">
+    <state x="319" y="26" width="978" height="819" key="find.popup/0.23.1440.826@0.23.1440.826" timestamp="1582252601899" />
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1582845146846">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1581611583633" />
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1582845146846" />
   </component>
 </project>

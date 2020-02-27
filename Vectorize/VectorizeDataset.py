@@ -79,9 +79,14 @@ def main(dataset_info,config,method_config):
     print(data_vector.shape)
 
     print("Saving data in ", config["saving_format"], "format")
+
     if("numpy" in config["saving_format"]):
-        from Dataset.Lib import save_vector_rating_numpy
+        from Dataset.Lib import save_vector_rating_numpy,save_vector_scipy
+
         if (type(data_vector).__name__ == "csr_matrix"):
+
+            save_vector_scipy(output_dir,data_vector)
+
             print("Converting scipy sparse to dense,")
             data_vector_dense=data_vector.todense()
             save_vector_rating_numpy(output_dir,data_vector_dense, data_rating)

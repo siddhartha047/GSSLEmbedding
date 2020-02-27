@@ -1,6 +1,7 @@
 import numpy as np
-from scipy.sparse import  csr_matrix
+from scipy.sparse import  csr_matrix,save_npz
 from sklearn.metrics import  pairwise_distances
+from scipy.spatial.distance import pdist
 import multiprocessing
 
 def mtxtotext(input_filename,output_filename):
@@ -31,12 +32,14 @@ def mtxtotext(input_filename,output_filename):
 
     print("number of processors: ",worker)
 
-    W=pairwise_distances(X,n_jobs=worker, metric="euclidean")
+    W=pairwise_distances(X,n_jobs=worker, metric="cosine")
+    #W=pdist(np.full(X),metric="cosine")
+    W=1-W
     print(W.shape)
     np.savetxt(output_filename,W)
 
     return
 if __name__ == '__main__':
     input_filename='/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/reuters_full_tfidf.mtx'
-    output_filename='/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/reuters_full_weights_euclidean.txt'
+    output_filename='/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/reuters_full_weights_cosine.txt'
     mtxtotext(input_filename,output_filename)

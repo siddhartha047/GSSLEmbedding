@@ -131,6 +131,11 @@ def save_vector_rating_numpy(home_dir,data_vector,data_rating):
     np.save(home_dir+"data_vector_np",data_vector)
     np.save(home_dir+"data_rating_np",data_rating)
 
+
+def save_vector_scipy(output_dir,data_vector):
+    import scipy.sparse
+    scipy.sparse.save_npz(output_dir+'data_vector.npz', data_vector)
+
 def load_data(home_dir):
     data=np.load(home_dir+"data_np.npy")
     data_rating = np.load(home_dir + "data_rating_np.npy")
