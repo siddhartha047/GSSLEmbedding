@@ -33,6 +33,6 @@ def text2mtx(weight_input_filename,edge_input_filename,edge_output_filename):
     return
 if __name__ == '__main__':
     weight_input_filename='/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/reuters_full_weights_cosine.txt'
-    edge_input_filename = '/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/full_reuters_full_weights_5.txt'
-    edge_output_filename='/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/full_reuters_full_weights_5.mtx'
+    edge_input_filename = '/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/full_reuters_full_weights_20.txt'
+    edge_output_filename='/Users/siddharthashankardas/Purdue/Dataset/ReutersMTX/full_reuters_full_weights_20.mtx'
     text2mtx(weight_input_filename,edge_input_filename,edge_output_filename)

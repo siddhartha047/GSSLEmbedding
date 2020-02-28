@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Complete/ScipyComplete.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GraphConstruction/Complete/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mixed/Edge2Mtx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mixed/Test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mixed/Newsgroup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mixed/Reuters/Edge2Mtx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mixed/Reuters/Mtx2Weight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mixed/Reuters/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mixed/Edge2Mtx.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/Newsgroup/Edge2Mtx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/Newsgroup/Mtx2Weight.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,24 +34,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Dataset" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mixed" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Dataset" />
-      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch/test" />
-      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Mixed/Reuters" />
       <recent name="$PROJECT_DIR$/Vectorize/Word2Vec/backup" />
       <recent name="$PROJECT_DIR$/Vectorize" />
       <recent name="$PROJECT_DIR$/Dataset" />
       <recent name="$PROJECT_DIR$/D2Vec/models" />
-      <recent name="$PROJECT_DIR$/D2Vec/Practice" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Mixed" />
+      <recent name="$PROJECT_DIR$/Dataset" />
+      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch/test" />
+      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Configuration">
+  <component name="RunManager" selected="Python.Mtx2Weight (1)">
     <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,7 +86,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Edge2Mtx.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Reuters/Edge2Mtx.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Path" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Mtx2Weight (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,11 +124,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed/Newsgroup" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Path.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Newsgroup/Mtx2Weight.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,7 +137,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ReutersProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Mtx2Weight" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,7 +149,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/ReutersProcessing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Reuters/Mtx2Weight.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -182,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Configuration" />
+        <item itemvalue="Python.Mtx2Weight (1)" />
         <item itemvalue="Python.Edge2Mtx" />
-        <item itemvalue="Python.ReutersProcessing" />
+        <item itemvalue="Python.Configuration" />
+        <item itemvalue="Python.Mtx2Weight" />
         <item itemvalue="Python.Test" />
-        <item itemvalue="Python.Path" />
       </list>
     </recent_temporary>
   </component>
@@ -239,22 +238,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="286" key="GridCell.Tab.0.bottom" timestamp="1582846214099">
+    <state width="1414" height="286" key="GridCell.Tab.0.bottom" timestamp="1582855439159">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1582846214099" />
-    <state width="1414" height="286" key="GridCell.Tab.0.center" timestamp="1582846214099">
+    <state width="1414" height="286" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1582855439159" />
+    <state width="1414" height="286" key="GridCell.Tab.0.center" timestamp="1582855439159">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1582846214099" />
-    <state width="1414" height="286" key="GridCell.Tab.0.left" timestamp="1582846214098">
+    <state width="1414" height="286" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1582855439159" />
+    <state width="1414" height="286" key="GridCell.Tab.0.left" timestamp="1582855439158">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1582846214098" />
-    <state width="1414" height="286" key="GridCell.Tab.0.right" timestamp="1582846214099">
+    <state width="1414" height="286" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1582855439158" />
+    <state width="1414" height="286" key="GridCell.Tab.0.right" timestamp="1582855439159">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1582846214099" />
+    <state width="1414" height="286" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1582855439159" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
