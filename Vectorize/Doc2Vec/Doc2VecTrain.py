@@ -157,7 +157,15 @@ if __name__ == '__main__':
 
         data=[text.lower() for text in data]
 
-        model=learn_d2v(data,"Models/test_d2v.model",max_epochs=400,vec_size=50)
-        #model=Doc2Vec.load("Models/test_d2v.model")
-        sanity_checking(model,data)
+        ##return model
+        #model=learn_d2v(data,"Models/test_d2v.model",max_epochs=400,vec_size=50)
+        # sanity_checking(model, data)
+
+        ##load model
+        # model=Doc2Vec.load("Models/test_d2v.model")
+        # sanity_checking(model, data)
+
+        ##return vector only and visualize
+        data_vector=get_vector(data, "Models/test_d2v.model", max_epochs=400, vec_size=50, use_saved=False, sanity=True, visualize=True)
+
 

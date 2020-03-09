@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Mixed/Newsgroup/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mixed/Reuters/Edge2Mtx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mixed/Reuters/Mtx2Weight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mixed/Reuters/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/FC_Custom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/FC_Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/FC_minibatcher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/Reg_Custom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/Reg_Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/Reg_minibatcher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/Synthetic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/Test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/instruction.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraphConstruction/Custom/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mixed/Edge2Mtx.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/Newsgroup/Edge2Mtx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mixed/ReutersProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/Newsgroup/Mtx2Weight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mixed/Newsgroup/Edge2Mtx.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/Newsgroup/Edge2Mtx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,26 +41,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mixed" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GraphConstruction/Custom" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Mixed/Reuters" />
-      <recent name="$PROJECT_DIR$/Vectorize/Word2Vec/backup" />
-      <recent name="$PROJECT_DIR$/Vectorize" />
-      <recent name="$PROJECT_DIR$/Dataset" />
-      <recent name="$PROJECT_DIR$/D2Vec/models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/GraphConstruction/Custom" />
+      <recent name="$PROJECT_DIR$/GraphConstruction/Custom/SSL" />
       <recent name="$PROJECT_DIR$/Mixed" />
       <recent name="$PROJECT_DIR$/Dataset" />
       <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch/test" />
-      <recent name="$PROJECT_DIR$/GraphConstruction/Bmatch" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/GraphConstruction/Custom" />
+      <recent name="$PROJECT_DIR$/GraphConstruction/Custom/FC" />
+      <recent name="$PROJECT_DIR$/Mixed/Reuters" />
+      <recent name="$PROJECT_DIR$/Vectorize/Word2Vec/backup" />
+      <recent name="$PROJECT_DIR$/Vectorize" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Mtx2Weight (1)">
-    <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Doc2VecTrain">
+    <configuration name="Doc2VecTrain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -61,32 +69,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Vectorize/Doc2Vec" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Configuration.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Edge2Mtx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Reuters/Edge2Mtx.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,7 +103,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Mtx2Weight (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Reg_Custom" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -124,11 +111,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed/Newsgroup" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GraphConstruction/Custom" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Newsgroup/Mtx2Weight.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphConstruction/Custom/Reg_Custom.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +124,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Mtx2Weight" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Reg_Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,11 +132,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GraphConstruction/Custom" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Reuters/Mtx2Weight.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphConstruction/Custom/Reg_Main.py" />
+      <option name="PARAMETERS" value="-n 3 -m 16 -e 100 -v -l 1e-2" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Reg_minibatcher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GraphConstruction/Custom" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphConstruction/Custom/Reg_minibatcher.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,11 +174,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GraphConstruction/Custom" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphConstruction/Custom/Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -179,13 +187,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Lib" />
+      <item itemvalue="Python.Reg_Main" />
+      <item itemvalue="Python.Reg_minibatcher" />
+      <item itemvalue="Python.Reg_Custom" />
+      <item itemvalue="Python.Test" />
+      <item itemvalue="Python.Doc2VecTrain" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Mtx2Weight (1)" />
-        <item itemvalue="Python.Edge2Mtx" />
-        <item itemvalue="Python.Configuration" />
-        <item itemvalue="Python.Mtx2Weight" />
+        <item itemvalue="Python.Doc2VecTrain" />
+        <item itemvalue="Python.Reg_Main" />
         <item itemvalue="Python.Test" />
+        <item itemvalue="Python.Reg_minibatcher" />
+        <item itemvalue="Python.Reg_Custom" />
       </list>
     </recent_temporary>
   </component>
@@ -230,30 +246,34 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579896458824">
+    <state x="0" y="23" width="1440" height="826" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583469264000">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="184" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.826@0.23.1440.826" timestamp="1579896458824" />
+    <state x="0" y="23" width="1440" height="826" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.826@0.23.1440.826" timestamp="1583469264000" />
+    <state x="439" y="231" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583454703021">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="439" y="231" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.826@0.23.1440.826" timestamp="1583454703021" />
     <state x="578" y="145" key="FileChooserDialogImpl" timestamp="1581661907874">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="286" key="GridCell.Tab.0.bottom" timestamp="1582855439159">
+    <state width="1414" height="245" key="GridCell.Tab.0.bottom" timestamp="1583767216106">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1582855439159" />
-    <state width="1414" height="286" key="GridCell.Tab.0.center" timestamp="1582855439159">
+    <state width="1414" height="245" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1583767216106" />
+    <state width="1414" height="245" key="GridCell.Tab.0.center" timestamp="1583767216105">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1582855439159" />
-    <state width="1414" height="286" key="GridCell.Tab.0.left" timestamp="1582855439158">
+    <state width="1414" height="245" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1583767216105" />
+    <state width="1414" height="245" key="GridCell.Tab.0.left" timestamp="1583767216104">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1582855439158" />
-    <state width="1414" height="286" key="GridCell.Tab.0.right" timestamp="1582855439159">
+    <state width="1414" height="245" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1583767216104" />
+    <state width="1414" height="245" key="GridCell.Tab.0.right" timestamp="1583767216105">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="286" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1582855439159" />
+    <state width="1414" height="245" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1583767216105" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -274,21 +294,25 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="241" y="23" key="SettingsEditor/0.23.1440.826@0.23.1440.826" timestamp="1580060916984" />
-    <state x="397" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1582840721893">
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog" timestamp="1583367823702">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="397" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1582840721893" />
+    <state x="397" y="268" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1583367823702" />
     <state x="340" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580231379064">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="340" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.826@0.23.1440.826" timestamp="1580231379064" />
+    <state x="482" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583442484066">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="482" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.826@0.23.1440.826" timestamp="1583442484066" />
     <state x="319" y="26" width="978" height="819" key="find.popup" timestamp="1582252601899">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="319" y="26" width="978" height="819" key="find.popup/0.23.1440.826@0.23.1440.826" timestamp="1582252601899" />
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1582845146846">
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1583690574573">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1582845146846" />
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1583690574573" />
   </component>
 </project>
