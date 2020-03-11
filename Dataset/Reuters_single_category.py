@@ -60,31 +60,42 @@ def readData(output_dir,data, data_rating, minWordLength, readall):
     print(categories_to_index)
     print(index_to_categories)
 
-    f = open(output_dir+"categories_to_index.pkl", "wb")
-    pickle.dump(categories_to_index, f)
-    f.close()
-    np.save(output_dir + 'index_to_categories', index_to_categories)
-
+    # f = open(output_dir+"categories_to_index.pkl", "wb")
+    # pickle.dump(categories_to_index, f)
+    # f.close()
+    # np.save(output_dir + 'index_to_categories', index_to_categories)
 
     i=0
     for doc in train_docs:
+        if (len(reuters.categories(doc)) > 1): continue
         i+=1
-        data_rating.append(reuters.categories(doc))
+        data_rating.append("".join(reuters.categories(doc)))
         data.append(tokenize(reuters.words(doc)))
         if(readall==False and i>minWordLength):
             break
+
+    train_size = i
+    print("Training documents: ",train_size)
+
     i=0
     for doc in test_docs:
+        if (len(reuters.categories(doc)) > 1): continue
         i+=1
-        data_rating.append(reuters.categories(doc))
+        data_rating.append("".join(reuters.categories(doc)))
         data.append(tokenize(reuters.words(doc)))
         if(readall==False and i>minWordLength):
             break
+
+    test_size = i
+    print("Test documents: ",test_size)
+
+    print("Total documents: ",train_size+test_size)
 
     train_index= np.array(range(len(train_docs)))
     test_index = np.array(range(len(train_docs),len(train_docs)+len(test_docs)))
     np.savetxt(output_dir+'train_index.txt',train_index)
     np.savetxt(output_dir + 'test_index.txt', test_index)
+    np.savetxt(output_dir +'labels.txt',data_rating,"%s")
 
     return (data, data_rating)
 
@@ -120,7 +131,7 @@ def read(home_dir,output_dir,load_saved):
     return (data,data_rating)
 
 if __name__ == '__main__':
-    read("", "/Users/siddharthashankardas/Purdue/Dataset/Reuters/", False)
+    read("", "/Users/siddharthashankardas/Purdue/Dataset/Reuters_onecat/", False)
     #readData("",[], [], [], 10, False)
 
 

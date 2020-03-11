@@ -59,7 +59,6 @@ def main(dataset_info,config,method_config):
         model_info = pretrained_model[method_config['pretrained_model_name']]
         data_doc = [item.split() for item in data]
         data_vector=learn(data_doc, model_info, vec_size=vec_size, visualize=config['visualize'])
-        print("Not implemented properly check again")
 
     elif (config['method'] == "TF_IDF"):
         from Vectorize.Transformer.tfidf import tf_idf
@@ -92,6 +91,12 @@ def main(dataset_info,config,method_config):
             save_vector_rating_numpy(output_dir,data_vector_dense, data_rating)
         else:
             save_vector_rating_numpy(output_dir,data_vector,data_rating)
+
+    if("mtx2" in config["saving_format"]):
+        from Dataset.Lib import save_vector_mtx2
+        save_vector_mtx2(output_dir, dataset_name, data_vector)
+
+        return
 
     if ("mtx" in config["saving_format"]):
         from Dataset.Lib import save_data

@@ -123,6 +123,19 @@ def save_data_txt2(home_dir,data,data_vector,data_rating):
     np.savetxt(home_dir + "data_rating_txt.txt", data_rating, delimiter='\t',fmt='%s')
 
 
+def save_vector_mtx2(home_dir,dataset_name,data_vector):
+    filename=home_dir+dataset_name+"_vector.mtx"
+    m, n = data_vector.shape
+    header = np.array([[m, n, m * n]])
+
+    with open(filename, 'wb') as f:
+        np.savetxt(f, header, fmt='%d %d %d')
+
+    with open(filename, 'a+') as f:
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                f.write("%d %d %f\n" % (i, j, data_vector[i - 1, j - 1]))
+
 def save_data_rating_numpy(home_dir,data,data_rating):
     np.save(home_dir+"data_np",data)
     np.save(home_dir+"data_rating_np",data_rating)

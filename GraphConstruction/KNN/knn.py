@@ -24,6 +24,8 @@ def knn(x,k,mode='distance',metric='cosine',include_self=True):
 def knn_single(data_vector,data_rating,k,KNN_config,GRAPH_config,output_dir):
     print("Constructing graph using Knn with k= ", k)
 
+    N=data_vector.shape[0]
+
     if (data_rating.shape[0] < k):
         print("k={0} has to be smaller than N={1}".format(k, N))
         return False
@@ -90,7 +92,10 @@ def save_gephi_graph(output_dir,A,y,k,multi_label=False):
         nY= [" ".join(row) for row in y]
         labels = dict(zip(range(len(y)), nY))
     else:
+        y = [str(i) for i in y]
         labels = dict(zip(range(len(y)), y))
+
+    print(labels)
 
     G = nx.from_scipy_sparse_matrix(A)
     # print(G.edges())

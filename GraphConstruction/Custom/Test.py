@@ -105,7 +105,9 @@ def test3():
 
 
     plt.legend(*scatter.legend_elements())
+    plt.savefig("images/egraph.png")
     plt.show()
+
 
 
 

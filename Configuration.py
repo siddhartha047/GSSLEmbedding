@@ -5,10 +5,10 @@ import numpy as np
 
 #vectorize configuration
 VEC_config={
-    "dataset_name":"newsgroup",
-    "method":"TF_IDF",
-    #"saving_format": "numpy", #numpy, mtx, mat, binary, txt
-    "saving_format":['txt','mtx','mat','numpy'],
+    "dataset_name":"reuters_one",
+    "method":"doc2vec",
+    #"saving_format": "numpy", #numpy, mtx, mat, binary, txt, mtx2
+    "saving_format":['numpy','mtx2'],
     "load_saved": False, #resume if possible in any stage (data loading, model loading etc.)
     "visualize":False
 }
@@ -18,7 +18,7 @@ def vectorize():
     if(VEC_config['method']=="doc2vec"):
         from Vectorize import VectorizeDataset
         Doc2Vec_config = {
-            "max_epochs": 1000,
+            "max_epochs": 500,
             "vec_size": 300
         }
         VectorizeDataset.main(dataset_info[VEC_config['dataset_name']], VEC_config, Doc2Vec_config)
@@ -80,12 +80,12 @@ def vectorize():
     return
 
 GRAPH_data_config={
-    "algorithm":'complete',
-    "dataset_name":'newsgroup',
-    "method":'TF_IDF',
+    "algorithm":'knn',
+    "dataset_name":'reuters_one',
+    "method":'doc2vec',
     "multi_label":False,
     #"saving_format":["numpy","mat","gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
-    "saving_format":["gephi","mtx","txt","numpy"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
+    "saving_format":["gephi"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
 }
 
 
@@ -137,7 +137,7 @@ def learn_test():
     return
 
 #running the program
-RUN_vectorize=False
+RUN_vectorize=True
 RUN_graph_construction=True
 RUN_learn=False
 

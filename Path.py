@@ -18,6 +18,9 @@ dataset_info_local={
     "reuters"    :{"name":"reuters",
                 "path":"",
                 "output_path":local_path+"Reuters/"},
+    "reuters_one"    :{"name":"reuters_one",
+                    "path":"",
+                    "output_path":local_path+"Reuters_one/"},
     "newsgroup": {"name": "newsgroup",
                 "path": "",
                 "output_path": local_path + "Newsgroup/"},
@@ -88,9 +91,11 @@ pretrained_model={}
 
 print(os.uname())
 pc_name=(os.uname()[1]).split('-')[0]
+sysname=(os.uname()[0]).split('-')[0]
 print("Pc-Name: ",pc_name)
+print("Sysname: ",sysname)
 
-if(pc_name=="Siddharthas"):
+if(pc_name=="Siddharthas" or sysname=="Darwin"):
     dataset_info=dataset_info_local
     pretrained_model=pretrained_model_local
 elif(pc_name == "gilbreth"):
@@ -104,7 +109,7 @@ else:
 
 executable=''
 
-if(pc_name=="Siddharthas"):
+if(pc_name=="Siddharthas" or sysname=="Darwin"):
     executable=base_path+'/GraphConstruction/Bmatch/Release_osx/BMatchingSolver'
 elif(pc_name in ["gilbreth", "rice", "snyder","scholar","halstead"]):
     executable=base_path+'/GraphConstruction/Bmatch/Release_linux/BMatchingSolver'

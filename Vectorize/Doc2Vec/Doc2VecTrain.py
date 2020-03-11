@@ -20,7 +20,7 @@ def learn_d2v(data, model_name="d2v.model",max_epochs = 100, vec_size = 20):
         import gensim
         model = gensim.models.doc2vec.Doc2Vec(
             vector_size=vec_size,
-            min_count=1,
+            min_count=2,
             epochs=max_epochs,
         workers=NUM_WORKERS)
 
