@@ -20,9 +20,9 @@ except LookupError:
     nltk.download('stopwords')
 
 try:
-    nltk.data.find('corpora/stopwords')
+    nltk.data.find('corpora/wordnet')
 except LookupError:
-    nltk.download('stopwords')
+    nltk.download('wordnet')
 
 lem = WordNetLemmatizer()
 stem = PorterStemmer()
@@ -30,9 +30,6 @@ stem = PorterStemmer()
 stop_words = stopwords.words('english')
 
 def processText(text):
-    print("-----------")
-    print(text)
-    print("-----------")
     # Remove punctuations
     text = re.sub('[^a-zA-Z]', ' ', text)
 

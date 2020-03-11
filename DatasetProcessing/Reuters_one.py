@@ -26,7 +26,7 @@ except LookupError:
 cachedStopWords = stopwords.words("english")
 
 def tokenize(text):
-    min_length = 3
+    min_length = 10
     words = map(lambda word: word.lower(), text);
     words = [word for word in words
                   if word not in cachedStopWords]
@@ -104,7 +104,7 @@ def readData(output_dir, data_rating, minWordLength=10, readall=True):
     i=0
     index=0
 
-    filename = output_dir + "reuter_vector.mtx"
+    filename = output_dir + "reuters10_vector.mtx"
     m=total
     n=300
 
@@ -166,7 +166,7 @@ def readData(output_dir, data_rating, minWordLength=10, readall=True):
     test_index = np.array(range(len(train_docs),len(train_docs)+len(test_docs)))
     np.savetxt(output_dir+'train_index.txt',train_index,"%d")
     np.savetxt(output_dir + 'test_index.txt', test_index,"%d")
-    np.savetxt(output_dir +'labels.txt',data_rating,"%s")
+    np.savetxt(output_dir +'reuters10_labels.txt',data_rating,"%s")
 
     return (data_vector, data_rating)
 

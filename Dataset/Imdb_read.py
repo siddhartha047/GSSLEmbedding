@@ -2,6 +2,7 @@ from Dataset.Lib import *
 import os
 import timeit
 
+
 def readData(directory,data,data_rating,minWordLength,readall=False):
     nrows=20
 

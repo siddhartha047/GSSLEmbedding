@@ -1,5 +1,7 @@
 import os
 import sys
+import gensim
+
 print(os.uname())
 pc_name=(os.uname()[1]).split('-')[0]
 pc_name=pc_name.split('.')[0]
@@ -35,6 +37,25 @@ dataset_path={
     "newsgroup": {
         "name": "newsgroup",
         "input_path": "",
-        "output_path": data_path + "NewsgroupX/"
+        "output_path": data_path + "Newsgroup20/"
+    },
+    "imdb": {
+        "name": "imdb",
+        "input_path": data_path + "Imdb/aclImdb/",
+        "output_path": data_path + "Imdb8/"
     }
 }
+
+def load_model(model_name):
+    from DatasetProcessing.Path import pretrained_model
+    if (model_name == "GLOVE"):
+        model = gensim.models.KeyedVectors.load_word2vec_format(os.path.join(pretrained_model[model_name]["path"]), binary=False,
+                                                                encoding="ISO-8859-1")
+    elif (model_name == "GOOGLE"):
+        model = gensim.models.KeyedVectors.load_word2vec_format(os.path.join(pretrained_model[model_name]["path"]), binary=True)
+
+    else:
+        print("Model not implemented yet")
+        sys.exit(0)
+
+    return model

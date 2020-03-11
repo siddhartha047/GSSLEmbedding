@@ -64,7 +64,6 @@ def readData(output_dir):
     index=0
     for i in range(len(newsgroups_train.data)):
         (tokens,status)=tokenize(newsgroups_train.data[i])
-        print(tokens)
         if(status):
             vocab_tokens = [word for word in tokens if word in model.vocab]
             if(len(vocab_tokens)<min_length):
@@ -107,7 +106,6 @@ def readData(output_dir):
     np.savetxt(output_dir + 'test_index.txt', test_index)
 
     category_map = dict()
-    print(category_map)
 
     for category in data_rating:
         if(category in category_map.keys()):
@@ -125,7 +123,7 @@ def readData(output_dir):
 
     header = np.array([[m, n, m * n]])
 
-    filename=output_dir+"newsgroup_vector.mtx"
+    filename=output_dir+"newsgroup20_vector.mtx"
 
     with open(filename, 'wb') as f:
         np.savetxt(f, header, fmt='%d %d %d')
@@ -134,6 +132,8 @@ def readData(output_dir):
         for i in range(1, m + 1):
             for j in range(1, n + 1):
                 f.write("%d %d %f\n" % (i, j, data_vector[i - 1][j - 1]))
+
+    np.savetxt(output_dir + 'newsgroup20_labels.txt', data_rating, "%s")
 
     return (data_vector,data_rating)
 
