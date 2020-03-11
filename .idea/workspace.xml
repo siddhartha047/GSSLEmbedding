@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dataset/ReutersModApte.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset/Reuters_single_category.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/Path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/Reuters_one.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/Dataset_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Dataset_lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/Reuters_read.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Reuters_read.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphConstruction/Custom/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Custom/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/KNN/knn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mixed/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mixed/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Path.py" beforeDir="false" afterPath="$PROJECT_DIR$/Path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Doc2VecTrain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vectorize/Doc2Vec/Models/test_d2v.model" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Doc2Vec/Models/test_d2v.model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/VectorizeDataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/Path.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/Reuters_one.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Reuters_one.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/instruction.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,15 +45,15 @@
       <recent name="$PROJECT_DIR$/Mixed" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DatasetProcessing" />
       <recent name="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg" />
       <recent name="$PROJECT_DIR$/DatasetProcessing/Reuters" />
       <recent name="$PROJECT_DIR$/GraphConstruction/Custom" />
       <recent name="$PROJECT_DIR$/GraphConstruction/Custom/FC" />
-      <recent name="$PROJECT_DIR$/Mixed/Reuters" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Reuters_one">
-    <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Path">
+    <configuration name="Path" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -73,53 +61,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DatasetProcessing" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Configuration.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Lib" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/Lib.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ReutersModApte" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/ReutersModApte.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Path.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,11 +82,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DatasetProcessing" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/Reuters_one.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Reuters_one.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,63 +95,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Reuters_single_category" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/Reuters_single_category.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GSSLEmbedding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mixed" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mixed/Test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.Lib" />
-      <item itemvalue="Python.Configuration" />
-      <item itemvalue="Python.ReutersModApte" />
-      <item itemvalue="Python.Reuters_single_category" />
-      <item itemvalue="Python.Test (1)" />
-      <item itemvalue="Python.Reuters_one" />
-    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Path" />
         <item itemvalue="Python.Reuters_one" />
-        <item itemvalue="Python.Configuration" />
-        <item itemvalue="Python.Test (1)" />
-        <item itemvalue="Python.Reuters_single_category" />
-        <item itemvalue="Python.ReutersModApte" />
       </list>
     </recent_temporary>
   </component>
@@ -250,10 +143,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="23" width="1440" height="826" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583469264000">
+    <state x="0" y="23" width="1440" height="826" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583890140625">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="0" y="23" width="1440" height="826" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.826@0.23.1440.826" timestamp="1583469264000" />
+    <state x="0" y="23" width="1440" height="826" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.826@0.23.1440.826" timestamp="1583890140625" />
     <state x="439" y="231" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583885109561">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -262,22 +155,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="224" key="GridCell.Tab.0.bottom" timestamp="1583885039177">
+    <state width="1414" height="224" key="GridCell.Tab.0.bottom" timestamp="1583890674500">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1583885039177" />
-    <state width="1414" height="224" key="GridCell.Tab.0.center" timestamp="1583885039176">
+    <state width="1414" height="224" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1583890674500" />
+    <state width="1414" height="224" key="GridCell.Tab.0.center" timestamp="1583890674500">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1583885039176" />
-    <state width="1414" height="224" key="GridCell.Tab.0.left" timestamp="1583885039176">
+    <state width="1414" height="224" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1583890674500" />
+    <state width="1414" height="224" key="GridCell.Tab.0.left" timestamp="1583890674499">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1583885039176" />
-    <state width="1414" height="224" key="GridCell.Tab.0.right" timestamp="1583885039176">
+    <state width="1414" height="224" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1583890674499" />
+    <state width="1414" height="224" key="GridCell.Tab.0.right" timestamp="1583890674500">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1583885039176" />
+    <state width="1414" height="224" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1583890674500" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>

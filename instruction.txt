@@ -50,4 +50,7 @@ Steps to run
 	/Users/siddharthashankardas/opt/anaconda3/envs/tensor_37/bin/python
 
 
+5. cd /home/das90/GNNcodes/GSSLEmbedding/DatasetProcessing/
+#PYTHONPATH=/home/das90/GNNcodes/GSSLEmbedding/DatasetProcessing/ python Reuters_one.py
+PYTHONPATH=/home/das90/GNNcodes/GSSLEmbedding/DatasetProcessing/ python -m DatasetProcessing.Reuters_one
 

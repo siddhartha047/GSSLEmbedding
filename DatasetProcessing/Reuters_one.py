@@ -40,7 +40,7 @@ def tokenize(text):
     return " ".join(filtered_tokens)
 
 def load_model(model_name):
-    from DatasetProcessing.Word2VecAvg.Path import pretrained_model
+    from DatasetProcessing.Path import pretrained_model
     if (model_name == "GLOVE"):
         model = gensim.models.KeyedVectors.load_word2vec_format(os.path.join(pretrained_model[model_name]["path"]), binary=False,
                                                                 encoding="ISO-8859-1")
@@ -186,8 +186,10 @@ def read(output_dir):
     np.save(output_dir + "data_vector_np", data_vector)
     np.save(output_dir + "data_rating_np", data_rating)
 
+    print(data_vector.shape)
+
     return (data_vector,data_rating)
 
 if __name__ == '__main__':
-    from DatasetProcessing.Word2VecAvg.Path import dataset_path
+    from DatasetProcessing.Path import dataset_path
     read(dataset_path["reuters10"]["output_path"])
