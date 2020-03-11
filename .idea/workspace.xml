@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Lib.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/Path.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/Reuters_one.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Reuters_one.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Word2VecAvg/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instruction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/instruction.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,28 @@
       <recent name="$PROJECT_DIR$/GraphConstruction/Custom/FC" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Path">
+  <component name="RunManager" selected="Python.Newsgroup">
+    <configuration name="Newsgroup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GSSLEmbedding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DatasetProcessing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Path" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,6 +115,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Newsgroup" />
         <item itemvalue="Python.Path" />
         <item itemvalue="Python.Reuters_one" />
       </list>
@@ -155,22 +174,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="224" key="GridCell.Tab.0.bottom" timestamp="1583890674500">
+    <state width="1414" height="288" key="GridCell.Tab.0.bottom" timestamp="1583896745933">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1583890674500" />
-    <state width="1414" height="224" key="GridCell.Tab.0.center" timestamp="1583890674500">
+    <state width="1414" height="288" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1583896745933" />
+    <state width="1414" height="288" key="GridCell.Tab.0.center" timestamp="1583896745933">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1583890674500" />
-    <state width="1414" height="224" key="GridCell.Tab.0.left" timestamp="1583890674499">
+    <state width="1414" height="288" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1583896745933" />
+    <state width="1414" height="288" key="GridCell.Tab.0.left" timestamp="1583896745933">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1583890674499" />
-    <state width="1414" height="224" key="GridCell.Tab.0.right" timestamp="1583890674500">
+    <state width="1414" height="288" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1583896745933" />
+    <state width="1414" height="288" key="GridCell.Tab.0.right" timestamp="1583896745933">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="224" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1583890674500" />
+    <state width="1414" height="288" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1583896745933" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
