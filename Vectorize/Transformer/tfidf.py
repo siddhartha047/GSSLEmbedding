@@ -11,7 +11,7 @@ def tf_idf(docs,TF_IDF_config):
     tfidf.fit(docs);
 
     X = tfidf.fit_transform(docs)
-    print(tfidf.get_feature_names())
+    #print(tfidf.get_feature_names())
     print(X.shape)
     print(type(X).__name__)
 

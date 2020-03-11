@@ -238,6 +238,51 @@ def load_model(model_name):
     return vectors
 
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+#https://miguelmalvarez.com/2015/03/20/classifying-reuters-21578-collection-with-python-representing-the-data/
+
+def tf_idf(docs,TF_IDF_config):
+    #tokenizer=tokenize
+    tfidf = TfidfVectorizer( min_df=3,
+                        max_df=0.90, max_features=TF_IDF_config['max_features'],
+                        use_idf=True, sublinear_tf=True, ngram_range=TF_IDF_config['ngram'],
+                        norm='l2');
+    tfidf.fit(docs);
+
+    X = tfidf.fit_transform(docs)
+    print(tfidf.get_feature_names())
+    print(X.shape)
+    print(type(X).__name__)
+
+    return X;
+
+def tf_idf_result(data,TF_IDF_config,output_dir,dataset_name):
+    print(data[0:5])
+    data_vector=tf_idf(data, TF_IDF_config)
+
+    m,n = data_vector.shape
+
+    non_zero=int(data_vector.count_nonzero())
+    print(non_zero)
+    nz=0
+
+    header = np.array([[m, n, non_zero]])
+    filename = output_dir + dataset_name+"_tf_idf_vector.mtx"
+
+    with open(filename, 'wb') as f:
+        np.savetxt(f, header, fmt='%d %d %d')
+
+    with open(filename, 'a+') as f:
+        for row, col in zip(*data_vector.nonzero()):
+            val = data_vector[row, col]
+            f.write("%d %d %f\n" % (row+1, col+1, val))
+            nz+=1
+
+    if(nz==non_zero):
+        print("Verified")
+
+
 if __name__ == '__main__':
     # home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"
     # #home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Yelp/"

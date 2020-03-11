@@ -14,8 +14,9 @@ import pickle
 
 from DatasetProcessing.Lib import processText
 
+min_length = 3
+
 def tokenize(text):
-    min_length = 10
 
     filtered_tokens=processText(text)
 
@@ -55,8 +56,8 @@ def readData(output_dir):
     print("Test size :", testsize)
 
     model=load_model("GOOGLE")
-    min_length = 10
 
+    data=[]
     data_vector=[]
     data_rating=[]
 
@@ -73,6 +74,7 @@ def readData(output_dir):
             vector = np.mean(model[vocab_tokens], axis=0)
             data_vector.append(vector)
             data_rating.append(newsgroups_train.target[i])
+            data.append(" ".join(tokens))
             index += 1
     print("Filtering ended")
     train_size=index
@@ -88,10 +90,9 @@ def readData(output_dir):
             vector = np.mean(model[vocab_tokens], axis=0)
             data_vector.append(vector)
             data_rating.append(newsgroups_test.target[i])
+            data.append(" ".join(tokens))
             index += 1
     print("Filtering ended")
-
-    print(data_vector[0])
 
     test_size=index-train_size
     print("New train size ", train_size, " Removed :", trsize-train_size)
@@ -123,7 +124,7 @@ def readData(output_dir):
 
     header = np.array([[m, n, m * n]])
 
-    filename=output_dir+"newsgroup20_vector.mtx"
+    filename=output_dir+"newsgroup20_w2v_vector.mtx"
 
     with open(filename, 'wb') as f:
         np.savetxt(f, header, fmt='%d %d %d')
@@ -133,9 +134,13 @@ def readData(output_dir):
             for j in range(1, n + 1):
                 f.write("%d %d %f\n" % (i, j, data_vector[i - 1][j - 1]))
 
-    np.savetxt(output_dir + 'newsgroup20_labels.txt', data_rating, "%s")
+    label_file_name = output_dir + 'newsgroup20_labels.txt'
+    with open(label_file_name, 'wb') as f:
+        np.savetxt(f, [len(data_rating)], fmt='%d')
+    with open(label_file_name, 'a+') as f:
+        np.savetxt(f, data_rating, "%d")
 
-    return (data_vector,data_rating)
+    return (data,data_vector,data_rating)
 
 def read(output_dir):
     if not os.path.exists(output_dir):
@@ -144,11 +149,21 @@ def read(output_dir):
 
     print("Started Reading data")
     start_reading = timeit.default_timer()
-    (data_vector, data_rating)=readData(output_dir)
+    (data, data_vector, data_rating)=readData(output_dir)
+    np.save(output_dir + "data_np.npy", data)
+    np.save(output_dir + "data_rating_np", data_rating)
+
+    # data=np.load(output_dir + "data_np.npy")
+
+    TF_IDF_config = {
+        'max_features': 5000,
+        'ngram': (1, 1)  # min max range
+    }
+    from DatasetProcessing.Lib import tf_idf_result
+    tf_idf_result(data, TF_IDF_config, output_dir, dataset_name="newsgroup20")
+
     stop_reading = timeit.default_timer()
     print('Time to process: ', stop_reading - start_reading)
-
-    np.save(output_dir + "data_rating_np", data_rating)
 
     return (data_vector,data_rating)
 

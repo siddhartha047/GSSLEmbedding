@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Imdb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/Imdb_read.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Imdb_read.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/Lib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Imdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Imdb8.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatasetProcessing/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Path.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Reuters_one.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Reuters_one.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Newsgroup20.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Reuters_one.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Reuters10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vectorize/Transformer/tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/Vectorize/Transformer/tfidf.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +52,8 @@
       <recent name="$PROJECT_DIR$/GraphConstruction/Custom/FC" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Imdb">
-    <configuration name="Imdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Reuters10">
+    <configuration name="Imdb8" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,7 +65,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Imdb.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Imdb8.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -76,7 +74,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Newsgroup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Newsgroup20" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -88,7 +86,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Newsgroup.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Newsgroup20.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Reuters_one" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Reuters10" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -130,7 +128,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Reuters_one.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Reuters10.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,10 +139,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Imdb" />
-        <item itemvalue="Python.Newsgroup" />
+        <item itemvalue="Python.Reuters10" />
+        <item itemvalue="Python.Imdb8" />
+        <item itemvalue="Python.Newsgroup20" />
         <item itemvalue="Python.Path" />
-        <item itemvalue="Python.Reuters_one" />
       </list>
     </recent_temporary>
   </component>
@@ -201,22 +199,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="189" key="GridCell.Tab.0.bottom" timestamp="1583939325922">
+    <state width="1414" height="277" key="GridCell.Tab.0.bottom" timestamp="1583952340768">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="189" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1583939325922" />
-    <state width="1414" height="189" key="GridCell.Tab.0.center" timestamp="1583939325921">
+    <state width="1414" height="277" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1583952340768" />
+    <state width="1414" height="277" key="GridCell.Tab.0.center" timestamp="1583952340762">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="189" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1583939325921" />
-    <state width="1414" height="189" key="GridCell.Tab.0.left" timestamp="1583939325921">
+    <state width="1414" height="277" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1583952340762" />
+    <state width="1414" height="277" key="GridCell.Tab.0.left" timestamp="1583952340702">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="189" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1583939325921" />
-    <state width="1414" height="189" key="GridCell.Tab.0.right" timestamp="1583939325921">
+    <state width="1414" height="277" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1583952340702" />
+    <state width="1414" height="277" key="GridCell.Tab.0.right" timestamp="1583952340765">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="189" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1583939325921" />
+    <state width="1414" height="277" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1583952340765" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -257,9 +255,9 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="750" height="530" key="javadoc.popup/0.23.1440.826@0.23.1440.826" timestamp="1583872416137" />
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1583851573339">
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup" timestamp="1583948570709">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1583851573339" />
+    <state x="301" y="23" width="838" height="826" key="search.everywhere.popup/0.23.1440.826@0.23.1440.826" timestamp="1583948570709" />
   </component>
 </project>
