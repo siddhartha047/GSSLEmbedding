@@ -81,8 +81,8 @@ def vectorize():
 
 GRAPH_data_config={
     "algorithm":'knn',
-    "dataset_name":'reuters_one',
-    "method":'doc2vec',
+    "dataset_name":'newsgroup20tfidf',
+    "method":'TF_IDF',
     "multi_label":False,
     #"saving_format":["numpy","mat","gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
     "saving_format":["gephi"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
@@ -137,7 +137,7 @@ def learn_test():
     return
 
 #running the program
-RUN_vectorize=True
+RUN_vectorize=False
 RUN_graph_construction=True
 RUN_learn=False
 

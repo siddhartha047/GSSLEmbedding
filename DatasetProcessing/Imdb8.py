@@ -5,19 +5,6 @@ import numpy as np
 from gensim.models import Word2Vec
 import gensim
 import sys
-import nltk
-
-from nltk.stem.porter import PorterStemmer
-import re
-from nltk.corpus import stopwords
-
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
-
-cachedStopWords = stopwords.words("english")
-
 
 def num(s):
     try:

@@ -17,7 +17,6 @@ from DatasetProcessing.Lib import processText
 min_length = 3
 
 def tokenize(text):
-
     filtered_tokens=processText(text)
 
     if(len(filtered_tokens)<min_length):
@@ -26,9 +25,6 @@ def tokenize(text):
         return ("",False)
 
     return (filtered_tokens,True)
-
-from DatasetProcessing.Path import load_model
-model=load_model("GOOGLE")
 
 def readData(output_dir):
     newsgroups_train = fetch_20newsgroups(subset='train', remove=('headers', 'footers', 'quotes'))
@@ -48,77 +44,29 @@ def readData(output_dir):
     data_rating=[]
 
     print("Started filtering text")
-    index=0
     for i in range(len(newsgroups_train.data)):
         (tokens,status)=tokenize(newsgroups_train.data[i])
         if(status):
-            vocab_tokens = [word for word in tokens if word in model.vocab]
-            if(len(vocab_tokens)<min_length):
-                print(tokens)
-                print(vocab_tokens)
-                continue
-            vector = np.mean(model.wv[vocab_tokens], axis=0)
-            data_vector.append(vector)
             data_rating.append(newsgroups_train.target[i])
             data.append(" ".join(tokens))
-            index += 1
     print("Filtering ended")
-    train_size=index
 
     for i in range(len(newsgroups_test.data)):
         (tokens,status)=tokenize(newsgroups_test.data[i])
         if(status):
-            vocab_tokens = [word for word in tokens if word in model.vocab]
-            if (len(vocab_tokens) < min_length):
-                print(tokens)
-                print(vocab_tokens)
-                continue
-            vector = np.mean(model.wv[vocab_tokens], axis=0)
-            data_vector.append(vector)
             data_rating.append(newsgroups_test.target[i])
             data.append(" ".join(tokens))
-            index += 1
-    print("Filtering ended")
-
-    test_size=index-train_size
-    print("New train size ", train_size, " Removed :", trsize-train_size)
-    print("New test size ", test_size, " Removed :",testsize-test_size)
-    print("Total example remove: ",trsize+testsize-train_size-test_size)
-    print("Total rating ",len(data_rating))
-
-    train_index = np.array(range(train_size))
-    test_index = np.array(range(train_size,index))
-
-    np.savetxt(output_dir+'train_index.txt',train_index)
-    np.savetxt(output_dir + 'test_index.txt', test_index)
 
     category_map = dict()
-
     for category in data_rating:
         if(category in category_map.keys()):
             category_map[category] = category_map[category] + 1
         else:
             category_map[category] = 0
-
     print(category_map)
     with open(output_dir+"categories_all.txt","w") as f:
         for k,v in category_map.items():
             f.write('%s,%d\n'%(k,v))
-
-    m=len(data_rating)
-    n=300
-
-    header = np.array([[m, n, m * n]])
-
-    filename=output_dir+"newsgroup20_w2v_vector.mtx"
-
-    with open(filename, 'wb') as f:
-        np.savetxt(f, header, fmt='%d %d %d')
-
-    with open(filename, 'a+') as f:
-        for i in range(1, m + 1):
-            for j in range(1, n + 1):
-                f.write("%d %d %f\n" % (i, j, data_vector[i - 1][j - 1]))
 
     label_file_name = output_dir + 'newsgroup20_labels.txt'
     with open(label_file_name, 'wb') as f:
@@ -128,6 +76,58 @@ def readData(output_dir):
 
     return (data,data_vector,data_rating)
 
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+#https://miguelmalvarez.com/2015/03/20/classifying-reuters-21578-collection-with-python-representing-the-data/
+
+def tf_idf(docs):
+    TF_IDF_config = {
+        'max_features': 5000,
+        'ngram': (1, 2)  # min max range
+    }
+    #tokenizer=tokenize
+    tfidf = TfidfVectorizer( min_df=3,
+                        max_df=0.90, max_features=TF_IDF_config['max_features'],
+                        use_idf=True, sublinear_tf=True, ngram_range=TF_IDF_config['ngram'],
+                        norm='l2');
+    tfidf.fit(docs)
+
+
+    X = tfidf.fit_transform(docs)
+    print(tfidf.get_feature_names())
+    print(X.shape)
+    print(type(X).__name__)
+
+    return X;
+
+def tf_idf_result(data,output_dir,dataset_name):
+    print(data[0:5])
+    data_vector=tf_idf(data)
+
+    m,n = data_vector.shape
+
+    non_zero=int(data_vector.count_nonzero())
+    print(non_zero)
+    nz=0
+
+    header = np.array([[m, n, non_zero]])
+    filename = output_dir + dataset_name+"_tf_idf_vector.mtx"
+
+    with open(filename, 'wb') as f:
+        np.savetxt(f, header, fmt='%d %d %d')
+
+    with open(filename, 'a+') as f:
+        for row, col in zip(*data_vector.nonzero()):
+            val = data_vector[row, col]
+            f.write("%d %d %f\n" % (row+1, col+1, val))
+            nz+=1
+
+    if(nz==non_zero):
+        print("Verified")
+
+    return data_vector
+
 def read(output_dir):
     if not os.path.exists(output_dir):
         print("Creating directory: ",output_dir)
@@ -136,19 +136,13 @@ def read(output_dir):
     print("Started Reading data")
     start_reading = timeit.default_timer()
     (data, data_vector, data_rating)=readData(output_dir)
+
+    X=tf_idf_result(data, output_dir, "newsgroup20")
+    print(X.shape)
+
     np.save(output_dir + "data_np.npy", data)
     np.save(output_dir + "data_rating_np.npy", data_rating)
-    np.save(output_dir+"data_vector_np.npy",np.array(data_vector))
-
-
-    # data=np.load(output_dir + "data_np.npy")
-
-    TF_IDF_config = {
-        'max_features': 5000,
-        'ngram': (1, 1)  # min max range
-    }
-    from DatasetProcessing.Lib import tf_idf_result
-    tf_idf_result(data, TF_IDF_config, output_dir, dataset_name="newsgroup20")
+    np.save(output_dir+"data_vector_np.npy", X.todense())
 
     stop_reading = timeit.default_timer()
     print('Time to process: ', stop_reading - start_reading)
@@ -157,4 +151,4 @@ def read(output_dir):
 
 if __name__ == '__main__':
     from DatasetProcessing.Path import dataset_path
-    read(dataset_path["newsgroup"]["output_path"])
+    read(dataset_path["newsgroup20tfidf"]["output_path"])

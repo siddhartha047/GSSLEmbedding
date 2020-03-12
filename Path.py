@@ -24,6 +24,12 @@ dataset_info_local={
     "newsgroup": {"name": "newsgroup",
                 "path": "",
                 "output_path": local_path + "Newsgroup/"},
+    "newsgroup20": {"name": "newsgroup",
+                "path": "",
+                "output_path": local_path + "Newsgroup20/"},
+    "newsgroup20tfidf": {"name": "newsgroup",
+                    "path": "",
+                    "output_path": local_path + "Newsgroup20tfidf/"},
     "imdb"      :{"name":"imdb",
                   "path":local_path+"Imdb/aclImdb/",
                   "output_path":local_path+"/Imdb/aclImdb/"}

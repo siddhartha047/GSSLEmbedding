@@ -14,17 +14,6 @@ try:
 except LookupError:
     nltk.download('reuters')
 
-from nltk.stem.porter import PorterStemmer
-import re
-from nltk.corpus import stopwords
-
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
-
-cachedStopWords = stopwords.words("english")
-
 from DatasetProcessing.Lib import processText
 min_length = 3
 
@@ -74,12 +63,13 @@ def readData(output_dir, data_rating, minWordLength=10, readall=True):
 
     category_map_10=dict(itertools.islice(category_map_sorted.items(), 10))
     print(category_map_10)
+    keys = list(category_map_10.keys())
+    category_map_index=dict(zip(keys,range(len(keys))))
+    print(category_map_index)
 
     with open(output_dir+"original_categories_all.txt","w") as f:
         for k,v in category_map_sorted.items():
             f.write('%s,%d\n'%(k,v))
-
-    model=load_model("GOOGLE")
     i=0
     filename = output_dir + "reuters10_w2v_vector.mtx"
 
@@ -101,7 +91,7 @@ def readData(output_dir, data_rating, minWordLength=10, readall=True):
             vector = np.mean(model[vocab_tokens], axis=0)
             data_vector.append(vector)
             data.append(" ".join(tokens))
-            data_rating.append(category)
+            data_rating.append(category_map_index[category])
             if(readall==False and i>minWordLength):
                 break
 
@@ -125,7 +115,7 @@ def readData(output_dir, data_rating, minWordLength=10, readall=True):
             vector = np.mean(model[vocab_tokens], axis=0)
             data.append(" ".join(tokens))
             data_vector.append(vector)
-            data_rating.append(category)
+            data_rating.append(category_map_index[category])
 
             if (readall == False and i > minWordLength):
                 break

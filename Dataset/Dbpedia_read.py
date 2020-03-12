@@ -29,7 +29,6 @@ def read(home_dir,output_dir,load_saved):
     input_file1 = home_dir + "train.csv"
     input_file2 = home_dir + "test.csv"
 
-
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 

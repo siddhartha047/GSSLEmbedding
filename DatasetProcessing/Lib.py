@@ -282,6 +282,8 @@ def tf_idf_result(data,TF_IDF_config,output_dir,dataset_name):
     if(nz==non_zero):
         print("Verified")
 
+    return data_vector
+
 
 if __name__ == '__main__':
     # home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"

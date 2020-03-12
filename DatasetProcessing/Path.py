@@ -39,10 +39,25 @@ dataset_path={
         "input_path": "",
         "output_path": data_path + "Newsgroup20/"
     },
+    "newsgroup20tfidf": {
+            "name": "newsgroup",
+            "input_path": "",
+            "output_path": data_path + "Newsgroup20tfidf/"
+        },
     "imdb": {
         "name": "imdb",
         "input_path": data_path + "Imdb/aclImdb/",
         "output_path": data_path + "Imdb8/"
+    },
+    "dbpediaw2v": {
+        "name": "dbpediaw2v",
+        "input_path": data_path + "DBpedia/dbpedia_csv/",
+        "output_path": data_path + "DBpedia14w2v/"
+    },
+    "dbpediatfidf": {
+            "name": "dbpediatfidf",
+            "input_path": data_path + "DBpedia/dbpedia_csv/",
+            "output_path": data_path + "DBpedia14tfidf/"
     }
 }
 
