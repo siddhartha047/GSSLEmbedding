@@ -238,16 +238,52 @@ def load_model(model_name):
     return vectors
 
 
+def save_data_vector_list_mtx(data_vector,output_dir,dataset_name):
+    m = len(data_vector)
+    n = len(data_vector[0])
+
+    header = np.array([[m, n, m * n]])
+    filename = output_dir + dataset_name+"_vector.mtx"
+
+    with open(filename, 'wb') as f:
+        np.savetxt(f, header, fmt='%d %d %d')
+
+    with open(filename, 'a+') as f:
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                f.write("%d %d %f\n" % (i, j, data_vector[i - 1][j - 1]))
+
+
+def save_labels_txt(data_rating,output_dir,dataset_name):
+    category_map = dict()
+    for category in data_rating:
+        if (category in category_map.keys()):
+            category_map[category] = category_map[category] + 1
+        else:
+            category_map[category] = 1
+
+    print(category_map)
+
+    with open(output_dir + dataset_name+ "_categories.txt", "w") as f:
+        for k, v in category_map.items():
+            f.write('%s,%d\n' % (k, v))
+
+    label_file_name = output_dir + dataset_name+'_labels.txt'
+    with open(label_file_name, 'wb') as f:
+        np.savetxt(f, [len(data_rating)], fmt='%d')
+    with open(label_file_name, 'a+') as f:
+        np.savetxt(f, data_rating, "%s")
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 #https://miguelmalvarez.com/2015/03/20/classifying-reuters-21578-collection-with-python-representing-the-data/
 
 def tf_idf(docs,TF_IDF_config):
-    #tokenizer=tokenize
-    tfidf = TfidfVectorizer( min_df=3,
-                        max_df=0.90, max_features=TF_IDF_config['max_features'],
-                        use_idf=True, sublinear_tf=True, ngram_range=TF_IDF_config['ngram'],
-                        norm='l2');
+    # tokenizer=tokenize
+    tfidf = TfidfVectorizer(min_df=TF_IDF_config['min_df'],
+                            max_df=TF_IDF_config['max_df'], max_features=TF_IDF_config['max_features'],
+                            use_idf=True, sublinear_tf=True, ngram_range=TF_IDF_config['ngram'],
+                            norm='l2');
     tfidf.fit(docs);
 
     X = tfidf.fit_transform(docs)
@@ -268,7 +304,7 @@ def tf_idf_result(data,TF_IDF_config,output_dir,dataset_name):
     nz=0
 
     header = np.array([[m, n, non_zero]])
-    filename = output_dir + dataset_name+"_tf_idf_vector.mtx"
+    filename = output_dir + dataset_name+"_vector.mtx"
 
     with open(filename, 'wb') as f:
         np.savetxt(f, header, fmt='%d %d %d')

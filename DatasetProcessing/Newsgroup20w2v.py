@@ -1,12 +1,5 @@
-import os
-import timeit
-import itertools
 import numpy as np
-from gensim.models import Word2Vec
-import gensim
-import sys
 from sklearn.datasets import fetch_20newsgroups
-from pprint import pprint
 import os
 import timeit
 import numpy as np
@@ -43,7 +36,6 @@ def readData(output_dir):
     print("Training size :",trsize)
     print("Test size :", testsize)
 
-    data=[]
     data_vector=[]
     data_rating=[]
 
@@ -60,7 +52,6 @@ def readData(output_dir):
             vector = np.mean(model.wv[vocab_tokens], axis=0)
             data_vector.append(vector)
             data_rating.append(newsgroups_train.target[i])
-            data.append(" ".join(tokens))
             index += 1
     print("Filtering ended")
     train_size=index
@@ -76,7 +67,6 @@ def readData(output_dir):
             vector = np.mean(model.wv[vocab_tokens], axis=0)
             data_vector.append(vector)
             data_rating.append(newsgroups_test.target[i])
-            data.append(" ".join(tokens))
             index += 1
     print("Filtering ended")
 
@@ -86,47 +76,16 @@ def readData(output_dir):
     print("Total example remove: ",trsize+testsize-train_size-test_size)
     print("Total rating ",len(data_rating))
 
-    train_index = np.array(range(train_size))
-    test_index = np.array(range(train_size,index))
+    if(len(data_rating)==(train_size+test_size)):
+        print("Data size correct")
+    else:
+        print("something wrong")
 
-    np.savetxt(output_dir+'train_index.txt',train_index)
-    np.savetxt(output_dir + 'test_index.txt', test_index)
+    from DatasetProcessing.Lib import save_labels_txt,save_data_vector_list_mtx
+    save_labels_txt(data_rating,output_dir,dataset_name="newsgroup20_w2v")
+    save_data_vector_list_mtx(data_vector,output_dir,dataset_name="newsgroup20_w2v")
 
-    category_map = dict()
-
-    for category in data_rating:
-        if(category in category_map.keys()):
-            category_map[category] = category_map[category] + 1
-        else:
-            category_map[category] = 0
-
-    print(category_map)
-    with open(output_dir+"categories_all.txt","w") as f:
-        for k,v in category_map.items():
-            f.write('%s,%d\n'%(k,v))
-
-    m=len(data_rating)
-    n=300
-
-    header = np.array([[m, n, m * n]])
-
-    filename=output_dir+"newsgroup20_w2v_vector.mtx"
-
-    with open(filename, 'wb') as f:
-        np.savetxt(f, header, fmt='%d %d %d')
-
-    with open(filename, 'a+') as f:
-        for i in range(1, m + 1):
-            for j in range(1, n + 1):
-                f.write("%d %d %f\n" % (i, j, data_vector[i - 1][j - 1]))
-
-    label_file_name = output_dir + 'newsgroup20_labels.txt'
-    with open(label_file_name, 'wb') as f:
-        np.savetxt(f, [len(data_rating)], fmt='%d')
-    with open(label_file_name, 'a+') as f:
-        np.savetxt(f, data_rating, "%d")
-
-    return (data,data_vector,data_rating)
+    return (data_vector,data_rating)
 
 def read(output_dir):
     if not os.path.exists(output_dir):
@@ -135,20 +94,10 @@ def read(output_dir):
 
     print("Started Reading data")
     start_reading = timeit.default_timer()
-    (data, data_vector, data_rating)=readData(output_dir)
-    np.save(output_dir + "data_np.npy", data)
-    np.save(output_dir + "data_rating_np.npy", data_rating)
-    np.save(output_dir+"data_vector_np.npy",np.array(data_vector))
+    (data_vector, data_rating)=readData(output_dir)
 
-
-    # data=np.load(output_dir + "data_np.npy")
-
-    TF_IDF_config = {
-        'max_features': 5000,
-        'ngram': (1, 1)  # min max range
-    }
-    from DatasetProcessing.Lib import tf_idf_result
-    tf_idf_result(data, TF_IDF_config, output_dir, dataset_name="newsgroup20")
+    # np.save(output_dir + "data_rating_np.npy", data_rating)
+    # np.save(output_dir+"data_vector_np.npy",np.array(data_vector))
 
     stop_reading = timeit.default_timer()
     print('Time to process: ', stop_reading - start_reading)
@@ -157,4 +106,4 @@ def read(output_dir):
 
 if __name__ == '__main__':
     from DatasetProcessing.Path import dataset_path
-    read(dataset_path["newsgroup"]["output_path"])
+    read(dataset_path["newsgroup20w2v"]["output_path"])

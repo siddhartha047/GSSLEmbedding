@@ -29,40 +29,65 @@ pretrained_model={
 }
 
 dataset_path={
-    "reuters10":{
+    "reuters10w2v":{
         "name":"reuters10",
         "input_path":"",
-        "output_path":data_path+"Reuters10/"
+        "output_path":data_path+"Reuters10w2v/"
     },
-    "newsgroup": {
+    "reuters10tfidf":{
+        "name":"reuters10",
+        "input_path":"",
+        "output_path":data_path+"Reuters10tfidf/"
+    },
+    "newsgroup20w2v": {
         "name": "newsgroup",
         "input_path": "",
-        "output_path": data_path + "Newsgroup20/"
+        "output_path": data_path + "Newsgroup20w2v/"
     },
     "newsgroup20tfidf": {
             "name": "newsgroup",
             "input_path": "",
             "output_path": data_path + "Newsgroup20tfidf/"
         },
-    "imdb": {
+    "imdb8w2v": {
         "name": "imdb",
         "input_path": data_path + "Imdb/aclImdb/",
-        "output_path": data_path + "Imdb8/"
+        "output_path": data_path + "Imdb8w2v/"
     },
-    "dbpediaw2v": {
-        "name": "dbpediaw2v",
+    "imdb8tfidf": {
+        "name": "imdb",
+        "input_path": data_path + "Imdb/aclImdb/",
+        "output_path": data_path + "Imdb8tfidf/"
+    },
+    "dbpedia14w2v": {
+        "name": "dbpedia",
         "input_path": data_path + "DBpedia/dbpedia_csv/",
         "output_path": data_path + "DBpedia14w2v/"
     },
-    "dbpediatfidf": {
-            "name": "dbpediatfidf",
+    "dbpedia14tfidf": {
+            "name": "dbpedia",
             "input_path": data_path + "DBpedia/dbpedia_csv/",
             "output_path": data_path + "DBpedia14tfidf/"
+    },
+    "yelp4w2v": {
+            "name": "yelp",
+            "input_path": data_path + "Yelp/",
+            "output_path": data_path + "Yelp4w2v/"
+    },
+    "yelp4tfidf": {
+            "name": "yelp",
+            "input_path": data_path + "Yelp/",
+            "output_path": data_path + "Yelp4tfidf/"
+    },
+    "amazon4tfidf": {
+            "name": "amazon",
+            "input_path": data_path + "AmazonReview/",
+            "output_path": data_path + "Amazon4tfidf/"
     }
+
 }
 
 def load_model(model_name):
-    from DatasetProcessing.Path import pretrained_model
     if (model_name == "GLOVE"):
         model = gensim.models.KeyedVectors.load_word2vec_format(os.path.join(pretrained_model[model_name]["path"]), binary=False,
                                                                 encoding="ISO-8859-1")
