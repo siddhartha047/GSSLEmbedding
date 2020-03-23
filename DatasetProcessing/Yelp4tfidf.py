@@ -57,9 +57,9 @@ def read(home_dir,output_dir):
     save_labels_txt(data_rating, output_dir, dataset_name="yelp4_tfidf")
 
     TF_IDF_config = {
-        'max_df': 0.25,
-        'min_df': 5,
-        'max_features': 5000,
+        'max_df': 0.5,
+        'min_df': 10,
+        'max_features': 10000,
         'ngram': (1, 1)  # min max range
     }
 

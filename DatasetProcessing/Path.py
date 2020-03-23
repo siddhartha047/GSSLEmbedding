@@ -30,12 +30,12 @@ pretrained_model={
 
 dataset_path={
     "reuters10w2v":{
-        "name":"reuters10",
+        "name":"reuters10w2v",
         "input_path":"",
         "output_path":data_path+"Reuters10w2v/"
     },
     "reuters10tfidf":{
-        "name":"reuters10",
+        "name":"reuters10_tfidf",
         "input_path":"",
         "output_path":data_path+"Reuters10tfidf/"
     },
@@ -45,7 +45,7 @@ dataset_path={
         "output_path": data_path + "Newsgroup20w2v/"
     },
     "newsgroup20tfidf": {
-            "name": "newsgroup",
+            "name": "newsgroup20_tfidf",
             "input_path": "",
             "output_path": data_path + "Newsgroup20tfidf/"
         },
@@ -99,3 +99,18 @@ def load_model(model_name):
         sys.exit(0)
 
     return model
+
+
+script=os. getcwd()
+base_path=script
+print(base_path)
+
+executable=''
+
+if(pc_name=="Siddharthas" or sysname=="Darwin"):
+    executable=base_path+'/Release_osx/BMatchingSolver'
+elif(pc_name in ["dhaka","gilbreth", "rice", "snyder","scholar","halstead"]):
+    executable=base_path+'/DatasetProcessing/Release_linux/BMatchingSolver'
+else:
+    print(pc_name," not matched")
+    sys.exit(0)

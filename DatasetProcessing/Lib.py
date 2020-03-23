@@ -1,6 +1,10 @@
 import gzip
 import pickle
 import re
+import scipy.sparse
+from sklearn.metrics import  pairwise_distances
+import multiprocessing
+
 
 import numpy as np
 from nltk.corpus import stopwords
@@ -320,6 +324,22 @@ def tf_idf_result(data,TF_IDF_config,output_dir,dataset_name):
 
     return data_vector
 
+def csr2weight_matrix(data_vector, metric, output_dir, dataset_name):
+    worker = multiprocessing.cpu_count()
+    print("number of processors: ", worker)
+
+    print("using Metric ",metric)
+
+    W = pairwise_distances(data_vector, n_jobs=worker, metric=metric)
+
+    if(metric=="cosine"):
+        print("Adjusting weight: (1-W)")
+        W = 1 - W
+        print(W.shape)
+
+    np.savetxt(output_dir+dataset_name+"_weights.txt", W)
+
+    return W
 
 if __name__ == '__main__':
     # home_dir = "/Users/sid/Purdue/Research/GCSSL/Dataset/Imdb/aclImdb/"

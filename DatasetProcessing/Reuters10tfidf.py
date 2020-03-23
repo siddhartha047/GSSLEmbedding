@@ -122,11 +122,17 @@ def read(output_dir):
     TF_IDF_config = {
         'max_df': 0.5,
         'min_df': 3,
-        'max_features': 5000,
+        'max_features': None,
         'ngram': (1, 1)  # min max range
     }
 
     data_vector=tf_idf_result(data,TF_IDF_config, output_dir,dataset_name="reuters10_tfidf")
+
+    from DatasetProcessing.Lib import csr2weight_matrix
+    W=csr2weight_matrix(data_vector,"cosine",output_dir,dataset_name="reuters10_tfidf")
+    print(W.shape)
+
+    #np.savetxt(output_dir+"reuters10_tfidf_feature.txt",data_vector.todense())
 
     # np.save(output_dir + "data_rating_np.npy", data_rating)
     # np.save(output_dir+"data_vector_np.npy",data_vector.todense())

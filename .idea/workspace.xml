@@ -2,20 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Amazon4tfidf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Imdb8w2v.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Reuters10w2v.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Yelp4tfidf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Yelp4w2v.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Bmatch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/BMatchingSolver" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/anaconda.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/objects.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/sources.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BMatchingLibrary.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BMatchingLibrary.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BMatchingProblem.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BMatchingProblem.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BMatchingSolver.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BMatchingSolver.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BeliefPropagator.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BeliefPropagator.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BipartiteFunctionOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BipartiteFunctionOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BipartiteMatrixOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/BipartiteMatrixOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/EuclideanDistance.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/EuclideanDistance.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/FunctionOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/FunctionOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/IndexHeap.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/IndexHeap.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/InnerProduct.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/InnerProduct.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/IntDoubleMap.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/IntDoubleMap.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/IntSet.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/IntSet.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/MatrixOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/MatrixOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/OscillationDetector.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/OscillationDetector.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/WeightFunction.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/WeightFunction.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/WeightOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/WeightOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/subdir.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/utils.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_linux/src/utils.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/BMatchingSolver" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/objects.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/sources.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BMatchingLibrary.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BMatchingLibrary.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BMatchingProblem.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BMatchingProblem.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BMatchingSolver.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BMatchingSolver.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BeliefPropagator.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BeliefPropagator.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BipartiteFunctionOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BipartiteFunctionOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BipartiteMatrixOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/BipartiteMatrixOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/EuclideanDistance.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/EuclideanDistance.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/FunctionOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/FunctionOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/IndexHeap.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/IndexHeap.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/InnerProduct.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/InnerProduct.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/IntDoubleMap.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/IntDoubleMap.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/IntSet.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/IntSet.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/MatrixOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/MatrixOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/OscillationDetector.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/OscillationDetector.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/WeightFunction.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/WeightFunction.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/WeightOracle.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/WeightOracle.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/subdir.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/utils.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatasetProcessing/Release_osx/src/utils.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatasetProcessing/Dbpedia14tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Dbpedia14tfidf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Dbpedia14w2v.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Dbpedia14w2v.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Imdb8.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Imdb8tfidf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Imdb8tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Imdb8tfidf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatasetProcessing/Lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Newsgroup20.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Newsgroup20w2v.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatasetProcessing/Newsgroup20tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Newsgroup20tfidf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatasetProcessing/Path.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Reuters10.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Reuters10tfidf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Reuters10tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Reuters10tfidf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatasetProcessing/Yelp4tfidf.py" beforeDir="false" afterPath="$PROJECT_DIR$/DatasetProcessing/Yelp4tfidf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mixed/data_vector.mtx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +135,8 @@
       <recent name="$PROJECT_DIR$/GraphConstruction/Custom/FC" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Amazon4tfidf">
-    <configuration name="Amazon4tfidf" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Newsgroup20tfidf">
+    <configuration name="Bmatch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -73,7 +148,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Amazon4tfidf.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Bmatch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -124,7 +199,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Yelp4tfidf" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Newsgroup20tfidf" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -136,7 +211,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Yelp4tfidf.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Newsgroup20tfidf.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -145,7 +220,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Yelp4w2v" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Reuters10tfidf" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -157,7 +232,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Yelp4w2v.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DatasetProcessing/Reuters10tfidf.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,9 +243,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Amazon4tfidf" />
-        <item itemvalue="Python.Yelp4w2v" />
-        <item itemvalue="Python.Yelp4tfidf" />
+        <item itemvalue="Python.Newsgroup20tfidf" />
+        <item itemvalue="Python.Bmatch" />
+        <item itemvalue="Python.Reuters10tfidf" />
         <item itemvalue="Python.Dbpedia14tfidf" />
         <item itemvalue="Python.Imdb8tfidf" />
       </list>
@@ -229,22 +304,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="306" key="GridCell.Tab.0.bottom" timestamp="1584052931330">
+    <state width="1414" height="285" key="GridCell.Tab.0.bottom" timestamp="1584653054886">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="306" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1584052931330" />
-    <state width="1414" height="306" key="GridCell.Tab.0.center" timestamp="1584052931330">
+    <state width="1414" height="285" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1584653054886" />
+    <state width="1414" height="285" key="GridCell.Tab.0.center" timestamp="1584653054886">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="306" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1584052931330" />
-    <state width="1414" height="306" key="GridCell.Tab.0.left" timestamp="1584052931329">
+    <state width="1414" height="285" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1584653054886" />
+    <state width="1414" height="285" key="GridCell.Tab.0.left" timestamp="1584653054885">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="306" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1584052931329" />
-    <state width="1414" height="306" key="GridCell.Tab.0.right" timestamp="1584052931330">
+    <state width="1414" height="285" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1584653054885" />
+    <state width="1414" height="285" key="GridCell.Tab.0.right" timestamp="1584653054886">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="306" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1584052931330" />
+    <state width="1414" height="285" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1584653054886" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
