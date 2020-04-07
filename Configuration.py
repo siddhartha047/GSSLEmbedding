@@ -127,7 +127,7 @@ def construct_graph():
 
 LEARNING_data_config={
     "algorithm":'GCN_DGL',
-    "dataset_name":'imdb',
+    "dataset_name":'karate',
     "directed":False,
     "labled_only": True, #load only data that has known labels
     "vectorize":"TF_IDF",
@@ -139,7 +139,7 @@ def learn():
     if (LEARNING_data_config['algorithm'] == 'GCN_DGL'):
         from GNN.GCN_DGL.GCN_DGL_main import learn
         from GNN_configuration import getSettings,load_data_DGL
-
+        if LEARNING_data_config["dataset_name"]=="karate":LEARNING_data_config["vectorize"]=""
         LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']+LEARNING_data_config["vectorize"]+"/"
         data=load_data_DGL(LEARNING_data_config)
 
@@ -152,7 +152,9 @@ def learn():
         from GNN.GSAGE_DGL.GSAGE_DGL_main import learn
         from GNN_configuration import getSettings,load_data_DGL
 
-        LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']
+        if LEARNING_data_config["dataset_name"] == "karate": LEARNING_data_config["vectorize"] = ""
+        LEARNING_data_config['input_path'] = dataset_info[LEARNING_data_config['dataset_name']]['path'] + \
+                                             LEARNING_data_config["vectorize"] + "/"
         data=load_data_DGL(LEARNING_data_config)
 
         gnn_settings = getSettings(LEARNING_data_config['dataset_name'])
@@ -164,7 +166,9 @@ def learn():
         from GNN.GAT_DGL.GAT_DGL_main import learn
         from GNN_configuration import getSettings,load_data_DGL
 
-        LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']
+        if LEARNING_data_config["dataset_name"] == "karate": LEARNING_data_config["vectorize"] = ""
+        LEARNING_data_config['input_path'] = dataset_info[LEARNING_data_config['dataset_name']]['path'] + \
+                                             LEARNING_data_config["vectorize"] + "/"
         data=load_data_DGL(LEARNING_data_config)
 
         gnn_settings = getSettings(LEARNING_data_config['dataset_name'])
@@ -176,7 +180,9 @@ def learn():
         from GNN.FNN_PT_TF_Keras.FC import learn
         from GNN_configuration import getSettings,load_data_DGL
 
-        LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']
+        if LEARNING_data_config["dataset_name"] == "karate": LEARNING_data_config["vectorize"] = ""
+        LEARNING_data_config['input_path'] = dataset_info[LEARNING_data_config['dataset_name']]['path'] + \
+                                             LEARNING_data_config["vectorize"] + "/"
         data=load_data_DGL(LEARNING_data_config)
 
         gnn_settings = getSettings(LEARNING_data_config['dataset_name'])
