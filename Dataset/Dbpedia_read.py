@@ -4,24 +4,42 @@ import timeit
 import csv
 
 
-def readData(filename,data,data_rating,minWordLength,readall=False):
-    nrows=20
-    with open(filename,encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f, delimiter=',')
-        for row in reader:
-            rating=num(row['stars'])
-            review = processText(row['text'])
+min_length = 3
 
-            if(int(rating)!=3 and len(review)>minWordLength):
-                data.append(" ".join(review))
-                data_rating.append(rating)
+def tokenize(text):
+    filtered_tokens=processText(text)
+    if(len(filtered_tokens)<min_length):
+        return ("",False)
+    return (filtered_tokens,True)
+
+def num(s):
+    try:
+        return int(s)
+    except ValueError:
+        return -1
+
+def readData(filename,data,data_rating,readall=True):
+    nrows=20
+    with open(filename,newline='',encoding="utf-8-sig") as f:
+        reader = csv.reader(f, delimiter=',', quotechar='"')
+        for row in reader:
+            #print(row)
+            category=num(row[0])
+            if(category==-1):continue
+            title=row[1]
+            description=row[2]
+            #print(title+description)
+            tokens,status=tokenize(title+" "+description)
+            #print(tokens)
+
+            if (status == False): continue
+            data.append(" ".join(tokens))
+            data_rating.append(category)
 
             if (readall == False):
                 if (nrows < 0):
                     break
                 nrows -= 1
-
-
 
 def read(home_dir,output_dir,load_saved):
     print(os.uname())
@@ -43,8 +61,8 @@ def read(home_dir,output_dir,load_saved):
     if (load_saved==False or os.path.exists(output_dir + "data_np.npy") == False):
         print("Started Reading data")
         start_reading = timeit.default_timer()
-        readData(input_file1, data, data_rating, minWordLength, readall)
-        readData(input_file2, data, data_rating, minWordLength, readall)
+        readData(input_file1, data, data_rating, readall)
+        readData(input_file2, data, data_rating, readall)
         stop_reading = timeit.default_timer()
         print('Time to process: ', stop_reading - start_reading)
     else:

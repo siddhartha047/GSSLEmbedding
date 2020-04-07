@@ -1,18 +1,14 @@
-import sys
-import os
 from Path import *
-import numpy as np
 
 #vectorize configuration
 VEC_config={
-    "dataset_name":"reuters_one",
-    "method":"doc2vec",
+    "dataset_name":"imdb",
+    "method":"TF_IDF",
     #"saving_format": "numpy", #numpy, mtx, mat, binary, txt, mtx2
-    "saving_format":['numpy','mtx2'],
+    "saving_format":['numpy'],
     "load_saved": False, #resume if possible in any stage (data loading, model loading etc.)
     "visualize":False
 }
-
 
 def vectorize():
     if(VEC_config['method']=="doc2vec"):
@@ -74,20 +70,19 @@ def vectorize():
         print("Not implemented yet")
 
     else:
-        print("improper method")
+        print("improper vectorize name")
         sys.exit(0)
 
     return
 
 GRAPH_data_config={
     "algorithm":'knn',
-    "dataset_name":'newsgroup20tfidf',
+    "dataset_name":'imdb',
     "method":'TF_IDF',
     "multi_label":False,
     #"saving_format":["numpy","mat","gephi","mtx","txt"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
-    "saving_format":["gephi"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
+    "saving_format":["numpy","gephi"]  #avilable formats are: "saving_format": "numpy", #numpy, mtx, mat
 }
-
 
 def construct_graph():
 
@@ -110,7 +105,6 @@ def construct_graph():
         }
         csr2graph(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, complete_config)
 
-
     elif(GRAPH_data_config['algorithm']=='bmatch'):
         from GraphConstruction.Bmatch.bmatch import bmatch_construction
         bMatching_config = {
@@ -124,7 +118,6 @@ def construct_graph():
         }
         bmatch_construction(dataset_info[GRAPH_data_config['dataset_name']], GRAPH_data_config, bMatching_config)
 
-
     else:
         print(GRAPH_data_config['algorithm']," -> The graph construction algorithm is not implemented yet")
         sys.exit(0)
@@ -132,14 +125,75 @@ def construct_graph():
 
     return
 
-def learn_test():
+LEARNING_data_config={
+    "algorithm":'GCN_DGL',
+    "dataset_name":'imdb',
+    "directed":False,
+    "labled_only": True, #load only data that has known labels
+    "vectorize":"TF_IDF",
+    "graph_algorithm":"knn",
+    "train": 0.5,
+    "val": 0.2}
+
+def learn():
+    if (LEARNING_data_config['algorithm'] == 'GCN_DGL'):
+        from GNN.GCN_DGL.GCN_DGL_main import learn
+        from GNN_configuration import getSettings,load_data_DGL
+
+        LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']+LEARNING_data_config["vectorize"]+"/"
+        data=load_data_DGL(LEARNING_data_config)
+
+        gnn_settings = getSettings(LEARNING_data_config['dataset_name'],data)
+        gnn_settings['output_path']=dataset_info[LEARNING_data_config['dataset_name']]['output_path']
+
+        learn(gnn_settings,data)
+
+    elif (LEARNING_data_config['algorithm'] == 'GSAGE_DGL'):
+        from GNN.GSAGE_DGL.GSAGE_DGL_main import learn
+        from GNN_configuration import getSettings,load_data_DGL
+
+        LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']
+        data=load_data_DGL(LEARNING_data_config)
+
+        gnn_settings = getSettings(LEARNING_data_config['dataset_name'])
+        gnn_settings['output_path']=dataset_info[LEARNING_data_config['dataset_name']]['output_path']
+
+        learn(gnn_settings,data)
+
+    elif (LEARNING_data_config['algorithm'] == 'GAT_DGL'):
+        from GNN.GAT_DGL.GAT_DGL_main import learn
+        from GNN_configuration import getSettings,load_data_DGL
+
+        LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']
+        data=load_data_DGL(LEARNING_data_config)
+
+        gnn_settings = getSettings(LEARNING_data_config['dataset_name'])
+        gnn_settings['output_path']=dataset_info[LEARNING_data_config['dataset_name']]['output_path']
+
+        learn(gnn_settings,data)
+
+    elif (LEARNING_data_config['algorithm'] == 'FC'):
+        from GNN.FNN_PT_TF_Keras.FC import learn
+        from GNN_configuration import getSettings,load_data_DGL
+
+        LEARNING_data_config['input_path']=dataset_info[LEARNING_data_config['dataset_name']]['path']
+        data=load_data_DGL(LEARNING_data_config)
+
+        gnn_settings = getSettings(LEARNING_data_config['dataset_name'])
+        gnn_settings['output_path']=dataset_info[LEARNING_data_config['dataset_name']]['output_path']
+
+        learn(gnn_settings,data)
+
+    else:
+        print("this GNN is not incorporated yet")
+        sys.exit(0)
 
     return
 
 #running the program
 RUN_vectorize=False
-RUN_graph_construction=True
-RUN_learn=False
+RUN_graph_construction=False
+RUN_learn=True
 
 if __name__ == '__main__':
     if(RUN_vectorize):
@@ -149,4 +203,4 @@ if __name__ == '__main__':
         construct_graph()
 
     if(RUN_learn):
-        learn_test()
+        learn()

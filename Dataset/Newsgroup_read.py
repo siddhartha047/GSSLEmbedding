@@ -7,9 +7,11 @@ import pickle
 
 from Dataset.Lib import processText
 
-def tokenize(text):
-    min_length = 3
+from DatasetProcessing.Lib import processText
 
+min_length = 3
+
+def tokenize(text):
     filtered_tokens=processText(text)
 
     if(len(filtered_tokens)<min_length):
@@ -17,13 +19,14 @@ def tokenize(text):
         # print(filtered_tokens)
         return ("",False)
 
-    return (" ".join(filtered_tokens),True)
+    return (filtered_tokens,True)
 
-def readData(output_dir,readall,minWordLength):
+def readData(output_dir):
     newsgroups_train = fetch_20newsgroups(subset='train', remove=('headers', 'footers', 'quotes'))
     newsgroups_test = fetch_20newsgroups(subset='test', remove=('headers', 'footers', 'quotes'))
 
     categories=list(newsgroups_train.target_names)
+    print(categories)
 
     trsize=len(newsgroups_train.data)
     testsize=len(newsgroups_test.data)
@@ -31,56 +34,24 @@ def readData(output_dir,readall,minWordLength):
     print("Training size :",trsize)
     print("Test size :", testsize)
 
-
     data=[]
     data_rating=[]
 
     print("Started filtering text")
-    index=0
     for i in range(len(newsgroups_train.data)):
-        (text,status)=tokenize(newsgroups_train.data[i])
+        (tokens,status)=tokenize(newsgroups_train.data[i])
         if(status):
-            data.append(text)
             data_rating.append(newsgroups_train.target[i])
-            index += 1
+            data.append(" ".join(tokens))
     print("Filtering ended")
-    train_size=index
+
     for i in range(len(newsgroups_test.data)):
-        (text,status)=tokenize(newsgroups_test.data[i])
+        (tokens,status)=tokenize(newsgroups_test.data[i])
         if(status):
-            data.append(text)
             data_rating.append(newsgroups_test.target[i])
-            index += 1
-    print("Filtering ended")
-    test_size=index-train_size
+            data.append(" ".join(tokens))
 
-    print("New train size ", train_size, " Removed :", trsize-train_size)
-    print("New test size ", test_size, " Removed :",testsize-test_size)
-
-    print("Total example remove: ",trsize+testsize-train_size-test_size)
-
-
-    print("Total ",len(data))
-    print("Total rating ",len(data_rating))
-
-    categories_to_index= dict(zip(categories, range(len(categories))))
-    index_to_categories = np.array(categories)
-
-    print(categories_to_index)
-    print(index_to_categories)
-
-    f = open(output_dir+"categories_to_index.pkl", "wb")
-    pickle.dump(categories_to_index, f)
-    f.close()
-    np.save(output_dir + 'index_to_categories', index_to_categories)
-
-    train_index = np.array(range(train_size))
-    test_index = np.array(range(train_size,index))
-
-    np.save(output_dir+'train_index',train_index)
-    np.save(output_dir + 'test_index', test_index)
-
-    return (np.array(data), np.array(data_rating))
+    return (data,data_rating)
 
 
 def read(home_dir,output_dir,load_saved):
@@ -93,13 +64,11 @@ def read(home_dir,output_dir,load_saved):
 
     # ignores rating 3, review with text length less than140
     # to read all pass True
-    minWordLength = 10
-    readall = False
 
     if (load_saved==False or os.path.exists(output_dir + "data_np.npy") == False):
         print("Started Reading data")
         start_reading = timeit.default_timer()
-        (data,data_rating)=readData(output_dir,readall,minWordLength)
+        (data,data_rating)=readData(output_dir)
         stop_reading = timeit.default_timer()
         print('Time to process: ', stop_reading - start_reading)
     else:

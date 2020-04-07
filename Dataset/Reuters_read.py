@@ -2,6 +2,8 @@ from Dataset.Lib import *
 import os
 import timeit
 from nltk.corpus import reuters
+import sys
+import itertools
 
 import nltk
 try:
@@ -13,88 +15,105 @@ except LookupError:
 #https://martin-thoma.com/nlp-reuters/
 #process the documents into following steps
 
-from nltk.stem.porter import PorterStemmer
-import re
-from nltk.corpus import stopwords
-
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
-
-cachedStopWords = stopwords.words("english")
+from Dataset.Lib import processText
+min_length = 3
 
 def tokenize(text):
-    min_length = 3
-    words = map(lambda word: word.lower(), text);
-    words = [word for word in words
-                  if word not in cachedStopWords]
-    tokens =(list(map(lambda token: PorterStemmer().stem(token),
-                  words)));
-    p = re.compile('[a-zA-Z]+');
-    filtered_tokens = list(filter(lambda token:
-                  p.match(token) and len(token)>=min_length,
-         tokens));
+    text=" ".join(text)
+    filtered_tokens=processText(text)
+    if(len(filtered_tokens)<min_length):
+        return ("",False)
 
-    return " ".join(filtered_tokens)
+    return (filtered_tokens,True)
 
-def readData(output_dir,data, data_rating, minWordLength, readall):
+def readData(output_dir, data_rating, minWordLength=10, readall=True):
     # List of documents
     documents = reuters.fileids()
     print(str(len(documents)) + " documents");
 
     train_docs = list(filter(lambda doc: doc.startswith("train"),documents));
-    print(str(len(train_docs)) + " total train documents");
+    print(str(len(train_docs)) + " total train documents originally");
 
     test_docs = list(filter(lambda doc: doc.startswith("test"),documents));
-    print(str(len(test_docs)) + " total test documents");
+    print(str(len(test_docs)) + " total test documents originally");
 
     # List of categories
     categories = reuters.categories();
-    print(str(len(categories)) + " categories");
+    print(str(len(categories)) + " categories")
     print(categories)
+    category_map= dict(zip(categories, np.zeros(len(categories),dtype=int)))
+    print(category_map)
 
-    categories_to_index= dict(zip(categories, range(len(categories))))
-    index_to_categories = np.array(categories)
-
-    print(categories_to_index)
-    print(index_to_categories)
-
-    f = open(output_dir+"categories_to_index.pkl", "wb")
-    pickle.dump(categories_to_index, f)
-    f.close()
-    np.save(output_dir + 'index_to_categories', index_to_categories)
-
-
-    i=0
     for doc in train_docs:
-        i+=1
-        data_rating.append(reuters.categories(doc))
-        data.append(tokenize(reuters.words(doc)))
-        if(readall==False and i>minWordLength):
-            break
-    i=0
+        if (len(reuters.categories(doc)) > 1): continue
+        category=reuters.categories(doc)[0]
+        category_map[category]=category_map[category]+1
     for doc in test_docs:
-        i+=1
-        data_rating.append(reuters.categories(doc))
-        data.append(tokenize(reuters.words(doc)))
+        if (len(reuters.categories(doc)) > 1): continue
+        category=reuters.categories(doc)[0]
+        category_map[category]=category_map[category]+1
+
+    print(category_map)
+    category_map_sorted={k: v for k, v in sorted(category_map.items(), key=lambda item: item[1],reverse=True)}
+    print(category_map_sorted)
+
+    category_map_10=dict(itertools.islice(category_map_sorted.items(), 10))
+    print(category_map_10)
+    keys = list(category_map_10.keys())
+    category_map_index=dict(zip(keys,range(len(keys))))
+    print(category_map_index)
+
+    with open(output_dir+"original_categories_all.txt","w") as f:
+        for k,v in category_map_sorted.items():
+            f.write('%s,%d\n'%(k,v))
+    i=0
+    data=[]
+    for doc in train_docs:
+        if (len(reuters.categories(doc)) > 1): continue
+        category = reuters.categories(doc)[0]
+        if(category not in category_map_10.keys()): continue
+        (tokens,status)=tokenize(reuters.words(doc))
+        if(status==False):continue
+        i += 1
+        data.append(" ".join(tokens))
+        data_rating.append(category_map_index[category])
         if(readall==False and i>minWordLength):
             break
 
-    train_index= np.array(range(len(train_docs)))
-    test_index = np.array(range(len(train_docs),len(train_docs)+len(test_docs)))
-    np.savetxt(output_dir+'train_index.txt',train_index)
-    np.savetxt(output_dir + 'test_index.txt', test_index)
+    train_size = i
+    print("Training documents: ",train_size)
 
-    return (data, data_rating)
+    i = 0
+    for doc in test_docs:
+        if (len(reuters.categories(doc)) > 1): continue
+        category = reuters.categories(doc)[0]
+        if (category not in category_map_10.keys()): continue
+        (tokens, status) = tokenize(reuters.words(doc))
+        if (status == False): continue
+        i += 1
+        data.append(" ".join(tokens))
+        data_rating.append(category_map_index[category])
+        if (readall == False and i > minWordLength):
+            break
 
+    test_size = i
+
+    print("Test documents: ",test_size)
+    print("Total documents: ",train_size+test_size)
+
+    if(len(data_rating)!=train_size+test_size):
+        print("Error here")
+        print("Ratings: ",len(data_rating))
+        sys.exit(0)
+
+    return data
 
 def read(home_dir,output_dir,load_saved):
     if not os.path.exists(output_dir):
         print("Creating directory: ",output_dir)
         os.makedirs(output_dir)
 
-    data = []
+
     data_rating = []
 
     # ignores rating 3, review with text length less than140
@@ -105,7 +124,7 @@ def read(home_dir,output_dir,load_saved):
     if (load_saved==False or os.path.exists(output_dir + "data_np.npy") == False):
         print("Started Reading data")
         start_reading = timeit.default_timer()
-        (data, data_rating)=readData(output_dir,data, data_rating, minWordLength, readall)
+        data=readData(output_dir, data_rating, minWordLength, readall)
         stop_reading = timeit.default_timer()
         print('Time to process: ', stop_reading - start_reading)
     else:
