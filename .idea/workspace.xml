@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a9203ddb-f766-4ef5-a700-4560423b7e81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GNN/GCN_PYG/GCN_PYG.py" beforeDir="false" afterPath="$PROJECT_DIR$/GNN/GCN_PYG/GCN_PYG.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Supervised_GC/FC_Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Supervised_GC/FC_Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphConstruction/Supervised_GC/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/GraphConstruction/Supervised_GC/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/instruction.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
       <recent name="$PROJECT_DIR$/Dataset" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Configuration">
+  <component name="RunManager" selected="Python.GCN_PYG">
     <configuration name="CVE_NGM_keras" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GSSLEmbedding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GCN_PYG" />
         <item itemvalue="Python.Configuration" />
         <item itemvalue="Python.Imdb_read" />
         <item itemvalue="Python.CVE_NGM_keras" />
         <item itemvalue="Python.NGM_Batch" />
-        <item itemvalue="Python.GCN_PYG" />
       </list>
     </recent_temporary>
   </component>
@@ -218,22 +221,22 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="578" y="145" key="FileChooserDialogImpl/0.23.1440.826@0.23.1440.826" timestamp="1581661907874" />
-    <state width="1414" height="223" key="GridCell.Tab.0.bottom" timestamp="1586239717641">
+    <state width="1414" height="223" key="GridCell.Tab.0.bottom" timestamp="1586812672825">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="223" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1586239717641" />
-    <state width="1414" height="223" key="GridCell.Tab.0.center" timestamp="1586239717640">
+    <state width="1414" height="223" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1586812672825" />
+    <state width="1414" height="223" key="GridCell.Tab.0.center" timestamp="1586812672824">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="223" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1586239717640" />
-    <state width="1414" height="223" key="GridCell.Tab.0.left" timestamp="1586239717640">
+    <state width="1414" height="223" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1586812672824" />
+    <state width="1414" height="223" key="GridCell.Tab.0.left" timestamp="1586812672824">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="223" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1586239717640" />
-    <state width="1414" height="223" key="GridCell.Tab.0.right" timestamp="1586239717640">
+    <state width="1414" height="223" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1586812672824" />
+    <state width="1414" height="223" key="GridCell.Tab.0.right" timestamp="1586812672825">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state width="1414" height="223" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1586239717640" />
+    <state width="1414" height="223" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1586812672825" />
     <state width="1414" height="249" key="GridCell.Tab.1.bottom" timestamp="1581662171790">
       <screen x="0" y="23" width="1440" height="826" />
     </state>

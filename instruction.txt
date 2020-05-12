@@ -54,3 +54,29 @@ Steps to run
 #PYTHONPATH=/home/das90/GNNcodes/GSSLEmbedding/DatasetProcessing/ python Reuters_one.py
 PYTHONPATH=/home/das90/GNNcodes/GSSLEmbedding/DatasetProcessing/ python -m DatasetProcessing.Reuters_one
 
+Pygeometric MacOs:
+https://github.com/rusty1s/pytorch_geometric/issues/279
+MacOS Mojave installation of torch-geometric
+
+ MACOSX_DEPLOYMENT_TARGET=10.14 CC=clang CXX=clang++ pip install torch-scatter
+ MACOSX_DEPLOYMENT_TARGET=10.14 CC=clang CXX=clang++ pip install torch-sparse
+ MACOSX_DEPLOYMENT_TARGET=10.14 CC=clang CXX=clang++ pip install torch-cluster
+ MACOSX_DEPLOYMENT_TARGET=10.14 CC=clang CXX=clang++ pip install torch-spline-conv
+ pip install torch-geometric
+
+Pygeometric Linux:
+pip install torch-scatter==latest+cu100 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-sparse==latest+cu100 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-cluster==latest+cu100 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-spline-conv==latest+cu100 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
+pip install torch-geometric
+
+make sure nvcc version, cuda version, torch cuda version matches, here all of them 10.0
+export PATH=/usr/local/cuda-10.0/bin:$PATH
+export CPATH=/usr/local/cuda-10.0/include:$CPATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=/usr/local/cuda-10.0/lib:$DYLD_LIBRARY_PATH
+
+nvcc --version
+python -c "import torch; print(torch.version.cuda)"
+python -c "import torch; print(torch.cuda.is_available())"

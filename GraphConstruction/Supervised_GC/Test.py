@@ -50,8 +50,8 @@ def in_reweight(d,sigma):
     return w
 
 def test3():
-    from GraphConstruction.Custom.Synthetic import load_synthetic
-    import GraphConstruction.Custom.utils as utils
+    from GraphConstruction.Supervised_GC.Synthetic import load_synthetic
+    import GraphConstruction.Supervised_GC.utils as utils
 
     X_train, y_train, X_test, y_test = load_synthetic(labeled=3)
     n_training_examples = y_train.shape[0]

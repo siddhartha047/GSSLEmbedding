@@ -79,6 +79,11 @@ def make_data(dataset):
     edge_index=torch.tensor([u,v],dtype=torch.long)
     data=Data(x=x,y=y,edge_index=edge_index,train_index=train_index,test_index=test_index,val_index=val_index)
 
+    print(edge_index)
+    sys.exit(0)
+
+
+
     return (data,dataset.classname)
 
 def accuracy(pred_label, true_label):

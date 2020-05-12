@@ -12,9 +12,9 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-from GraphConstruction.Custom import utils, FC_Custom
-from GraphConstruction.Custom.FC_minibatcher import MiniBatcher
-from GraphConstruction.Custom.Synthetic import load_synthetic
+from GraphConstruction.Supervised_GC import utils, FC_Custom
+from GraphConstruction.Supervised_GC.FC_minibatcher import MiniBatcher
+from GraphConstruction.Supervised_GC.Synthetic import load_synthetic
 
 def get_arguments(argv):
     parser = argparse.ArgumentParser(description='Training for MNIST')
